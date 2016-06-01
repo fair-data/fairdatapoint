@@ -32,7 +32,7 @@
 __author__  = 'Arnold Kuzniar'
 __version__ = '0.4.7'
 __status__  = 'Prototype'
-__license__ = 'Apache Lincense, Version 2.0'
+__license__ = 'Apache License, Version 2.0'
 
 
 from bottle import get, run, static_file, redirect, response, request, opt, install
