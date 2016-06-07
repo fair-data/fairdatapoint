@@ -16,118 +16,120 @@ DB.DBA.TTLP('
 @prefix gterm: <http://purl.org/germplasm/germplasmTerm#> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <#TriplesMap1>
-    a rr:TriplesMap;
+    a rr:TriplesMap ;
 
     rr:logicalTable [
-      rr:tableSchema "BreeDB";
-      rr:tableOwner  "breedb";
-      rr:tableName   "pp_accession";
-    ];
+      rr:tableSchema "BreeDB" ;
+      rr:tableOwner  "breedb" ;
+      rr:tableName   "pp_accession"
+    ] ;
 
     rr:subjectMap [
-      rr:template "http://www.eu-sol.wur.nl/passport#{accessionID}";
-      rr:class gterm:GermplasmAccession;
-      rr:graph <http://www.eu-sol.wur.nl/passport>;
+      rr:template "http://www.eu-sol.wur.nl/passport#{accessionID}" ;
+      rr:class gterm:GermplasmAccession ;
+      rr:graph <http://www.eu-sol.wur.nl/passport> ;
       rr:termType rr:IRI
-    ];
+    ] ;
 
     rr:predicateObjectMap [
-      rr:predicate gterm:germplasmID;
+      rr:predicate gterm:germplasmID ;
       rr:objectMap [
-        rr:template "http://www.eu-sol.wur.nl/passport/SelectAccessionByAccessionID.do?accessionID={accessionID}";
+        rr:template "http://www.eu-sol.wur.nl/passport/SelectAccessionByAccessionID.do?accessionID={accessionID}" ;
         rr:termType rr:IRI
-      ];
-    ];
+      ] ;
+    ] ;
 
     rr:predicateObjectMap [
-      rr:predicate gterm:germplasmIdentifier;
+      rr:predicate gterm:germplasmIdentifier ;
       rr:objectMap [
-        rr:column "accessionName";
+        rr:column "accessionName" ;
         rr:termType rr:Literal
-      ];
-    ];
+      ] ;
+    ] ;
 
     rr:predicateObjectMap [
-      rr:predicate geo:lat;
+      rr:predicate geo:lat ;
       rr:objectMap [
-        rr:termType rr:Literal;
-        rr:column "gpsLat";
+        rr:termType rr:Literal ;
+        rr:column "gpsLat" ;
         rr:datatype xsd:decimal
-      ];
-    ];
+      ] ;
+    ] ;
 
     rr:predicateObjectMap [
-      rr:predicate geo:long;
+      rr:predicate geo:long ;
       rr:objectMap [
-        rr:termType rr:Literal;
-        rr:column "gpsLong";
+        rr:termType rr:Literal ;
+        rr:column "gpsLong" ;
         rr:datatype xsd:decimal
-      ];
-    ];
+      ] ;
+    ] ;
 
     rr:predicateObjectMap [
-      rr:predicate geo:alt;
+      rr:predicate geo:alt ;
       rr:objectMap [
-        rr:termType rr:Literal;
-        rr:column "elevation";
+        rr:termType rr:Literal ;
+        rr:column "elevation" ;
         rr:datatype xsd:decimal
-      ];
-    ];
+      ] ;
+    ] ;
 
     rr:predicateObjectMap [
-      rr:predicate dwc:countryCode; # requires two-letter codes in ISO 3166-1-alpha-2
+      rr:predicate dwc:countryCode ; # requires two-letter codes in ISO 3166-1-alpha-2
       rr:objectMap [
-        rr:termType rr:Literal;
-        rr:column "collectionSiteCountry"; # contains three-letter country codes (FIXME)
+        rr:termType rr:Literal ;
+        rr:column "collectionSiteCountry" ; # contains three-letter country codes (FIXME)
         rr:datatype dct:Location # dct:ISO3166
-      ];
-    ];
+      ] ;
+    ] ;
 
     rr:predicateObjectMap [
-      rr:predicate dwc:scientificName;
+      rr:predicate dwc:scientificName ;
       rr:objectMap [
-        rr:termType rr:Literal;
-        rr:column "speciesName";
+        rr:termType rr:Literal ;
+        rr:column "speciesName" ;
         rr:datatype dwc:Taxon
-      ];
-    ];
+      ] ;
+    ] ;
 
     rr:predicateObjectMap [
-      rr:predicate gterm:acquisitionDate;
+      rr:predicate gterm:acquisitionDate ;
       rr:objectMap [
-        rr:termType rr:Literal;
-        rr:column "collectionDate";
+        rr:termType rr:Literal ;
+        rr:column "collectionDate" ;
         rr:datatype xsd:date
-      ];
-    ];
+      ] ;
+    ] ;
 
     rr:predicateObjectMap [
-      rr:predicate gterm:biologicalStatus;
+      rr:predicate gterm:biologicalStatus ;
       rr:objectMap [
-        rr:termType rr:Literal;
-        rr:column "germplasmStatus";
+        rr:termType rr:Literal ;
+        rr:column "germplasmStatus" ;
         rr:datatype gterm:BiologicalStatusType
-      ];
-    ];
+      ] ;
+    ] ;
 
     rr:predicateObjectMap [
-      rr:predicate dct:modified;
+      rr:predicate dct:modified ;
       rr:objectMap [
-        rr:termType rr:Literal;
-        rr:column "lastUpdate";
+        rr:termType rr:Literal ;
+        rr:column "lastUpdate" ;
         rr:datatype xsd:date
-      ];
-    ];
+      ] ;
+    ] ;
 
     rr:predicateObjectMap [
-      rr:predicate dct:created;
+      rr:predicate dct:created ;
       rr:objectMap [
-        rr:termType rr:Literal;
-        rr:column "dateCreated"; rr:datatype xsd:date
-      ];
-    ];
+        rr:termType rr:Literal ;
+        rr:column "dateCreated" ;
+        rr:datatype xsd:date
+      ] ;
+    ] ;
 .
 ', 'http://temp/germplasm', 'http://temp/germplasm')
 ;
