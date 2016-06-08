@@ -70,6 +70,10 @@ def _errorFieldInSectionNotFound(field, section):
    return "Field '%s' not found in section '%s'." % (field, section)
 
 
+def _errorResourceNotFound(resource):
+   return "Resource '%s' not found." % resource
+
+
 def _errorResourceIdNotUnique(id):
    return "Resource ID '%s' must be unique." % id
 
