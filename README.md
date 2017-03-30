@@ -1,4 +1,4 @@
-###FAIRDataPoint (FDP) Metadata Service
+### FAIR Data Point (FDP) Metadata Service
 
 **Example dataset**: [EU-SOL BreeDB database](http://www.eu-sol.wur.nl) (tomato passport data)
 
