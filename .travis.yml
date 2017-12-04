@@ -1,0 +1,10 @@
+language: python
+sudo: false
+dist: trusty
+python:
+  - "2.7"
+install:
+  - cd fdp-api/python && make install
+script:
+  - make serve-dev &
+  - make test
