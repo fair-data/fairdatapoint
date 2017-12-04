@@ -1,9 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "version": "0.3.1",
-        "title": "FAIR Data Point Service",
-        "description": "Provides metadata about the FAIR Data Point (FDP) itself, catalogs, datasets and their distributions available through the FDP.",
+        "version": "0.5.0",
+        "title": "FAIR Data Point",
+        "description": "Provides machine-readable descriptions (metadata) about catalogs, datasets and distributions available through the FDP.",
         "contact": {
             "name": "Netherlands eScience Center",
             "url": "https://www.esciencecenter.nl",
@@ -20,9 +20,9 @@
     "basePath": "/",
     "produces": [
         "text/turtle",
-        "application/n-triples",
         "application/rdf+xml",
-        "application/ld+json"
+        "application/ld+json",
+        "application/n-triples"  
     ],
     "paths": {
         "/fdp": {

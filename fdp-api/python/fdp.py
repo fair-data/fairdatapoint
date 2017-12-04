@@ -1,4 +1,4 @@
-# FAIR Data Point Service
+# FAIR Data Point
 #
 # Copyright 2015 Netherlands eScience Center in collaboration with
 # Dutch Techcenter for Life Sciences.
@@ -16,14 +16,14 @@
 # limitations under the License.
 #
 #
-# FAIR Data Point (FDP) Service exposes the following endpoints (URL paths):
+# FAIR Data Point (FDP) exposes the following endpoints (URL paths):
 #   [ /, /doc, /doc/ ]             = Redirect to the API documentation (Swagger UI)
 #   /fdp                           = returns FDP metadata
 #   /catalog/{catalogID}           = returns catalog metadata (default: catalog-01)
 #   /dataset/{datasetID}           = returns dataset metadata (default: breedb)
 #   /distribution/{distributionID} = returns distribution metadata (default: breedb-sparql)
 #
-# This services makes extensive use of metadata defined by:
+# This services makes use of:
 #   Data Catalog Vocabulary (DCAT, http://www.w3.org/TR/vocab-dcat/)
 #   Dublin Core Metadata Terms (DCMI, http://dublincore.org/documents/dcmi-terms/)
 #   DBpedia (DBPEDIA, http://dbpedia.org/resource/)
@@ -81,16 +81,16 @@ for triple in reader.getTriples():
 # HTTP response: FAIR metadata in RDF and JSON-LD formats
 def httpResponse(graph, uri):
    accept_header = request.headers.get('Accept')
-   fmt = 'text/turtle' # set default format (MIME type)
+   fmt = 'turtle' # default RDF serialization
+   mime_types = {
+      'text/turtle'           : 'turtle',
+      'application/rdf+xml'   : 'xml',
+      'application/ld+json'   : 'json-ld',
+      'application/n-triples' : 'nt'
+   }
 
-   if 'triples' in accept_header:
-      fmt = 'application/n-triples'
-
-   if 'rdf+xml' in accept_header:
-      fmt = 'application/rdf+xml'
-
-   if 'ld+json' in accept_header:
-      fmt = 'application/ld+json'
+   if accept_header in mime_types:
+        fmt = mime_types[accept_header]
 
    serialized_graph = graph.serialize(uri, fmt)
 
@@ -98,7 +98,7 @@ def httpResponse(graph, uri):
       response.status = 404 # web resource not found
       return
 
-   response.content_type = fmt
+   response.content_type = 'text/plain'
    response.set_header('Allow', 'GET') 
 
    return serialized_graph
