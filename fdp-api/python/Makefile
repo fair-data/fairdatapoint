@@ -1,10 +1,11 @@
 .PHONY: all requirements doc install reinstall clean serve-dev serve-prod
 
 APP = fdp
-HOST_DEV = 127.0.0.1:8080
-HOST_PROD = fdp.biotools.nl:8080
+HOST = 127.0.0.1:8080
 
 all: install
+
+install: requirements doc
 
 requirements:
 	pip install -r requirements.txt
@@ -15,8 +16,6 @@ doc:
 	rm -fr swagger-ui
 	sed -i.org 's/http:.*\(swagger.json\)/\/doc\/\1/' doc/index.html
 
-install: requirements doc
-
 reinstall:
 	pip install --upgrade --no-deps .
 
@@ -24,9 +23,12 @@ clean:
 	rm -f *.pyc
 	cd doc && find . ! -name swagger.json -delete
 
+test:
+	nosetests -v -w tests
+
 serve-dev:
-	python -m bottle --debug --reload --bind $(HOST_DEV) $(APP)
+	python -m bottle --debug --reload --bind $(HOST) $(APP)
 
 serve-prod:
-	nohup python -m bottle -b $(HOST_PROD) $(APP) &
+	nohup python -m bottle -b $(HOST) $(APP) &
 

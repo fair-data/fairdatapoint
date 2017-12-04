@@ -2,18 +2,28 @@
   {
     "@graph": [
       {
-        "@id": "http://127.0.0.1:8080/catalog/catalog-01",
+        "@id": "http://127.0.0.1:8080/fdp",
         "@type": [
-          "http://www.w3.org/ns/dcat#Catalog"
+          "http://purl.org/dc/terms/Agent"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "Plant Breeding Data Catalog"
+            "@value": "This FDP provides metadata on plant-specific genotype/phenotype data sets"
+          }
+        ],
+        "http://purl.org/dc/terms/hasPart": [
+          {
+            "@id": "http://127.0.0.1:8080/catalog/catalog-01"
+          }
+        ],
+        "http://purl.org/dc/terms/hasVersion": [
+          {
+            "@value": "1.0"
           }
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "catalog-01"
+            "@value": "FDP-WUR-PB"
           }
         ],
         "http://purl.org/dc/terms/issued": [
@@ -40,36 +50,21 @@
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "Plant Breeding Data Catalog"
-          }
-        ],
-        "http://purl.org/dc/terms/version": [
-          {
-            "@value": "1.0"
+            "@value": "FAIR Data Point of the Plant Breeding Group, Wageningen UR"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "Plant Breeding Data Catalog"
+            "@value": "FAIR Data Point of the Plant Breeding Group, Wageningen UR"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
           {
-            "@id": "http://127.0.0.1:8080/dataset/breedb"
-          }
-        ],
-        "http://www.w3.org/ns/dcat#dataset": [
-          {
-            "@id": "http://127.0.0.1:8080/dataset/breedb"
-          }
-        ],
-        "http://www.w3.org/ns/dcat#themeTaxonomy": [
-          {
-            "@id": "http://dbpedia.org/resource/Breeding"
+            "@id": "http://127.0.0.1:8080/catalog/catalog-01"
           }
         ]
       }
     ],
-    "@id": "http://127.0.0.1:8080/catalog/catalog-01"
+    "@id": "http://127.0.0.1:8080/fdp"
   }
 ]

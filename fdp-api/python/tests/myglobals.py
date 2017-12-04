@@ -1,4 +1,4 @@
-DUMP_DIR = 'metadata'
+DUMP_DIR = 'rdf-metadata'
 BASE_URL = 'http://127.0.0.1:8080'
 
 # example catalog, dataset and distributions

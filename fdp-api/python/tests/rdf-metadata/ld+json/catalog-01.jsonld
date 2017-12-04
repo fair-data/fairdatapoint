@@ -2,18 +2,23 @@
   {
     "@graph": [
       {
-        "@id": "http://127.0.0.1:8080/distribution/breedb-sqldump",
+        "@id": "http://127.0.0.1:8080/catalog/catalog-01",
         "@type": [
-          "http://www.w3.org/ns/dcat#Distribution"
+          "http://www.w3.org/ns/dcat#Catalog"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "SQL dump of the BreeDB tomato passport data"
+            "@value": "Plant Breeding Data Catalog"
+          }
+        ],
+        "http://purl.org/dc/terms/hasVersion": [
+          {
+            "@value": "1.0"
           }
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "breedb-sqldump"
+            "@value": "catalog-01"
           }
         ],
         "http://purl.org/dc/terms/issued": [
@@ -25,11 +30,6 @@
         "http://purl.org/dc/terms/language": [
           {
             "@id": "http://id.loc.gov/vocabulary/iso639-1/en"
-          }
-        ],
-        "http://purl.org/dc/terms/license": [
-          {
-            "@id": "http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0"
           }
         ],
         "http://purl.org/dc/terms/modified": [
@@ -45,31 +45,31 @@
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "SQL dump of the BreeDB tomato passport data"
-          }
-        ],
-        "http://purl.org/dc/terms/version": [
-          {
-            "@value": "1.0"
+            "@value": "Plant Breeding Data Catalog"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "SQL dump of the BreeDB tomato passport data"
+            "@value": "Plant Breeding Data Catalog"
           }
         ],
-        "http://www.w3.org/ns/dcat#downloadURL": [
+        "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
           {
-            "@id": "http://virtuoso.biotools.nl:8888/DAV/home/breedb/breedb.sql"
+            "@id": "http://127.0.0.1:8080/dataset/breedb"
           }
         ],
-        "http://www.w3.org/ns/dcat#mediaType": [
+        "http://www.w3.org/ns/dcat#dataset": [
           {
-            "@value": "application/sql"
+            "@id": "http://127.0.0.1:8080/dataset/breedb"
+          }
+        ],
+        "http://www.w3.org/ns/dcat#themeTaxonomy": [
+          {
+            "@id": "http://dbpedia.org/resource/Breeding"
           }
         ]
       }
     ],
-    "@id": "http://127.0.0.1:8080/distribution/breedb-sqldump"
+    "@id": "http://127.0.0.1:8080/catalog/catalog-01"
   }
 ]

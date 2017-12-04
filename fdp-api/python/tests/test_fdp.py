@@ -6,6 +6,7 @@ from rdflib.compare import graph_diff
 from rdflib.plugin import register, Parser
 from myglobals import *
 
+
 register('application/ld+json', Parser, 'rdflib_jsonld.parser', 'JsonLDParser')
 
 URLs = [ urlparse.urljoin(BASE_URL, p) for p in URL_PATHS ]

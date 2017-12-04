@@ -11,6 +11,11 @@
             "@value": "SPARQL endpoint for BreeDB tomato passport data"
           }
         ],
+        "http://purl.org/dc/terms/hasVersion": [
+          {
+            "@value": "1.0"
+          }
+        ],
         "http://purl.org/dc/terms/identifier": [
           {
             "@value": "breedb-sparql"
@@ -46,11 +51,6 @@
         "http://purl.org/dc/terms/title": [
           {
             "@value": "SPARQL endpoint for BreeDB tomato passport data"
-          }
-        ],
-        "http://purl.org/dc/terms/version": [
-          {
-            "@value": "1.0"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [

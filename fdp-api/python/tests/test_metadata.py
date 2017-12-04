@@ -1,8 +1,11 @@
+import sys
+
+sys.path.append('../')
+
 from nose import with_setup
 from nose.tools import assert_equals, assert_in, assert_true, assert_false
 from metadata import FAIRConfigReader, FAIRGraph, FDPath
 from urllib2 import urlparse
-
 
 reader = FAIRConfigReader()
 

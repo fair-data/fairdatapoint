@@ -11,7 +11,7 @@ from urllib2 import urlparse
 register('application/ld+json', Serializer, 'rdflib_jsonld.serializer', 'JsonLDSerializer')
 
 # default metadata config file
-_CONFIG_FILE = path.join(path.dirname(__file__), 'metadata.ini')
+_CONFIG_FILE = path.join(path.dirname(__file__), 'config.ini')
 
 # define additional namespaces
 DCMITYPE = Namespace('http://purl.org/dc/dcmitype/')

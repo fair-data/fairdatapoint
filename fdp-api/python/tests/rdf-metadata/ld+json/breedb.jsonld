@@ -4,11 +4,17 @@
       {
         "@id": "http://127.0.0.1:8080/dataset/breedb",
         "@type": [
+          "http://purl.org/dc/dcmitype/Dataset",
           "http://www.w3.org/ns/dcat#Dataset"
         ],
         "http://purl.org/dc/terms/description": [
           {
             "@value": "BreeDB tomato passport data"
+          }
+        ],
+        "http://purl.org/dc/terms/hasVersion": [
+          {
+            "@value": "1.0"
           }
         ],
         "http://purl.org/dc/terms/identifier": [
@@ -43,11 +49,6 @@
             "@value": "BreeDB tomato passport data"
           }
         ],
-        "http://purl.org/dc/terms/version": [
-          {
-            "@value": "1.0"
-          }
-        ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
             "@value": "BreeDB tomato passport data"
@@ -55,10 +56,10 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
           {
-            "@id": "http://127.0.0.1:8080/distribution/breedb-sparql"
+            "@id": "http://127.0.0.1:8080/distribution/breedb-sqldump"
           },
           {
-            "@id": "http://127.0.0.1:8080/distribution/breedb-sqldump"
+            "@id": "http://127.0.0.1:8080/distribution/breedb-sparql"
           }
         ],
         "http://www.w3.org/ns/dcat#distribution": [
@@ -71,16 +72,16 @@
         ],
         "http://www.w3.org/ns/dcat#keyword": [
           {
-            "@value": "BreeDB"
-          },
-          {
-            "@value": "Plant breeding"
+            "@value": "passport data"
           },
           {
             "@value": "germplasm"
           },
           {
-            "@value": "passport data"
+            "@value": "BreeDB"
+          },
+          {
+            "@value": "Plant breeding"
           }
         ],
         "http://www.w3.org/ns/dcat#landingPage": [
