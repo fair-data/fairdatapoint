@@ -14,6 +14,7 @@ register('application/ld+json', Serializer, 'rdflib_jsonld.serializer', 'JsonLDS
 _CONFIG_FILE = path.join(path.dirname(__file__), 'metadata.ini')
 
 # define additional namespaces
+DCMITYPE = Namespace('http://purl.org/dc/dcmitype/')
 DCAT = Namespace('http://www.w3.org/ns/dcat#')
 LANG = Namespace('http://id.loc.gov/vocabulary/iso639-1/')
 DBPEDIA = Namespace('http://dbpedia.org/resource/')
@@ -40,7 +41,7 @@ _ONTO_MAP = dict(fdp_id          = [ ( DCTERMS.identifier, XSD.string ) ],
                  publisher       = [ ( DCTERMS.publisher, XSD.anyURI ) ],
                  issued          = [ ( DCTERMS.issued, XSD.date ) ],
                  modified        = [ ( DCTERMS.modified, XSD.date ) ],
-                 version         = [ ( DCTERMS.version, XSD.string ) ],
+                 version         = [ ( DCTERMS.hasVersion, XSD.string ) ],
                  license         = [ ( DCTERMS.license, XSD.anyURI ) ],
                  theme           = [ ( DCAT.theme, XSD.anyURI ) ],
                  theme_taxonomy  = [ ( DCAT.themeTaxonomy, XSD.anyURI ) ],
@@ -219,6 +220,7 @@ class FAIRGraph(object):
 
       # bind prefixes to namespaces
       graph.bind('dbp', DBPEDIA)
+      graph.bind('dcmitype', DCMITYPE)
       graph.bind('dct', DCTERMS)
       graph.bind('dcat', DCAT)
       graph.bind('lang', LANG)
@@ -316,6 +318,7 @@ class FAIRGraph(object):
          g = self._graphContext(s)
 
          g.add( (s, RDF.type, DCAT.Dataset) )
+         g.add( (s, RDF.type, DCMITYPE.Dataset) )
          g.add( (s, DCTERMS.language, LANG.en) )
          g.add( (s, DCTERMS.identifier, Literal(resource_id, datatype=XSD.string)) )
 
