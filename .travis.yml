@@ -3,8 +3,11 @@ sudo: false
 dist: trusty
 python:
   - "2.7"
+before_install:
+  - cd fdp-api/python
 install:
-  - cd fdp-api/python && make install
+  - make install
 script:
   - make serve-dev &
+  - sleep 10
   - make test
