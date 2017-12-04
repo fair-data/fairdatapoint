@@ -10,6 +10,7 @@ Currently, there are two FDP implementations (prototypes) in:
 * [Python](https://github.com/NLeSC/ODEX-FAIRDataPoint/tree/master/fdp-api/python)
 * [Java](https://github.com/NLeSC/ODEX-FAIRDataPoint/tree/master/fdp-api/java)
 
+FDP software specification can be found [here](https://dtl-fair.atlassian.net/wiki/spaces/FDP/pages/6127622/FAIR+Data+Point+Software+Specification).
 
 **Web API documentation**
 
