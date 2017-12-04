@@ -1,19 +1,19 @@
-# Install Python modules & Swagger UI
+### Install Python modules & Swagger UI
 
 `make install`
 
-# Deploy FDP in development
+### Deploy FDP in development
 
 `make serve-dev` # with default HOST=127.0.0.1:8080
 
-# Deploy FDP in production
+### Deploy FDP in production
 
 `make -e serve-prod HOST=example.com`
 
-# Clean up: .pyc and Swagger UI files in doc directory (except swagger.json)
+### Clean up files
 
-`make clean`
+`make clean` # .pyc and Swagger UI files in doc dir (except .json)
 
-# Run tests on running app (in development)
+### Run tests on running app (in development)
 
 `make test`
