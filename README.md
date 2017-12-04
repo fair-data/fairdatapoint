@@ -1,16 +1,21 @@
-### FAIR Data Point (FDP) Metadata Service
+[![Build Status](https://travis-ci.org/NLeSC/ODEX-FAIRDataPoint.svg?branch=master)](https://travis-ci.org/NLeSC/ODEX-FAIRDataPoint)
 
-**Example dataset**: [EU-SOL BreeDB database](http://www.eu-sol.wur.nl) (tomato passport data)
+### FAIR Data Point (FDP)
 
-**SPARQL endpoint**: [BreeDB](http://virtuoso.biotools.nl:8888/sparql/); *Graph IRI: http://www.eu-sol.wur.nl/passport*
+FDP is a stand-alone (RESTful) web application that enables data owners to expose their datasets and data users to discover more information about available datasets according to the [FAIR Data Guiding Principles](http://www.force11.org/group/fairgroup/fairprinciples). In particular, FDP addresses the findability or discoverability of data by providing descriptions at four hierarchical levels (metadata):
 
-**RESTful API documentation**
+*FDP->catalogs->datasets->distributions*
 
-http://fdp.biotools.nl:8080/
+Currently, there are two FDP implementations (prototypes) in:
+* [Python](https://github.com/NLeSC/ODEX-FAIRDataPoint/tree/master/fdp-api/python)
+* [Java](https://github.com/NLeSC/ODEX-FAIRDataPoint/tree/master/fdp-api/java)
 
-**Access FDP-, catalog-, dataset- and distribution-level metadata**
 
-http://virtuoso.biotools.nl:8888/describe/?url=http://fdp.biotools.nl:8080/fdp
+**Web API documentation**
+
+Example instance: http://fdp.biotools.nl:8080/
+
+**Programmatic access to FDP-, catalog-, dataset- and distribution-level metadata**
 
 ```
 curl -iH 'Accept: text/turtle' http://fdp.biotools.nl:8080/fdp
@@ -18,8 +23,9 @@ curl -iH 'Accept: text/turtle' http://fdp.biotools.nl:8080/catalog/catalog-01
 curl -iH 'Accept: text/turtle' http://fdp.biotools.nl:8080/dataset/breedb
 curl -iH 'Accept: text/turtle' http://fdp.biotools.nl:8080/distribution/breedb-sparql
 ```
-Note: FDP supports different RDF serializations (MIME-types):
-+ Turtle (text/turtle)
-+ N-Triples (application/n-triples)
-+ RDF/XML (application/rdf+xml)
-+ JSON-LD (application/ld+json)
+
+Note: FDP supports the following RDF serializations (MIME-types):
+* Turtle (text/turtle)
+* N-Triples (application/n-triples)
+* RDF/XML (application/rdf+xml)
+* JSON-LD (application/ld+json)
