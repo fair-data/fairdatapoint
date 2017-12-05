@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/NLeSC/ODEX-FAIRDataPoint.svg?branch=master)](https://travis-ci.org/NLeSC/ODEX-FAIRDataPoint)
+[![DOI](https://zenodo.org/badge/37470907.svg)](https://zenodo.org/badge/latestdoi/37470907)
 
 ### FAIR Data Point (FDP)
 
