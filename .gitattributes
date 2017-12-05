@@ -1,2 +1,1 @@
-*.py linguist-vendored
-*.java linguist-vendored
+*.R linguist-vendored
