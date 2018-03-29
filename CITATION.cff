@@ -16,6 +16,6 @@ authors:
   affiliation: Leiden University Medical Center
   orcid: https://orcid.org/0000-0002-1215-167X
 version: '0.5'
-date-released: '2017-12-05'
+date-released: 2017-12-05
 repository-code: https://github.com/NLeSC/ODEX-FAIRDataPoint
 license: Apache-2.0
