@@ -51,6 +51,7 @@ fh = FileHandler('access.log')
 fh.setLevel(INFO)
 logger.addHandler(fh)
 
+
 def logHttpRequests(fn):
     """Log HTTP requests into log file using Common Log Format"""
     @wraps(fn)
@@ -66,12 +67,13 @@ def logHttpRequests(fn):
         return fn(*args, **kwargs)
     return _log_to_logger
 
+
 install(logHttpRequests)
 
 # populate FAIR metadata from config file
 reader = FAIRConfigReader()
 scheme = 'http'
-host = opt.bind # pass host:[port] through the command-line -b option
+host = opt.bind  # pass host:[port] through the command-line -b option
 base_uri = '{}://{}'.format(scheme, host)
 g = FAIRGraph(base_uri)
 
@@ -82,12 +84,12 @@ for triple in reader.getTriples():
 def httpResponse(graph, uri):
     """HTTP response: FAIR metadata in RDF and JSON-LD formats"""
     accept_header = request.headers.get('Accept')
-    fmt = 'turtle' # default RDF serialization
+    fmt = 'turtle'  # default RDF serialization
     mime_types = {
-        'text/turtle'           : 'turtle',
-        'application/rdf+xml'   : 'xml',
-        'application/ld+json'   : 'json-ld',
-        'application/n-triples' : 'nt'
+        'text/turtle': 'turtle',
+        'application/rdf+xml': 'xml',
+        'application/ld+json': 'json-ld',
+        'application/n-triples': 'nt'
     }
 
     if accept_header in mime_types:
@@ -96,7 +98,7 @@ def httpResponse(graph, uri):
     serialized_graph = graph.serialize(uri, fmt)
 
     if serialized_graph is None:
-        response.status = 404 # web resource not found
+        response.status = 404  # web resource not found
         return
 
     response.content_type = 'text/plain'
@@ -110,21 +112,26 @@ def httpResponse(graph, uri):
 def defaultPage():
     redirect('/doc/index.html')
 
+
 @get(FDPath('doc', '<fname:path>'))
 def sourceDocFiles(fname):
     return static_file(fname, root='doc')
+
 
 @get(FDPath('fdp'))
 def getFdpMetadata(graph=g):
     return httpResponse(graph, graph.fdpURI())
 
+
 @get(FDPath('cat', '<catalog_id>'))
 def getCatalogMetadata(catalog_id, graph=g):
     return httpResponse(graph, graph.catURI(catalog_id))
 
+
 @get(FDPath('dat', '<dataset_id>'))
 def getDatasetMetadata(dataset_id, graph=g):
     return httpResponse(graph, graph.datURI(dataset_id))
+
 
 @get(FDPath('dist', '<distribution_id>'))
 def getDistributionMetadata(distribution_id, graph=g):
