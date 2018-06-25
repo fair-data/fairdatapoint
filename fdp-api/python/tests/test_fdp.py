@@ -7,8 +7,8 @@ from myglobals import (BASE_URL, DUMP_DIR, MIME_TYPES, URL_PATHS)
 import six
 
 if six.PY2:
-    from urllib2 import urlopen, urlparse, Request
-    from urlparse.urlparse import urljoin
+    from urllib2 import (urlopen, urlparse, Request)
+    urljoin = urlparse.urljoin
 else:
     from urllib.parse import urljoin
     from urllib.request import (Request, urlopen, urlparse)

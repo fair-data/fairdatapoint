@@ -9,10 +9,10 @@ from nose.tools import (assert_equals, assert_true, assert_false)
 from metadata import (FAIRConfigReader, FAIRGraph)
 
 if six.PY2:
-    from urlparse.urlparse import urljoin
+    from urllib2 import urlparse
+    urljoin = urlparse.urljoin
 else:
     from urllib.parse import urljoin
-
 
 reader = FAIRConfigReader()
 
