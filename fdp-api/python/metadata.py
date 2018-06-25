@@ -6,7 +6,7 @@ from datetime import datetime
 
 import six
 if six.PY2:
-    from urlparse import urlparse
+    from urllib2 import urlparse
     from ConfigParser import SafeConfigParser
 else:
     from urllib.request import urlparse
