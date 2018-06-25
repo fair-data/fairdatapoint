@@ -2,10 +2,15 @@ from os import path
 from rdflib import ConjunctiveGraph, URIRef, Literal
 from rdflib.namespace import Namespace, RDF, RDFS, DCTERMS, XSD
 from rdflib.plugin import register, Serializer
-from ConfigParser import SafeConfigParser
 from datetime import datetime
-from urllib2 import urlparse
 
+import six
+if six.PY2:
+    from urlparse import urlparse
+    from ConfigParser import SafeConfigParser
+else:
+    from urllib.request import urlparse
+    from configparser import SafeConfigParser
 
 # rdflib-jsonld module required
 register('application/ld+json', Serializer,
@@ -149,7 +154,7 @@ class FAIRConfigReader(object):
             yield item
 
     def getTriples(self):
-        for section, fields in self.getMetadata().iteritems():
+        for section, fields in self.getMetadata().items():
             for field in fields:
                 for item in self.getItems(section, field):
                     yield (section, field, item)
@@ -233,7 +238,10 @@ class FAIRGraph(object):
         #graph.bind('sd', SPARQLSD)
 
     def _validateURI(self, uri):
-        u = urlparse.urlparse(uri)
+        if six.PY2:
+            u = urlparse.urlparse(uri)
+        else:
+            u = urlparse(uri)
 
         if u.scheme not in ('http', 'https', 'ftp'):
             raise ValueError(
