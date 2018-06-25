@@ -1,12 +1,19 @@
 language: python
+
 sudo: false
+
 dist: trusty
+
 python:
   - "2.7"
+  - "3.6"
+
 before_install:
   - cd fdp-api/python
+
 install:
   - make install
+
 script:
   - make serve-dev &
   - sleep 10
