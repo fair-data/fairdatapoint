@@ -13,4 +13,4 @@ RUN make install
 
 EXPOSE 8080
 
-CMD python -m bottle -b 127.0.0.1:8080 fdp
+CMD python -m bottle -b 0.0.0.0:8080 fdp
