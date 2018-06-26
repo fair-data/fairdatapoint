@@ -32,3 +32,6 @@ var/
 # Service output
 *log
 fdp-api/python/doc/*
+
+# emacs
+*~
