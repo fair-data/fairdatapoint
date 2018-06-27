@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://127.0.0.1:8080/dataset/lofar-lta-dbview">
+    <dct:publisher rdf:resource="http://orcid.org/0000-0002-4368-8058"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOFAR LTA DBView</rdfs:label>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Astronomy</dcat:keyword>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASTRON</dcat:keyword>
+    <dct:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
+    <dct:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+    <dct:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lofar-lta-dbview</dct:identifier>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radio astronomy</dcat:keyword>
+    <rdfs:seeAlso rdf:resource="http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump"/>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LTA</dcat:keyword>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dct:modified>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOFAR LTA DBView</dct:title>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dct:issued>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOFAR (metadata) database related to the Long Term Archive.</dct:description>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LOFAR</dcat:keyword>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Long Term Archive</dcat:keyword>
+    <rdf:type rdf:resource="http://purl.org/dc/dcmitype/Dataset"/>
+    <dcat:distribution rdf:resource="http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"/>
+    <rdfs:seeAlso rdf:resource="http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"/>
+    <dcat:theme rdf:resource="http://dbpedia.org/page/Radio_telescope"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radio telescope</dcat:keyword>
+    <dcat:landingPage rdf:resource="https://lta-dbview.lofar.eu/DbView"/>
+    <dcat:distribution rdf:resource="http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump"/>
+    <dct:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dct:hasVersion>
+  </rdf:Description>
+</rdf:RDF>

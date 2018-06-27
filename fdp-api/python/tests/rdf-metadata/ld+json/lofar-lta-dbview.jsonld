@@ -2,30 +2,30 @@
   {
     "@graph": [
       {
-        "@id": "http://127.0.0.1:8080/dataset/breedb",
+        "@id": "http://127.0.0.1:8080/dataset/lofar-lta-dbview",
         "@type": [
           "http://purl.org/dc/dcmitype/Dataset",
           "http://www.w3.org/ns/dcat#Dataset"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "BreeDB tomato passport data"
+            "@value": "LOFAR (metadata) database related to the Long Term Archive."
           }
         ],
         "http://purl.org/dc/terms/hasVersion": [
           {
-            "@value": "1.0"
+            "@value": "0.1"
           }
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "breedb"
+            "@value": "lofar-lta-dbview"
           }
         ],
         "http://purl.org/dc/terms/issued": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2015-11-24"
+            "@value": "2018-06-27"
           }
         ],
         "http://purl.org/dc/terms/language": [
@@ -36,66 +36,78 @@
         "http://purl.org/dc/terms/modified": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2015-11-24"
+            "@value": "2018-06-27"
           }
         ],
         "http://purl.org/dc/terms/publisher": [
           {
             "@id": "http://orcid.org/0000-0002-4368-8058"
+          },
+          {
+            "@id": "https://orcid.org/0000-0002-9834-1756"
           }
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "BreeDB tomato passport data"
+            "@value": "LOFAR LTA DBView"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "BreeDB tomato passport data"
+            "@value": "LOFAR LTA DBView"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
           {
-            "@id": "http://127.0.0.1:8080/distribution/breedb-sqldump"
+            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump"
           },
           {
-            "@id": "http://127.0.0.1:8080/distribution/breedb-sparql"
+            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"
           }
         ],
         "http://www.w3.org/ns/dcat#distribution": [
           {
-            "@id": "http://127.0.0.1:8080/distribution/breedb-sqldump"
+            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"
           },
           {
-            "@id": "http://127.0.0.1:8080/distribution/breedb-sparql"
+            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump"
           }
         ],
         "http://www.w3.org/ns/dcat#keyword": [
           {
-            "@value": "passport data"
+            "@value": "Astronomy"
           },
           {
-            "@value": "germplasm"
+            "@value": "ASTRON"
           },
           {
-            "@value": "BreeDB"
+            "@value": "Radio astronomy"
           },
           {
-            "@value": "Plant breeding"
+            "@value": "LTA"
+          },
+          {
+            "@value": "LOFAR"
+          },
+          {
+            "@value": "Long Term Archive"
+          },
+          {
+            "@value": "Radio telescope"
           }
         ],
         "http://www.w3.org/ns/dcat#landingPage": [
           {
-            "@id": "http://www.eu-sol.wur.nl/passport"
+            "@id": "https://lta-dbview.lofar.eu/DbView"
           }
         ],
         "http://www.w3.org/ns/dcat#theme": [
           {
-            "@id": "http://dbpedia.org/resource/Plant_breeding"
+            "@id": "http://dbpedia.org/page/Radio_telescope"
           }
         ]
       }
     ],
-    "@id": "http://127.0.0.1:8080/dataset/breedb"
+    "@id": "http://127.0.0.1:8080/dataset/lofar-lta-dbview"
   }
 ]

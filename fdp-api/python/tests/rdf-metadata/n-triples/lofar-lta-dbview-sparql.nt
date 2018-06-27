@@ -1,0 +1,16 @@
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://www.w3.org/2000/01/rdf-schema#label> "SPARQL endpoint of the LOFAR DBView data"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://purl.org/dc/terms/issued> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://purl.org/dc/terms/identifier> "lofar-lta-dbview-sparql"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://www.w3.org/ns/dcat#mediaType> "application/n-triples"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://purl.org/dc/terms/description> "SPARQL endpoint of the LOFAR DBView data"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://purl.org/dc/terms/publisher> <https://orcid.org/0000-0002-9834-1756> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://purl.org/dc/terms/title> "SPARQL endpoint of the LOFAR DBView data"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://purl.org/dc/terms/license> <https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0002-4368-8058> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://purl.org/dc/terms/language> <http://id.loc.gov/vocabulary/iso639-1/en> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://purl.org/dc/terms/hasVersion> "0.1"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://www.w3.org/ns/dcat#accessURL> <http://fdp.lofarpipelines-astron.surf-hosted.nl:8890/sparql> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Distribution> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://www.w3.org/ns/dcat#mediaType> "application/rdf+xml"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> <http://purl.org/dc/terms/modified> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
+

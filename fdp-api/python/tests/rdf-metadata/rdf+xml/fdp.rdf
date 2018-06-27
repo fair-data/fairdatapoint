@@ -5,17 +5,18 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://127.0.0.1:8080/fdp">
-    <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
-    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This FDP provides metadata on plant-specific genotype/phenotype data sets</dct:description>
-    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FAIR Data Point of the Plant Breeding Group, Wageningen UR</dct:title>
-    <dct:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FDP-WUR-PB</dct:identifier>
-    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-11-24</dct:issued>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FAIR Data Point of the Plant Breeding Group, Wageningen UR</rdfs:label>
-    <dct:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-11-24</dct:modified>
+    <dct:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dct:hasVersion>
+    <dct:hasPart rdf:resource="http://127.0.0.1:8080/catalog/astron-01"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dct:modified>
     <dct:publisher rdf:resource="http://orcid.org/0000-0002-4368-8058"/>
-    <dct:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</dct:hasVersion>
-    <dct:hasPart rdf:resource="http://127.0.0.1:8080/catalog/catalog-01"/>
-    <rdfs:seeAlso rdf:resource="http://127.0.0.1:8080/catalog/catalog-01"/>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+    <dct:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
+    <dct:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FDP-ASTRON</dct:identifier>
+    <dct:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy.</dct:title>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy.</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://127.0.0.1:8080/catalog/astron-01"/>
+    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This service provides machine-readable descriptions (metadata) about ASTRON's datasets.</dct:description>
+    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dct:issued>
   </rdf:Description>
 </rdf:RDF>

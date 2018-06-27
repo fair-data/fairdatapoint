@@ -1,0 +1,36 @@
+@prefix dbp: <http://dbpedia.org/resource/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix lang: <http://id.loc.gov/vocabulary/iso639-1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> a dcmitype:Dataset,
+        dcat:Dataset ;
+    rdfs:label "LOFAR LTA DBView"^^xsd:string ;
+    dct:description "LOFAR (metadata) database related to the Long Term Archive."^^xsd:string ;
+    dct:hasVersion "0.1"^^xsd:string ;
+    dct:identifier "lofar-lta-dbview"^^xsd:string ;
+    dct:issued "2018-06-27"^^xsd:date ;
+    dct:language lang:en ;
+    dct:modified "2018-06-27"^^xsd:date ;
+    dct:publisher <http://orcid.org/0000-0002-4368-8058>,
+        <https://orcid.org/0000-0002-9834-1756> ;
+    dct:title "LOFAR LTA DBView"^^xsd:string ;
+    rdfs:seeAlso <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql>,
+        <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump> ;
+    dcat:distribution <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql>,
+        <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump> ;
+    dcat:keyword "ASTRON"^^xsd:string,
+        "Astronomy"^^xsd:string,
+        "LOFAR"^^xsd:string,
+        "LTA"^^xsd:string,
+        "Long Term Archive"^^xsd:string,
+        "Radio astronomy"^^xsd:string,
+        "Radio telescope"^^xsd:string ;
+    dcat:landingPage <https://lta-dbview.lofar.eu/DbView> ;
+    dcat:theme <http://dbpedia.org/page/Radio_telescope> .
+

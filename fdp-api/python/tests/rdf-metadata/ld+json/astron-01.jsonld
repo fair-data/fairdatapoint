@@ -2,18 +2,13 @@
   {
     "@graph": [
       {
-        "@id": "http://127.0.0.1:8080/fdp",
+        "@id": "http://127.0.0.1:8080/catalog/astron-01",
         "@type": [
-          "http://purl.org/dc/terms/Agent"
+          "http://www.w3.org/ns/dcat#Catalog"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "This service provides machine-readable descriptions (metadata) about ASTRON's datasets."
-          }
-        ],
-        "http://purl.org/dc/terms/hasPart": [
-          {
-            "@id": "http://127.0.0.1:8080/catalog/astron-01"
+            "@value": "ASTRON catalog of datasets"
           }
         ],
         "http://purl.org/dc/terms/hasVersion": [
@@ -23,7 +18,7 @@
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "FDP-ASTRON"
+            "@value": "astron-01"
           }
         ],
         "http://purl.org/dc/terms/issued": [
@@ -45,29 +40,51 @@
         ],
         "http://purl.org/dc/terms/publisher": [
           {
-            "@id": "http://orcid.org/0000-0002-4368-8058"
+            "@id": "https://orcid.org/0000-0002-9834-1756"
           },
           {
-            "@id": "https://orcid.org/0000-0002-9834-1756"
+            "@id": "http://orcid.org/0000-0002-4368-8058"
           }
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."
+            "@value": "ASTRON catalog of datasets"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."
+            "@value": "ASTRON catalog of datasets"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
           {
-            "@id": "http://127.0.0.1:8080/catalog/astron-01"
+            "@id": "http://127.0.0.1:8080/dataset/lofar-lta-dbview"
+          }
+        ],
+        "http://www.w3.org/ns/dcat#dataset": [
+          {
+            "@id": "http://127.0.0.1:8080/dataset/lofar-lta-dbview"
+          }
+        ],
+        "http://www.w3.org/ns/dcat#themeTaxonomy": [
+          {
+            "@id": "http://dbpedia.org/resource/LOFAR"
+          },
+          {
+            "@id": "http://dbpedia.org/resource/Radio_telescope"
+          },
+          {
+            "@id": "http://dbpedia.org/resource/Astronomical_instruments"
+          },
+          {
+            "@id": "http://dbpedia.org/resource/Astronomy"
+          },
+          {
+            "@id": "http://dbpedia.org/resource/Radio_astronomy"
           }
         ]
       }
     ],
-    "@id": "http://127.0.0.1:8080/fdp"
+    "@id": "http://127.0.0.1:8080/catalog/astron-01"
   }
 ]

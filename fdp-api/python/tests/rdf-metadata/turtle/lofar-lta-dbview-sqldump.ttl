@@ -8,17 +8,18 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://127.0.0.1:8080/fdp> a dct:Agent ;
-    rdfs:label "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."^^xsd:string ;
-    dct:description "This service provides machine-readable descriptions (metadata) about ASTRON's datasets."^^xsd:string ;
-    dct:hasPart <http://127.0.0.1:8080/catalog/astron-01> ;
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump> a dcat:Distribution ;
+    rdfs:label "SQL dump of the LOFAR DBView data"^^xsd:string ;
+    dct:description "SQL dump of the LOFAR DBView data"^^xsd:string ;
     dct:hasVersion "0.1"^^xsd:string ;
-    dct:identifier "FDP-ASTRON"^^xsd:string ;
+    dct:identifier "lofar-lta-dbview-sqldump"^^xsd:string ;
     dct:issued "2018-06-27"^^xsd:date ;
     dct:language lang:en ;
+    dct:license <https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy> ;
     dct:modified "2018-06-27"^^xsd:date ;
     dct:publisher <http://orcid.org/0000-0002-4368-8058>,
         <https://orcid.org/0000-0002-9834-1756> ;
-    dct:title "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."^^xsd:string ;
-    rdfs:seeAlso <http://127.0.0.1:8080/catalog/astron-01> .
+    dct:title "SQL dump of the LOFAR DBView data"^^xsd:string ;
+    dcat:downloadURL <http://fdp.lofarpipelines-astron.surf-hosted.nl:8890/sparql> ;
+    dcat:mediaType "application/sql"^^xsd:string .
 
