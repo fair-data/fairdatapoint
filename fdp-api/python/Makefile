@@ -24,7 +24,7 @@ clean:
 	cd doc && find . ! -name swagger.json -delete
 
 test:
-	nosetests -v -w tests
+	nosetests -v
 
 serve-dev:
 	python -m bottle --debug --reload --bind $(HOST) $(APP)

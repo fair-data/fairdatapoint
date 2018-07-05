@@ -2,11 +2,10 @@ import sys
 import six
 
 from nose.tools import (assert_equals, assert_true, assert_false)
-from metadata import (FAIRConfigReader, FAIRGraph)
 
 # add parent folder to path
-#sys.path.append('../')
-
+sys.path.append('../')
+from metadata import (FAIRConfigReader, FAIRGraph)
 
 if six.PY2:
     from urllib2 import urlparse
