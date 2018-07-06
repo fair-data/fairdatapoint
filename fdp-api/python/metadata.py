@@ -1,3 +1,4 @@
+from __future__ import print_function
 from os import path
 from rdflib import ConjunctiveGraph, URIRef, Literal
 from rdflib.namespace import Namespace, RDF, RDFS, DCTERMS, XSD
@@ -204,20 +205,20 @@ class FAIRConfigReader(object):
                         uniq_resource_ids[resource_id] = None
 
             if fdp in section:
-                ids_1 = sections[cat]
-                ids_2 = [id for id in self.getItems(section, cat_id)]
+                ids_1 = set(sections[cat])
+                ids_2 = set([id for id in self.getItems(section, cat_id)])
                 assert(ids_1 == ids_2), _errorSectionNotReferenced(
                     fdp, cat_id, cat)
 
             if cat in section:
-                ids_1 = sections[dat]
-                ids_2 = [id for id in self.getItems(section, dat_id)]
+                ids_1 = set(sections[dat])
+                ids_2 = set([id for id in self.getItems(section, dat_id)])
                 assert(ids_1 == ids_2), _errorSectionNotReferenced(
                     cat, dat_id, dat)
 
             if dat in section:
-                ids_1 = sections[dist]
-                ids_2 = [id for id in self.getItems(section, dist_id)]
+                ids_1 = set(sections[dist])
+                ids_2 = set([id for id in self.getItems(section, dist_id)])
                 assert(ids_1 == ids_2), _errorSectionNotReferenced(
                     dat, dist_id, dist)
 

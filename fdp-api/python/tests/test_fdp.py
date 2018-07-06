@@ -1,18 +1,20 @@
+import os
+import six
+
 from nose.tools import assert_equals
-from os import path
 from rdflib import Graph
 from rdflib.compare import graph_diff
 from rdflib.plugin import register, Parser
 from myglobals import (BASE_URL, DUMP_DIR, MIME_TYPES, URL_PATHS)
-import six
+
 
 if six.PY2:
     from urllib2 import (urlopen, urlparse, Request)
     urljoin = urlparse.urljoin
+    urlparse = urlparse.urlparse
 else:
-    from urllib.parse import urljoin
     from urllib.request import (Request, urlopen, urlparse)
-
+    from urllib.parse import urljoin
 
 register('application/ld+json', Parser, 'rdflib_jsonld.parser', 'JsonLDParser')
 
@@ -23,15 +25,11 @@ g_dump = Graph()  # reference metadata from dump file
 
 def test_compare_triple_counts():
     for mime, fext in MIME_TYPES.items():
-        dump_path = path.join(DUMP_DIR, path.basename(mime))
+        dump_path = os.path.join(DUMP_DIR, os.path.basename(mime))
 
         for url in URLs:
-            if six.PY2:
-                fname = '%s.%s' % (path.basename(urlparse.urlparse(url).path), fext)
-            else:
-                fname = '%s.%s' % (path.basename(urlparse(url).path), fext)
-
-            fname = path.join(dump_path, fname)
+            fname = '%s.%s' % (os.path.basename(urlparse(url).path), fext)
+            fname = os.path.join(dump_path, fname)
 
             req = Request(url)
             req.add_header('Accept', mime)
@@ -48,15 +46,15 @@ def test_compare_triple_counts():
 
 def test_compare_triples():
     for mime, fext in MIME_TYPES.items():
-        dump_path = path.join(DUMP_DIR, path.basename(mime))
+        dump_path = os.path.join(DUMP_DIR, os.path.basename(mime))
 
         for url in URLs:
             if six.PY2:
-                fname = '%s.%s' % (path.basename(urlparse.urlparse(url).path), fext)
+                fname = '%s.%s' % (os.path.basename(urlparse(url).path), fext)
             else:
-                fname = '%s.%s' % (path.basename(urlparse(url).path), fext)
+                fname = '%s.%s' % (os.path.basename(urlparse(url).path), fext)
 
-            fname = path.join(dump_path, fname)
+            fname = os.path.join(dump_path, fname)
 
             req = Request(url)
             req.add_header('Accept', mime)
