@@ -14,7 +14,7 @@ doc:
 	git clone https://github.com/swagger-api/swagger-ui.git
 	mv swagger-ui/dist/* doc
 	rm -fr swagger-ui
-	sed -i.org 's/https\?:.*\(swagger.json\)/\/doc\/\1/' doc/index.html
+	sed -i.org 's/http.*\(swagger.json\)/\1/' doc/index.html
 
 reinstall:
 	pip install --upgrade --no-deps .
