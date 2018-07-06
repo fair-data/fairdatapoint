@@ -45,10 +45,10 @@
         ],
         "http://purl.org/dc/terms/publisher": [
           {
-            "@id": "http://orcid.org/0000-0002-4368-8058"
+            "@id": "https://orcid.org/0000-0002-9834-1756"
           },
           {
-            "@id": "https://orcid.org/0000-0002-9834-1756"
+            "@id": "http://orcid.org/0000-0002-4368-8058"
           }
         ],
         "http://purl.org/dc/terms/title": [
@@ -63,7 +63,7 @@
         ],
         "http://www.w3.org/ns/dcat#downloadURL": [
           {
-            "@id": "http://fdp.lofarpipelines-astron.surf-hosted.nl:8890/sparql"
+            "@id": "http://example.com/lofar-lta-dbview.sql"
           }
         ],
         "http://www.w3.org/ns/dcat#mediaType": [

@@ -20,6 +20,6 @@
     dct:publisher <http://orcid.org/0000-0002-4368-8058>,
         <https://orcid.org/0000-0002-9834-1756> ;
     dct:title "SQL dump of the LOFAR DBView data"^^xsd:string ;
-    dcat:downloadURL <http://fdp.lofarpipelines-astron.surf-hosted.nl:8890/sparql> ;
+    dcat:downloadURL <http://example.com/lofar-lta-dbview.sql> ;
     dcat:mediaType "application/sql"^^xsd:string .
 

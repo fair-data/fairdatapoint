@@ -68,10 +68,10 @@
         ],
         "http://www.w3.org/ns/dcat#mediaType": [
           {
-            "@value": "application/n-triples"
+            "@value": "application/rdf+xml"
           },
           {
-            "@value": "application/rdf+xml"
+            "@value": "application/n-triples"
           }
         ]
       }

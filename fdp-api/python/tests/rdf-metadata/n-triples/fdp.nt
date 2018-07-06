@@ -1,14 +1,14 @@
-<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/hasVersion> "0.1"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/hasPart> <http://127.0.0.1:8080/catalog/astron-01> .
-<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/modified> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0002-4368-8058> .
-<http://127.0.0.1:8080/fdp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Agent> .
-<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/publisher> <https://orcid.org/0000-0002-9834-1756> .
 <http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/identifier> "FDP-ASTRON"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0002-4368-8058> .
 <http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/language> <http://id.loc.gov/vocabulary/iso639-1/en> .
-<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/title> "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/fdp> <http://www.w3.org/2000/01/rdf-schema#label> "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://127.0.0.1:8080/fdp> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://127.0.0.1:8080/catalog/astron-01> .
+<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/title> "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/modified> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://127.0.0.1:8080/fdp> <http://www.w3.org/2000/01/rdf-schema#label> "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/hasVersion> "0.1"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/description> "This service provides machine-readable descriptions (metadata) about ASTRON's datasets."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/fdp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/terms/Agent> .
 <http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/issued> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/publisher> <https://orcid.org/0000-0002-9834-1756> .
+<http://127.0.0.1:8080/fdp> <http://purl.org/dc/terms/hasPart> <http://127.0.0.1:8080/catalog/astron-01> .
 

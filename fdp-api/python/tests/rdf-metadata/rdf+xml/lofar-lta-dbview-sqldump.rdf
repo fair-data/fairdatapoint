@@ -6,19 +6,19 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump">
+    <dct:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dct:hasVersion>
     <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dct:issued>
-    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SQL dump of the LOFAR DBView data</dct:title>
+    <dcat:mediaType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application/sql</dcat:mediaType>
     <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SQL dump of the LOFAR DBView data</dct:description>
     <dct:license rdf:resource="https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy"/>
-    <dcat:downloadURL rdf:resource="http://fdp.lofarpipelines-astron.surf-hosted.nl:8890/sparql"/>
     <dct:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+    <dct:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
+    <dcat:downloadURL rdf:resource="http://example.com/lofar-lta-dbview.sql"/>
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dct:modified>
     <dct:publisher rdf:resource="http://orcid.org/0000-0002-4368-8058"/>
     <dct:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lofar-lta-dbview-sqldump</dct:identifier>
-    <dct:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
-    <dcat:mediaType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application/sql</dcat:mediaType>
-    <dct:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dct:hasVersion>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SQL dump of the LOFAR DBView data</rdfs:label>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SQL dump of the LOFAR DBView data</dct:title>
     <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
   </rdf:Description>
 </rdf:RDF>
