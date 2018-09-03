@@ -1,28 +1,28 @@
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#keyword> "LTA"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/publisher> <https://orcid.org/0000-0002-9834-1756> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/dcmitype/Dataset> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#distribution> <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> .
 <http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#keyword> "ASTRON"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Dataset> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/identifier> "lofar-lta-dbview"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#keyword> "Long Term Archive"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#distribution> <http://127.0.0.1:8080/distribution/lofar-lta-dbview-csvdump> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/description> "LOFAR (metadata) database related to the Long Term Archive."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/identifier> "lofar-lta-dbview"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/modified> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/issued> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://127.0.0.1:8080/distribution/lofar-lta-dbview-csvdump> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#keyword> "LTA"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#keyword> "LOFAR"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/title> "LOFAR LTA DBView"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/hasVersion> "0.1"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/publisher> <https://orcid.org/0000-0002-9834-1756> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Dataset> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/description> "LOFAR (metadata) database related to the Long Term Archive."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#landingPage> <https://lta-dbview.lofar.eu/DbView> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/2000/01/rdf-schema#label> "LOFAR LTA DBView"^^<http://www.w3.org/2001/XMLSchema#string> .
 <http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#distribution> <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump> .
 <http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#keyword> "Radio astronomy"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#keyword> "Astronomy"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0002-4368-8058> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/2000/01/rdf-schema#label> "LOFAR LTA DBView"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/language> <http://id.loc.gov/vocabulary/iso639-1/en> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#landingPage> <https://lta-dbview.lofar.eu/DbView> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#keyword> "Radio telescope"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/modified> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#theme> <http://dbpedia.org/page/Radio_telescope> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#keyword> "Radio telescope"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#distribution> <http://127.0.0.1:8080/distribution/lofar-lta-dbview-csvdump> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/hasVersion> "0.1"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0003-1711-7961> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://127.0.0.1:8080/distribution/lofar-lta-dbview-csvdump> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#keyword> "Astronomy"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/dcmitype/Dataset> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://www.w3.org/ns/dcat#distribution> <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/language> <http://id.loc.gov/vocabulary/iso639-1/en> .
+<http://127.0.0.1:8080/dataset/lofar-lta-dbview> <http://purl.org/dc/terms/title> "LOFAR LTA DBView"^^<http://www.w3.org/2001/XMLSchema#string> .
 

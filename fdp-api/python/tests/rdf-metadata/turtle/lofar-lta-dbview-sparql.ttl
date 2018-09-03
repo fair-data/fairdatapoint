@@ -17,7 +17,7 @@
     dct:language lang:en ;
     dct:license <https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy> ;
     dct:modified "2018-06-27"^^xsd:date ;
-    dct:publisher <http://orcid.org/0000-0002-4368-8058>,
+    dct:publisher <http://orcid.org/0000-0003-1711-7961>,
         <https://orcid.org/0000-0002-9834-1756> ;
     dct:title "SPARQL endpoint of the LOFAR DBView data"^^xsd:string ;
     dcat:accessURL <http://fdp.lofarpipelines-astron.surf-hosted.nl:8890/sparql> ;

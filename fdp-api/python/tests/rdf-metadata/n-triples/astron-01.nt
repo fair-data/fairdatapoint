@@ -1,19 +1,19 @@
-<http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/ns/dcat#themeTaxonomy> <http://dbpedia.org/resource/Astronomical_instruments> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/ns/dcat#dataset> <http://127.0.0.1:8080/dataset/lofar-lta-dbview> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/language> <http://id.loc.gov/vocabulary/iso639-1/en> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/ns/dcat#themeTaxonomy> <http://dbpedia.org/resource/Astronomy> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/ns/dcat#themeTaxonomy> <http://dbpedia.org/resource/LOFAR> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/publisher> <https://orcid.org/0000-0002-9834-1756> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/modified> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/hasVersion> "0.1"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/issued> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/title> "ASTRON catalog of datasets"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://127.0.0.1:8080/dataset/lofar-lta-dbview> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/identifier> "astron-01"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0002-4368-8058> .
 <http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/ns/dcat#themeTaxonomy> <http://dbpedia.org/resource/Radio_telescope> .
 <http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Catalog> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/hasVersion> "0.1"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/ns/dcat#themeTaxonomy> <http://dbpedia.org/resource/Astronomical_instruments> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/ns/dcat#themeTaxonomy> <http://dbpedia.org/resource/LOFAR> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/issued> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/modified> "2018-06-27"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://127.0.0.1:8080/dataset/lofar-lta-dbview> .
 <http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/description> "ASTRON catalog of datasets"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/identifier> "astron-01"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/language> <http://id.loc.gov/vocabulary/iso639-1/en> .
 <http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/ns/dcat#themeTaxonomy> <http://dbpedia.org/resource/Radio_astronomy> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/ns/dcat#dataset> <http://127.0.0.1:8080/dataset/lofar-lta-dbview> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/title> "ASTRON catalog of datasets"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/publisher> <https://orcid.org/0000-0002-9834-1756> .
 <http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/2000/01/rdf-schema#label> "ASTRON catalog of datasets"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://www.w3.org/ns/dcat#themeTaxonomy> <http://dbpedia.org/resource/Astronomy> .
+<http://127.0.0.1:8080/catalog/astron-01> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0003-1711-7961> .
 

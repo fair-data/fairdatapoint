@@ -4,8 +4,8 @@
       {
         "@id": "http://127.0.0.1:8080/dataset/lofar-lta-dbview",
         "@type": [
-          "http://purl.org/dc/dcmitype/Dataset",
-          "http://www.w3.org/ns/dcat#Dataset"
+          "http://www.w3.org/ns/dcat#Dataset",
+          "http://purl.org/dc/dcmitype/Dataset"
         ],
         "http://purl.org/dc/terms/description": [
           {
@@ -44,7 +44,7 @@
             "@id": "https://orcid.org/0000-0002-9834-1756"
           },
           {
-            "@id": "http://orcid.org/0000-0002-4368-8058"
+            "@id": "http://orcid.org/0000-0003-1711-7961"
           }
         ],
         "http://purl.org/dc/terms/title": [
@@ -70,24 +70,24 @@
         ],
         "http://www.w3.org/ns/dcat#distribution": [
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"
+            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump"
           },
           {
             "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-csvdump"
           },
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump"
+            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"
           }
         ],
         "http://www.w3.org/ns/dcat#keyword": [
-          {
-            "@value": "LTA"
-          },
           {
             "@value": "ASTRON"
           },
           {
             "@value": "Long Term Archive"
+          },
+          {
+            "@value": "LTA"
           },
           {
             "@value": "LOFAR"
@@ -96,10 +96,10 @@
             "@value": "Radio astronomy"
           },
           {
-            "@value": "Astronomy"
+            "@value": "Radio telescope"
           },
           {
-            "@value": "Radio telescope"
+            "@value": "Astronomy"
           }
         ],
         "http://www.w3.org/ns/dcat#landingPage": [
