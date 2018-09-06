@@ -1,11 +1,11 @@
 FROM python:3.6-stretch
 
-ARG HOST=lofar-ld.lofarpipelines-astron.surf-hosted.nl
+ENV HOST=0.0.0.0
+ENV PORT=8080
 
 RUN apt-get update -y && \
-    apt-get install git make -y
+    apt-get install git make curl -y
 
-# Service user
 RUN useradd lta && \
     mkdir /home/lta && \
     chown lta:lta /home/lta
@@ -16,6 +16,8 @@ WORKDIR /home/lta
 
 RUN make install
 
-EXPOSE 8080
+EXPOSE ${PORT}
 
-CMD python -m bottle -b ${HOST}:8080 fdp
+CMD python -m bottle -b ${HOST}:${PORT} fdp
+
+HEALTHCHECK --interval=5s CMD curl --silent --fail ${HOST}:${PORT} || exit 1
