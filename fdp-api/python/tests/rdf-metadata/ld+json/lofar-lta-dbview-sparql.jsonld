@@ -2,7 +2,7 @@
   {
     "@graph": [
       {
-        "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql",
+        "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-sparql",
         "@type": [
           "http://www.w3.org/ns/dcat#Distribution"
         ],
@@ -63,19 +63,19 @@
         ],
         "http://www.w3.org/ns/dcat#accessURL": [
           {
-            "@id": "http://fdp.lofarpipelines-astron.surf-hosted.nl:8890/sparql"
+            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/sparql"
           }
         ],
         "http://www.w3.org/ns/dcat#mediaType": [
           {
-            "@value": "application/rdf+xml"
+            "@value": "application/n-triples"
           },
           {
-            "@value": "application/n-triples"
+            "@value": "application/rdf+xml"
           }
         ]
       }
     ],
-    "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"
+    "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-sparql"
   }
 ]

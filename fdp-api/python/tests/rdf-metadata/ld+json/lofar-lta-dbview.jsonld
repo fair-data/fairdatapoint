@@ -2,10 +2,10 @@
   {
     "@graph": [
       {
-        "@id": "http://127.0.0.1:8080/dataset/lofar-lta-dbview",
+        "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/dataset/lofar-lta-dbview",
         "@type": [
-          "http://www.w3.org/ns/dcat#Dataset",
-          "http://purl.org/dc/dcmitype/Dataset"
+          "http://purl.org/dc/dcmitype/Dataset",
+          "http://www.w3.org/ns/dcat#Dataset"
         ],
         "http://purl.org/dc/terms/description": [
           {
@@ -59,50 +59,50 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump"
+            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-rdfdump"
           },
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"
+            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-sqldump"
           },
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-rdfdump"
+            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-sparql"
           },
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-csvdump"
+            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-csvdump"
           }
         ],
         "http://www.w3.org/ns/dcat#distribution": [
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"
+            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-csvdump"
           },
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-csvdump"
+            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-sparql"
           },
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump"
+            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-sqldump"
           },
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-rdfdump"
+            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-rdfdump"
           }
         ],
         "http://www.w3.org/ns/dcat#keyword": [
           {
-            "@value": "Radio astronomy"
-          },
-          {
-            "@value": "LTA"
-          },
-          {
             "@value": "LOFAR"
-          },
-          {
-            "@value": "Astronomy"
           },
           {
             "@value": "ASTRON"
           },
           {
             "@value": "Radio telescope"
+          },
+          {
+            "@value": "LTA"
+          },
+          {
+            "@value": "Radio astronomy"
+          },
+          {
+            "@value": "Astronomy"
           },
           {
             "@value": "Long Term Archive"
@@ -120,6 +120,6 @@
         ]
       }
     ],
-    "@id": "http://127.0.0.1:8080/dataset/lofar-lta-dbview"
+    "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/dataset/lofar-lta-dbview"
   }
 ]

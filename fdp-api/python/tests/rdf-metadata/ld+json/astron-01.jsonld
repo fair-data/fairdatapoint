@@ -2,7 +2,7 @@
   {
     "@graph": [
       {
-        "@id": "http://127.0.0.1:8080/catalog/astron-01",
+        "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/catalog/astron-01",
         "@type": [
           "http://www.w3.org/ns/dcat#Catalog"
         ],
@@ -58,33 +58,33 @@
         ],
         "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
           {
-            "@id": "http://127.0.0.1:8080/dataset/lofar-lta-dbview"
+            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/dataset/lofar-lta-dbview"
           }
         ],
         "http://www.w3.org/ns/dcat#dataset": [
           {
-            "@id": "http://127.0.0.1:8080/dataset/lofar-lta-dbview"
+            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/dataset/lofar-lta-dbview"
           }
         ],
         "http://www.w3.org/ns/dcat#themeTaxonomy": [
           {
-            "@id": "http://dbpedia.org/resource/LOFAR"
+            "@id": "http://dbpedia.org/resource/Astronomy"
           },
           {
             "@id": "http://dbpedia.org/resource/Radio_telescope"
           },
           {
-            "@id": "http://dbpedia.org/resource/Astronomical_instruments"
+            "@id": "http://dbpedia.org/resource/LOFAR"
           },
           {
             "@id": "http://dbpedia.org/resource/Radio_astronomy"
           },
           {
-            "@id": "http://dbpedia.org/resource/Astronomy"
+            "@id": "http://dbpedia.org/resource/Astronomical_instruments"
           }
         ]
       }
     ],
-    "@id": "http://127.0.0.1:8080/catalog/astron-01"
+    "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/catalog/astron-01"
   }
 ]

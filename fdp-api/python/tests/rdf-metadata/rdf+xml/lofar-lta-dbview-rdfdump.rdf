@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF
    xmlns:dcat="http://www.w3.org/ns/dcat#"
-   xmlns:dct="http://purl.org/dc/terms/"
+   xmlns:dcterms="http://purl.org/dc/terms/"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="http://127.0.0.1:8080/distribution/lofar-lta-dbview-rdfdump">
-    <dct:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dct:hasVersion>
-    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
-    <dct:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dct:modified>
-    <dcat:downloadURL rdf:resource="https://github.com/EOSC-LOFAR/lofar-ld/blob/master/data/lofar_dbview.ttl.gz"/>
-    <dct:license rdf:resource="https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy"/>
-    <dct:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lofar-lta-dbview-rdfdump</dct:identifier>
+  <rdf:Description rdf:about="http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-rdfdump">
+    <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF dump of the LOFAR DBView data</dcterms:description>
+    <dcterms:license rdf:resource="https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy"/>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF dump of the LOFAR DBView data</rdfs:label>
+    <dcat:downloadURL rdf:resource="https://github.com/EOSC-LOFAR/lofar-ld/blob/master/data/lofar_dbview.ttl.gz"/>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dcterms:modified>
+    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dcterms:issued>
     <dcat:mediaType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text/turtle</dcat:mediaType>
-    <dct:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
-    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF dump of the LOFAR DBView data</dct:title>
-    <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dct:issued>
-    <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF dump of the LOFAR DBView data</dct:description>
-    <dct:publisher rdf:resource="http://orcid.org/0000-0003-1711-7961"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lofar-lta-dbview-rdfdump</dcterms:identifier>
+    <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dcterms:hasVersion>
+    <dcterms:publisher rdf:resource="http://orcid.org/0000-0003-1711-7961"/>
+    <dcterms:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
+    <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF dump of the LOFAR DBView data</dcterms:title>
   </rdf:Description>
 </rdf:RDF>
