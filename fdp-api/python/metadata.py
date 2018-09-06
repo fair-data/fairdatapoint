@@ -236,7 +236,7 @@ class FAIRGraph(object):
         # bind prefixes to namespaces
         graph.bind('dbp', DBPEDIA)
         graph.bind('dcmitype', DCMITYPE)
-        graph.bind('dct', DCTERMS)
+        graph.bind('dcterms', DCTERMS)
         graph.bind('dcat', DCAT)
         graph.bind('lang', LANG)
         #graph.bind('sd', SPARQLSD)
