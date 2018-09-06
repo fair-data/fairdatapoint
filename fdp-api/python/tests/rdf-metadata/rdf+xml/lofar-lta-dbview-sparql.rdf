@@ -6,20 +6,20 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql">
+    <dct:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dct:hasVersion>
+    <dct:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lofar-lta-dbview-sparql</dct:identifier>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SPARQL endpoint of the LOFAR DBView data</rdfs:label>
     <dcat:mediaType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application/rdf+xml</dcat:mediaType>
-    <dct:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
-    <dcat:accessURL rdf:resource="http://fdp.lofarpipelines-astron.surf-hosted.nl:8890/sparql"/>
-    <dct:publisher rdf:resource="http://orcid.org/0000-0003-1711-7961"/>
-    <dct:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
-    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SPARQL endpoint of the LOFAR DBView data</dct:title>
-    <dct:license rdf:resource="https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy"/>
     <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dct:issued>
+    <dct:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SPARQL endpoint of the LOFAR DBView data</dct:title>
+    <dct:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
     <dct:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SPARQL endpoint of the LOFAR DBView data</dct:description>
-    <dct:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dct:hasVersion>
-    <dcat:mediaType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application/n-triples</dcat:mediaType>
-    <dct:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lofar-lta-dbview-sparql</dct:identifier>
-    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+    <dct:publisher rdf:resource="http://orcid.org/0000-0003-1711-7961"/>
+    <dcat:accessURL rdf:resource="http://fdp.lofarpipelines-astron.surf-hosted.nl:8890/sparql"/>
+    <dct:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dct:modified>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+    <dct:license rdf:resource="https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy"/>
+    <dcat:mediaType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application/n-triples</dcat:mediaType>
   </rdf:Description>
 </rdf:RDF>

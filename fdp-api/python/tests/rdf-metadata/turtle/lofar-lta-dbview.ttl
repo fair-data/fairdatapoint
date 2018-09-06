@@ -21,9 +21,11 @@
         <https://orcid.org/0000-0002-9834-1756> ;
     dct:title "LOFAR LTA DBView"^^xsd:string ;
     rdfs:seeAlso <http://127.0.0.1:8080/distribution/lofar-lta-dbview-csvdump>,
+        <http://127.0.0.1:8080/distribution/lofar-lta-dbview-rdfdump>,
         <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql>,
         <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump> ;
     dcat:distribution <http://127.0.0.1:8080/distribution/lofar-lta-dbview-csvdump>,
+        <http://127.0.0.1:8080/distribution/lofar-lta-dbview-rdfdump>,
         <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql>,
         <http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump> ;
     dcat:keyword "ASTRON"^^xsd:string,

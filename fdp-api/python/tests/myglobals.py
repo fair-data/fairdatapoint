@@ -7,6 +7,7 @@ URL_PATHS = [
     'catalog/astron-01',
     'dataset/lofar-lta-dbview',
     'distribution/lofar-lta-dbview-sparql',
+    'distribution/lofar-lta-dbview-rdfdump',
     'distribution/lofar-lta-dbview-sqldump'
 ]
 

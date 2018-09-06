@@ -1,0 +1,25 @@
+@prefix dbp: <http://dbpedia.org/resource/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix lang: <http://id.loc.gov/vocabulary/iso639-1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://127.0.0.1:8080/distribution/lofar-lta-dbview-rdfdump> a dcat:Distribution ;
+    rdfs:label "RDF dump of the LOFAR DBView data"^^xsd:string ;
+    dct:description "RDF dump of the LOFAR DBView data"^^xsd:string ;
+    dct:hasVersion "0.1"^^xsd:string ;
+    dct:identifier "lofar-lta-dbview-rdfdump"^^xsd:string ;
+    dct:issued "2018-06-27"^^xsd:date ;
+    dct:language lang:en ;
+    dct:license <https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy> ;
+    dct:modified "2018-06-27"^^xsd:date ;
+    dct:publisher <http://orcid.org/0000-0003-1711-7961>,
+        <https://orcid.org/0000-0002-9834-1756> ;
+    dct:title "RDF dump of the LOFAR DBView data"^^xsd:string ;
+    dcat:downloadURL <https://github.com/EOSC-LOFAR/lofar-ld/blob/master/data/lofar_dbview.ttl.gz> ;
+    dcat:mediaType "text/turtle"^^xsd:string .
+

@@ -41,10 +41,10 @@
         ],
         "http://purl.org/dc/terms/publisher": [
           {
-            "@id": "https://orcid.org/0000-0002-9834-1756"
+            "@id": "http://orcid.org/0000-0003-1711-7961"
           },
           {
-            "@id": "http://orcid.org/0000-0003-1711-7961"
+            "@id": "https://orcid.org/0000-0002-9834-1756"
           }
         ],
         "http://purl.org/dc/terms/title": [
@@ -65,26 +65,29 @@
             "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"
           },
           {
+            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-rdfdump"
+          },
+          {
             "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-csvdump"
           }
         ],
         "http://www.w3.org/ns/dcat#distribution": [
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump"
+            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"
           },
           {
             "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-csvdump"
           },
           {
-            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sparql"
+            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-sqldump"
+          },
+          {
+            "@id": "http://127.0.0.1:8080/distribution/lofar-lta-dbview-rdfdump"
           }
         ],
         "http://www.w3.org/ns/dcat#keyword": [
           {
-            "@value": "ASTRON"
-          },
-          {
-            "@value": "Long Term Archive"
+            "@value": "Radio astronomy"
           },
           {
             "@value": "LTA"
@@ -93,13 +96,16 @@
             "@value": "LOFAR"
           },
           {
-            "@value": "Radio astronomy"
+            "@value": "Astronomy"
+          },
+          {
+            "@value": "ASTRON"
           },
           {
             "@value": "Radio telescope"
           },
           {
-            "@value": "Astronomy"
+            "@value": "Long Term Archive"
           }
         ],
         "http://www.w3.org/ns/dcat#landingPage": [
