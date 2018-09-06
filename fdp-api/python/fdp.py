@@ -72,9 +72,7 @@ install(logHttpRequests)
 
 # populate FAIR metadata from config file
 reader = FAIRConfigReader()
-scheme = 'http'
-host = opt.bind  # pass host:[port] through the command-line -b option
-base_uri = '{}://{}'.format(scheme, host)
+base_uri = reader.getBaseUri()
 g = FAIRGraph(base_uri)
 
 for triple in reader.getTriples():

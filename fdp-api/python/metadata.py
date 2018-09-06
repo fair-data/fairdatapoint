@@ -29,11 +29,11 @@ DBPEDIA = Namespace('http://dbpedia.org/resource/')
 
 # define which sections/fields in the metadata config file are mandatory
 _CORE_META = ['title', 'publisher', 'version', 'issued', 'modified']
-_REQUIRED_META = dict(fdp=_CORE_META + ['fdp_id', 'catalog_id'],
+_REQUIRED_META = dict(fdp=_CORE_META + ['base_uri', 'fdp_id', 'catalog_id'],
                       catalog=_CORE_META + ['dataset_id', 'theme_taxonomy'],
                       dataset=_CORE_META + ['distribution_id', 'theme'],
                       distribution=_CORE_META + ['access_url|download_url',
-                        'media_type', 'license'])
+                                                 'media_type', 'license'])
 
 # mappings between fields in the config file and ontologies/vocabularies
 # and data types
@@ -91,7 +91,7 @@ def _errorResourceIdNotUnique(id):
 def _errorSectionNotReferenced(section, field, ref_section_by_field):
     return "{f}(s) in the '{s}' section is not referenced in the '{r}/<{f}>' \
         header(s) or vice versa.".format(f=field, r=ref_section_by_field,
-            s=section)
+                                         s=section)
 
 
 def mandatoryFields(section):
@@ -153,6 +153,9 @@ class FAIRConfigReader(object):
         else:
             item = items
             yield item
+
+    def getBaseUri(self):
+        return self._parser.get('fdp', 'base_uri')
 
     def getTriples(self):
         for section, fields in self.getMetadata().items():
@@ -355,25 +358,25 @@ class FAIRGraph(object):
 
         s, p, o = triple
 
-        for (mp, dtype) in mapFieldToOnto(p):
-            mo = o
+        if 'base_uri' not in p:
+            for (mp, dtype) in mapFieldToOnto(p):
+                mo = o
+                if 'catalog_id' in p:
+                    mo = self.catURI(o)
 
-            if 'catalog_id' in p:
-                mo = self.catURI(o)
+                if 'dataset_id' in p:
+                    mo = self.datURI(o)
 
-            if 'dataset_id' in p:
-                mo = self.datURI(o)
+                if 'distribution_id' in p:
+                    mo = self.distURI(o)
 
-            if 'distribution_id' in p:
-                mo = self.distURI(o)
+                if dtype == XSD.anyURI:
+                    mo = URIRef(self._validateURI(mo))
 
-            if dtype == XSD.anyURI:
-                mo = URIRef(self._validateURI(mo))
+                elif dtype == XSD.date:
+                    mo = Literal(self._validateDate(mo), datatype=dtype)
 
-            elif dtype == XSD.date:
-                mo = Literal(self._validateDate(mo), datatype=dtype)
+                else:
+                    mo = Literal(mo, datatype=dtype)
 
-            else:
-                mo = Literal(mo, datatype=dtype)
-
-            yield (s, mp, mo)
+                yield (s, mp, mo)
