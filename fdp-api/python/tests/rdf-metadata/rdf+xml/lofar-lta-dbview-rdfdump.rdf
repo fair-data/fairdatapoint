@@ -6,19 +6,19 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-rdfdump">
-    <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF dump of the LOFAR DBView data</dcterms:description>
-    <dcterms:license rdf:resource="https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy"/>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF dump of the LOFAR DBView data</rdfs:label>
-    <dcat:downloadURL rdf:resource="https://github.com/EOSC-LOFAR/lofar-ld/blob/master/data/lofar_dbview.ttl.gz"/>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dcterms:modified>
-    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
     <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dcterms:issued>
     <dcat:mediaType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text/turtle</dcat:mediaType>
-    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
-    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lofar-lta-dbview-rdfdump</dcterms:identifier>
-    <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dcterms:hasVersion>
-    <dcterms:publisher rdf:resource="http://orcid.org/0000-0003-1711-7961"/>
-    <dcterms:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
     <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF dump of the LOFAR DBView data</dcterms:title>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lofar-lta-dbview-rdfdump</dcterms:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF dump of the LOFAR DBView data</rdfs:label>
+    <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RDF dump of the LOFAR DBView data</dcterms:description>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dcterms:modified>
+    <dcterms:license rdf:resource="https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy"/>
+    <dcat:downloadURL rdf:resource="https://github.com/EOSC-LOFAR/lofar-ld/blob/master/data/lofar_dbview.ttl.gz"/>
+    <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dcterms:hasVersion>
+    <dcterms:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
+    <dcterms:publisher rdf:resource="http://orcid.org/0000-0003-1711-7961"/>
   </rdf:Description>
 </rdf:RDF>

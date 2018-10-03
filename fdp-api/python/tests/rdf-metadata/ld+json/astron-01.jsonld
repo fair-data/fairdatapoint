@@ -68,7 +68,10 @@
         ],
         "http://www.w3.org/ns/dcat#themeTaxonomy": [
           {
-            "@id": "http://dbpedia.org/resource/Astronomy"
+            "@id": "http://dbpedia.org/resource/Radio_astronomy"
+          },
+          {
+            "@id": "http://dbpedia.org/resource/Astronomical_instruments"
           },
           {
             "@id": "http://dbpedia.org/resource/Radio_telescope"
@@ -77,10 +80,7 @@
             "@id": "http://dbpedia.org/resource/LOFAR"
           },
           {
-            "@id": "http://dbpedia.org/resource/Radio_astronomy"
-          },
-          {
-            "@id": "http://dbpedia.org/resource/Astronomical_instruments"
+            "@id": "http://dbpedia.org/resource/Astronomy"
           }
         ]
       }

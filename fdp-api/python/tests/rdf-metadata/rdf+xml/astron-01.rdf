@@ -6,23 +6,23 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/catalog/astron-01">
-    <rdfs:seeAlso rdf:resource="http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/dataset/lofar-lta-dbview"/>
-    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
-    <dcat:dataset rdf:resource="http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/dataset/lofar-lta-dbview"/>
-    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
-    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">astron-01</dcterms:identifier>
-    <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASTRON catalog of datasets</dcterms:description>
-    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dcterms:issued>
-    <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/Astronomy"/>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dcterms:modified>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASTRON catalog of datasets</rdfs:label>
-    <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/Radio_telescope"/>
-    <dcterms:publisher rdf:resource="http://orcid.org/0000-0003-1711-7961"/>
-    <dcterms:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
-    <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/LOFAR"/>
     <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/Radio_astronomy"/>
-    <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dcterms:hasVersion>
-    <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASTRON catalog of datasets</dcterms:title>
+    <dcterms:publisher rdf:resource="http://orcid.org/0000-0003-1711-7961"/>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dcterms:modified>
     <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/Astronomical_instruments"/>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">astron-01</dcterms:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASTRON catalog of datasets</rdfs:label>
+    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+    <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/Radio_telescope"/>
+    <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/LOFAR"/>
+    <dcterms:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
+    <dcat:dataset rdf:resource="http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/dataset/lofar-lta-dbview"/>
+    <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/Astronomy"/>
+    <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dcterms:hasVersion>
+    <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASTRON catalog of datasets</dcterms:description>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dcterms:issued>
+    <rdfs:seeAlso rdf:resource="http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/dataset/lofar-lta-dbview"/>
+    <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ASTRON catalog of datasets</dcterms:title>
   </rdf:Description>
 </rdf:RDF>
