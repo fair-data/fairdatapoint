@@ -1,4 +1,4 @@
-.PHONY: all requirements doc install reinstall clean serve-dev serve-prod
+.PHONY: all requirements doc install reinstall clean dump-rdf serve-dev serve-prod
 
 APP = fdp
 HOST = 127.0.0.1:8080
@@ -25,6 +25,9 @@ clean:
 
 test:
 	nosetests -v
+
+dump-rdf:
+	python tests/dump_metadata.py
 
 serve-dev:
 	python -m bottle --debug --reload --bind $(HOST) $(APP)
