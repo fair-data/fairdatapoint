@@ -8,10 +8,10 @@ from datetime import datetime
 import six
 if six.PY2:
     from urllib2 import urlparse
-    from ConfigParser import SafeConfigParser
+    from ConfigParser import ConfigParser
 else:
     from urllib.request import urlparse
-    from configparser import SafeConfigParser
+    from configparser import ConfigParser
 
 # rdflib-jsonld module required
 register('application/ld+json', Serializer,
@@ -114,7 +114,7 @@ def FDPath(resource, var=None):
 
 class FAIRConfigReader(object):
     def __init__(self, fname=_CONFIG_FILE):
-        parser = SafeConfigParser()
+        parser = ConfigParser()
         self._parser = parser
         self._metadata = dict()
         self._readFile(fname)
