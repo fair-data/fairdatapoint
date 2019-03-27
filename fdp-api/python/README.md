@@ -1,5 +1,11 @@
 **Deploy with Docker**
 
+`docker run -p 8080:8080 -d nlesc/odex-fairdatapoint`
+
+**Deploy without Docker**
+
+Edit metadata in `config.ini`.
+
 `docker run -p 8080:8080 -d nlesc/odex-fairdatapoint:lofar`
 
 **Deploy without Docker**
@@ -20,8 +26,6 @@ source /ENV/bin/activate
 make install
 # make clean # removes files from doc dir (except swagger.json)
 ```
-
-Edit metadata in `config.ini`.
 
 ```
 # in development
@@ -50,4 +54,3 @@ Note: FDP supports the following RDF serializations (MIME-types):
 * N-Triples: `application/n-triples`
 * RDF/XML: `application/rdf+xml`
 * JSON-LD: `application/ld+json`
-
