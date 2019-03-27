@@ -23,11 +23,14 @@ make -e serve-prod HOST=example.com
 
 Base URL: `http://127.0.0.1:8080`
 
-**Access endpoints programmatically**
+**Access endpoints to request metadata programmatically**
 
 FDP: `curl -iH 'Accept: text/turtle' [BASE URL]/fdp`
+
 Catalog: `curl -iH 'Accept: text/turtle' [BASE URL]/catalog/catalog-01`
+
 Dataset: `curl -iH 'Accept: text/turtle' [BASE URL]/dataset/breedb`
+
 Distribution: `curl -iH 'Accept: text/turtle' [BASE URL]/distribution/breedb-sparql`
 
 Note: FDP supports the following RDF serializations (MIME-types):
