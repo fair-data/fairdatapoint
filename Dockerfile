@@ -3,11 +3,11 @@ FROM python:3.6-stretch
 RUN apt-get update -y && apt-get install git make -y
 
 # Service user
-RUN useradd lta && mkdir /home/lta && chown lta:lta /home/lta
+RUN useradd fdp && mkdir /home/fdp && chown fdp:fdp /home/fdp
 
-COPY fdp-api/python /home/lta
+COPY fdp-api/python /home/fdp
 
-WORKDIR /home/lta
+WORKDIR /home/fdp
 
 RUN make install
 
