@@ -4,12 +4,24 @@
 
 **Deploy without Docker**
 
-Edit metadata in `config.ini`.
+Clone this repo.
 
 ```
+git clone https://github.com/NLeSC/ODEX-FAIRDataPoint.git
+cd ODEX-FAIRDataPoint/fdp-api/python
+```
+
+Install FDP into ENV.
+
+```
+python -m venv ENV
+source /ENV/bin/activate
+
 make install
 # make clean # removes files from doc dir (except swagger.json)
 ```
+
+Edit metadata in `config.ini`.
 
 ```
 # in development
@@ -38,3 +50,4 @@ Note: FDP supports the following RDF serializations (MIME-types):
 * N-Triples: `application/n-triples`
 * RDF/XML: `application/rdf+xml`
 * JSON-LD: `application/ld+json`
+
