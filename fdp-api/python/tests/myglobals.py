@@ -4,11 +4,13 @@ BASE_URL = 'http://127.0.0.1:8080'
 # example catalog, dataset and distributions
 URL_PATHS = [
     'fdp',
-    'catalog/astron-01',
-    'dataset/lofar-lta-dbview',
-    'distribution/lofar-lta-dbview-sparql',
-    'distribution/lofar-lta-dbview-rdfdump',
-    'distribution/lofar-lta-dbview-sqldump'
+    'catalog/pbg-ld',
+    'dataset/sly-genes',
+    'dataset/spe-genes',
+    'dataset/stu-genes',
+    'distribution/sly-genes-gff',
+    'distribution/spe-genes-gff',
+    'distribution/stu-genes-gff'
 ]
 
 # lookup table: MIME type - file extension pairs

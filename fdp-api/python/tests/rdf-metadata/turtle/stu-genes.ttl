@@ -1,0 +1,30 @@
+@prefix dbp: <http://dbpedia.org/resource/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix lang: <http://id.loc.gov/vocabulary/iso639-1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> a dcmitype:Dataset,
+        dcat:Dataset ;
+    rdfs:label "Solanum tuberosum gene models."^^xsd:string ;
+    dcterms:description "Solanum tuberosum gene models (PGSC v4.03)."^^xsd:string ;
+    dcterms:hasVersion "4.03"^^xsd:string ;
+    dcterms:identifier "stu-genes"^^xsd:string ;
+    dcterms:issued "2014-02-23"^^xsd:date ;
+    dcterms:language lang:en ;
+    dcterms:modified "2014-02-23"^^xsd:date ;
+    dcterms:publisher <http://solgenomics.net> ;
+    dcterms:title "Solanum tuberosum gene models."^^xsd:string ;
+    rdfs:seeAlso <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/stu-genes-gff> ;
+    dcat:distribution <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/stu-genes-gff> ;
+    dcat:keyword "Solanum tuberosum"^^xsd:string,
+        "gene models"^^xsd:string,
+        "potato"^^xsd:string ;
+    dcat:landingPage <https://solgenomics.net/organism/Solanum_tuberosum/genome> ;
+    dcat:theme dbp:Gene,
+        dbp:Solanum_tuberosum .
+

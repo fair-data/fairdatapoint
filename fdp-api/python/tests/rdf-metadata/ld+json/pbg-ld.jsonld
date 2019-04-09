@@ -2,13 +2,13 @@
   {
     "@graph": [
       {
-        "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/catalog/astron-01",
+        "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld",
         "@type": [
           "http://www.w3.org/ns/dcat#Catalog"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "ASTRON catalog of datasets"
+            "@value": "pbg-ld catalog of datasets"
           }
         ],
         "http://purl.org/dc/terms/hasVersion": [
@@ -18,13 +18,13 @@
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "astron-01"
+            "@value": "pbg-ld"
           }
         ],
         "http://purl.org/dc/terms/issued": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2018-06-27"
+            "@value": "2019-04-09"
           }
         ],
         "http://purl.org/dc/terms/language": [
@@ -35,56 +35,59 @@
         "http://purl.org/dc/terms/modified": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2018-06-27"
+            "@value": "2019-04-09"
           }
         ],
         "http://purl.org/dc/terms/publisher": [
           {
             "@id": "http://orcid.org/0000-0003-1711-7961"
-          },
-          {
-            "@id": "https://orcid.org/0000-0002-9834-1756"
           }
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "ASTRON catalog of datasets"
+            "@value": "pbg-ld catalog of datasets"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "ASTRON catalog of datasets"
+            "@value": "pbg-ld catalog of datasets"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
           {
-            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/dataset/lofar-lta-dbview"
+            "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes"
+          },
+          {
+            "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/sly-genes"
+          },
+          {
+            "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/spe-genes"
           }
         ],
         "http://www.w3.org/ns/dcat#dataset": [
           {
-            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/dataset/lofar-lta-dbview"
+            "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes"
+          },
+          {
+            "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/sly-genes"
+          },
+          {
+            "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/spe-genes"
           }
         ],
         "http://www.w3.org/ns/dcat#themeTaxonomy": [
           {
-            "@id": "http://dbpedia.org/resource/Radio_astronomy"
+            "@id": "http://dbpedia.org/resource/QTL"
           },
           {
-            "@id": "http://dbpedia.org/resource/Astronomical_instruments"
+            "@id": "http://dbpedia.org/resource/Genomics"
           },
           {
-            "@id": "http://dbpedia.org/resource/Radio_telescope"
-          },
-          {
-            "@id": "http://dbpedia.org/resource/LOFAR"
-          },
-          {
-            "@id": "http://dbpedia.org/resource/Astronomy"
+            "@id": "http://dbpedia.org/resource/Plant_breeding"
           }
         ]
       }
     ],
-    "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/catalog/astron-01"
+    "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld"
   }
 ]

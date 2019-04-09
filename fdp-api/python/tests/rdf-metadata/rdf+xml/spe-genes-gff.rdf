@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/spe-genes-gff">
+    <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solanum pennellii gene models in Generic Feature Format (GFF).</dcterms:description>
+    <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.0</dcterms:hasVersion>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-27</dcterms:issued>
+    <dcat:downloadURL rdf:resource="ftp://ftp.solgenomics.net/genomes/Solanum_pennellii/spenn_v2.0_gene_models_annot.gff"/>
+    <dcat:mediaType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">text/tab-separated-values</dcat:mediaType>
+    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
+    <dcterms:publisher rdf:resource="http://solgenomics.net"/>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spe-genes-gff</dcterms:identifier>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-27</dcterms:modified>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solanum pennellii gene models in Generic Feature Format (GFF).</rdfs:label>
+    <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solanum pennellii gene models in Generic Feature Format (GFF).</dcterms:title>
+  </rdf:Description>
+</rdf:RDF>

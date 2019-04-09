@@ -1,0 +1,20 @@
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://purl.org/dc/terms/language> <http://id.loc.gov/vocabulary/iso639-1/en> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://purl.org/dc/terms/hasVersion> "0.1"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://www.w3.org/ns/dcat#themeTaxonomy> <http://dbpedia.org/resource/QTL> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/sly-genes> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://purl.org/dc/terms/modified> "2019-04-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://www.w3.org/ns/dcat#dataset> <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://purl.org/dc/terms/issued> "2019-04-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0003-1711-7961> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Catalog> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://purl.org/dc/terms/description> "pbg-ld catalog of datasets"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://www.w3.org/ns/dcat#themeTaxonomy> <http://dbpedia.org/resource/Genomics> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://www.w3.org/2000/01/rdf-schema#label> "pbg-ld catalog of datasets"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://www.w3.org/ns/dcat#dataset> <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/sly-genes> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/spe-genes> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://www.w3.org/ns/dcat#themeTaxonomy> <http://dbpedia.org/resource/Plant_breeding> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://www.w3.org/ns/dcat#dataset> <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/spe-genes> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://purl.org/dc/terms/identifier> "pbg-ld"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> <http://purl.org/dc/terms/title> "pbg-ld catalog of datasets"^^<http://www.w3.org/2001/XMLSchema#string> .
+

@@ -2,29 +2,29 @@
   {
     "@graph": [
       {
-        "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-rdfdump",
+        "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/sly-genes-gff",
         "@type": [
           "http://www.w3.org/ns/dcat#Distribution"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "RDF dump of the LOFAR DBView data"
+            "@value": "Solanum lycopersicum gene models in Generic Feature Format (GFF)."
           }
         ],
         "http://purl.org/dc/terms/hasVersion": [
           {
-            "@value": "0.1"
+            "@value": "2.4"
           }
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "lofar-lta-dbview-rdfdump"
+            "@value": "sly-genes-gff"
           }
         ],
         "http://purl.org/dc/terms/issued": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2018-06-27"
+            "@value": "2014-02-23"
           }
         ],
         "http://purl.org/dc/terms/language": [
@@ -34,45 +34,42 @@
         ],
         "http://purl.org/dc/terms/license": [
           {
-            "@id": "https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy"
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
           }
         ],
         "http://purl.org/dc/terms/modified": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2018-06-27"
+            "@value": "2014-02-23"
           }
         ],
         "http://purl.org/dc/terms/publisher": [
           {
-            "@id": "https://orcid.org/0000-0002-9834-1756"
-          },
-          {
-            "@id": "http://orcid.org/0000-0003-1711-7961"
+            "@id": "http://solgenomics.net"
           }
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "RDF dump of the LOFAR DBView data"
+            "@value": "Solanum lycopersicum gene models in Generic Feature Format (GFF)."
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "RDF dump of the LOFAR DBView data"
+            "@value": "Solanum lycopersicum gene models in Generic Feature Format (GFF)."
           }
         ],
         "http://www.w3.org/ns/dcat#downloadURL": [
           {
-            "@id": "https://github.com/EOSC-LOFAR/lofar-ld/blob/master/data/lofar_dbview.ttl.gz"
+            "@id": "ftp://ftp.solgenomics.net/genomes/Solanum_lycopersicum/annotation/ITAG2.4_release/ITAG2.4_gene_models.gff3"
           }
         ],
         "http://www.w3.org/ns/dcat#mediaType": [
           {
-            "@value": "text/turtle"
+            "@value": "text/tab-separated-values"
           }
         ]
       }
     ],
-    "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-rdfdump"
+    "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/sly-genes-gff"
   }
 ]

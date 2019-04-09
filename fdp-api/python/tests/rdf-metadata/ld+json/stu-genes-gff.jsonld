@@ -2,29 +2,29 @@
   {
     "@graph": [
       {
-        "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-sparql",
+        "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/stu-genes-gff",
         "@type": [
           "http://www.w3.org/ns/dcat#Distribution"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "SPARQL endpoint of the LOFAR DBView data"
+            "@value": "Solanum tuberosum gene models in Generic Feature Format (GFF)."
           }
         ],
         "http://purl.org/dc/terms/hasVersion": [
           {
-            "@value": "0.1"
+            "@value": "4.03"
           }
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "lofar-lta-dbview-sparql"
+            "@value": "stu-genes-gff"
           }
         ],
         "http://purl.org/dc/terms/issued": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2018-06-27"
+            "@value": "2013-12-05"
           }
         ],
         "http://purl.org/dc/terms/language": [
@@ -34,48 +34,45 @@
         ],
         "http://purl.org/dc/terms/license": [
           {
-            "@id": "https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy"
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
           }
         ],
         "http://purl.org/dc/terms/modified": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2018-06-27"
+            "@value": "2013-12-05"
           }
         ],
         "http://purl.org/dc/terms/publisher": [
           {
-            "@id": "https://orcid.org/0000-0002-9834-1756"
-          },
-          {
-            "@id": "http://orcid.org/0000-0003-1711-7961"
+            "@id": "http://solgenomics.net"
           }
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "SPARQL endpoint of the LOFAR DBView data"
+            "@value": "Solanum tuberosum gene models in Generic Feature Format (GFF)."
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "SPARQL endpoint of the LOFAR DBView data"
+            "@value": "Solanum tuberosum gene models in Generic Feature Format (GFF)."
           }
         ],
-        "http://www.w3.org/ns/dcat#accessURL": [
+        "http://www.w3.org/ns/dcat#downloadURL": [
           {
-            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/sparql"
+            "@id": "ftp://ftp.solgenomics.net/genomes/Solanum_tuberosum/annotation/PGSC_4.03/PGSC_DM_V403_genes.gff.zip"
           }
         ],
         "http://www.w3.org/ns/dcat#mediaType": [
           {
-            "@value": "application/n-triples"
+            "@value": "application/zip"
           },
           {
-            "@value": "application/rdf+xml"
+            "@value": "text/tab-separated-values"
           }
         ]
       }
     ],
-    "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-sparql"
+    "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/stu-genes-gff"
   }
 ]

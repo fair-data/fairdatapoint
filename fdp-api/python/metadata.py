@@ -211,19 +211,19 @@ class FAIRConfigReader(object):
                 ids_1 = set(sections[cat])
                 ids_2 = set([id for id in self.getItems(section, cat_id)])
                 assert(ids_1 == ids_2), _errorSectionNotReferenced(
-                    fdp, cat_id, cat)
+                    section, cat_id, cat)
 
             if cat in section:
                 ids_1 = set(sections[dat])
                 ids_2 = set([id for id in self.getItems(section, dat_id)])
-                assert(ids_1 == ids_2), _errorSectionNotReferenced(
-                    cat, dat_id, dat)
+                assert(ids_2.issubset(ids_1)), _errorSectionNotReferenced(
+                    section, dat_id, dat)
 
             if dat in section:
                 ids_1 = set(sections[dist])
                 ids_2 = set([id for id in self.getItems(section, dist_id)])
-                assert(ids_1 == ids_2), _errorSectionNotReferenced(
-                    dat, dist_id, dist)
+                assert(ids_2.issubset(ids_1)), _errorSectionNotReferenced(
+                    section, dist_id, dist)
 
 
 class FAIRGraph(object):

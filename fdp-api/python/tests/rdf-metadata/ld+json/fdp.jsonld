@@ -2,18 +2,18 @@
   {
     "@graph": [
       {
-        "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/fdp",
+        "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/fdp",
         "@type": [
           "http://purl.org/dc/terms/Agent"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "This service provides machine-readable descriptions (metadata) about ASTRON's datasets."
+            "@value": "This service provides machine-readable descriptions about available datasets (metadata)."
           }
         ],
         "http://purl.org/dc/terms/hasPart": [
           {
-            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/catalog/astron-01"
+            "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld"
           }
         ],
         "http://purl.org/dc/terms/hasVersion": [
@@ -23,13 +23,13 @@
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "FDP-ASTRON"
+            "@value": "PBR-WUR"
           }
         ],
         "http://purl.org/dc/terms/issued": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2018-06-27"
+            "@value": "2019-04-09"
           }
         ],
         "http://purl.org/dc/terms/language": [
@@ -40,34 +40,31 @@
         "http://purl.org/dc/terms/modified": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2018-06-27"
+            "@value": "2019-04-09"
           }
         ],
         "http://purl.org/dc/terms/publisher": [
-          {
-            "@id": "https://orcid.org/0000-0002-9834-1756"
-          },
           {
             "@id": "http://orcid.org/0000-0003-1711-7961"
           }
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."
+            "@value": "FAIR Data Point service of Plant Breeding group at Wageningen University and Research."
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."
+            "@value": "FAIR Data Point service of Plant Breeding group at Wageningen University and Research."
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
           {
-            "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/catalog/astron-01"
+            "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld"
           }
         ]
       }
     ],
-    "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/fdp"
+    "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/fdp"
   }
 ]

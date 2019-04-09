@@ -3,7 +3,7 @@
     "info": {
         "version": "0.5.1",
         "title": "FAIR Data Point",
-        "description": "Provides machine-readable descriptions (metadata) about available data sets.",
+        "description": "Provides machine-readable descriptions (metadata) about available datasets.",
         "contact": {
             "name": "Netherlands eScience Center",
             "url": "https://www.esciencecenter.nl",
@@ -49,7 +49,7 @@
                         "in": "path",
                         "description": "catalogID",
                         "type": "string",
-                        "default": "astron-01",
+                        "default": "pbg-ld",
                         "required": true
                     }
                 ],
@@ -73,7 +73,7 @@
                         "in": "path",
                         "description": "datasetID",
                         "type": "string",
-                        "default": "lofar-lta-dbview",
+                        "default": "sly-genes",
                         "required": true
                     }
                 ],
@@ -97,7 +97,7 @@
                         "in": "path",
                         "description": "distributionID",
                         "type": "string",
-                        "default": "lofar-lta-dbview-sparql",
+                        "default": "sly-genes-gff",
                         "required": true
                     }
                 ],

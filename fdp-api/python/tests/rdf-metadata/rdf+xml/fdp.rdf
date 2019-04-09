@@ -4,19 +4,18 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/fdp">
-    <dcterms:publisher rdf:resource="https://orcid.org/0000-0002-9834-1756"/>
-    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dcterms:issued>
-    <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
-    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FDP-ASTRON</dcterms:identifier>
-    <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This service provides machine-readable descriptions (metadata) about ASTRON's datasets.</dcterms:description>
-    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
-    <dcterms:hasPart rdf:resource="http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/catalog/astron-01"/>
-    <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dcterms:hasVersion>
-    <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy.</dcterms:title>
-    <rdfs:seeAlso rdf:resource="http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/catalog/astron-01"/>
+  <rdf:Description rdf:about="http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/fdp">
     <dcterms:publisher rdf:resource="http://orcid.org/0000-0003-1711-7961"/>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-06-27</dcterms:modified>
-    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy.</rdfs:label>
+    <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This service provides machine-readable descriptions about available datasets (metadata).</dcterms:description>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PBR-WUR</dcterms:identifier>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FAIR Data Point service of Plant Breeding group at Wageningen University and Research.</rdfs:label>
+    <dcterms:hasPart rdf:resource="http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld"/>
+    <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FAIR Data Point service of Plant Breeding group at Wageningen University and Research.</dcterms:title>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-09</dcterms:issued>
+    <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-09</dcterms:modified>
+    <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dcterms:hasVersion>
+    <rdfs:seeAlso rdf:resource="http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld"/>
+    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
   </rdf:Description>
 </rdf:RDF>

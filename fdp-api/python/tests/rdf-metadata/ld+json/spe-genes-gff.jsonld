@@ -2,29 +2,29 @@
   {
     "@graph": [
       {
-        "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-sqldump",
+        "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/spe-genes-gff",
         "@type": [
           "http://www.w3.org/ns/dcat#Distribution"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "SQL dump of the LOFAR DBView data"
+            "@value": "Solanum pennellii gene models in Generic Feature Format (GFF)."
           }
         ],
         "http://purl.org/dc/terms/hasVersion": [
           {
-            "@value": "0.1"
+            "@value": "2.0"
           }
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "lofar-lta-dbview-sqldump"
+            "@value": "spe-genes-gff"
           }
         ],
         "http://purl.org/dc/terms/issued": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2018-06-27"
+            "@value": "2014-08-27"
           }
         ],
         "http://purl.org/dc/terms/language": [
@@ -34,45 +34,42 @@
         ],
         "http://purl.org/dc/terms/license": [
           {
-            "@id": "https://www.astron.nl/radio-observatory/observing-proposals/lofar-data-policy/lofar-data-policy"
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
           }
         ],
         "http://purl.org/dc/terms/modified": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2018-06-27"
+            "@value": "2014-08-27"
           }
         ],
         "http://purl.org/dc/terms/publisher": [
           {
-            "@id": "http://orcid.org/0000-0003-1711-7961"
-          },
-          {
-            "@id": "https://orcid.org/0000-0002-9834-1756"
+            "@id": "http://solgenomics.net"
           }
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "SQL dump of the LOFAR DBView data"
+            "@value": "Solanum pennellii gene models in Generic Feature Format (GFF)."
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "SQL dump of the LOFAR DBView data"
+            "@value": "Solanum pennellii gene models in Generic Feature Format (GFF)."
           }
         ],
         "http://www.w3.org/ns/dcat#downloadURL": [
           {
-            "@id": "http://example.com/lofar-lta-dbview.sql"
+            "@id": "ftp://ftp.solgenomics.net/genomes/Solanum_pennellii/spenn_v2.0_gene_models_annot.gff"
           }
         ],
         "http://www.w3.org/ns/dcat#mediaType": [
           {
-            "@value": "application/sql"
+            "@value": "text/tab-separated-values"
           }
         ]
       }
     ],
-    "@id": "http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/distribution/lofar-lta-dbview-sqldump"
+    "@id": "http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/spe-genes-gff"
   }
 ]

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes">
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solanum tuberosum</dcat:keyword>
+    <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solanum tuberosum gene models.</dcterms:title>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-23</dcterms:modified>
+    <dcat:landingPage rdf:resource="https://solgenomics.net/organism/Solanum_tuberosum/genome"/>
+    <dcat:theme rdf:resource="http://dbpedia.org/resource/Gene"/>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-02-23</dcterms:issued>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stu-genes</dcterms:identifier>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">potato</dcat:keyword>
+    <rdfs:seeAlso rdf:resource="http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/stu-genes-gff"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+    <dcterms:publisher rdf:resource="http://solgenomics.net"/>
+    <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4.03</dcterms:hasVersion>
+    <dcat:theme rdf:resource="http://dbpedia.org/resource/Solanum_tuberosum"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solanum tuberosum gene models.</rdfs:label>
+    <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solanum tuberosum gene models (PGSC v4.03).</dcterms:description>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene models</dcat:keyword>
+    <dcat:distribution rdf:resource="http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/stu-genes-gff"/>
+    <rdf:type rdf:resource="http://purl.org/dc/dcmitype/Dataset"/>
+  </rdf:Description>
+</rdf:RDF>

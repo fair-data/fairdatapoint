@@ -8,17 +8,16 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/fdp> a dcterms:Agent ;
-    rdfs:label "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."^^xsd:string ;
-    dcterms:description "This service provides machine-readable descriptions (metadata) about ASTRON's datasets."^^xsd:string ;
-    dcterms:hasPart <http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/catalog/astron-01> ;
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/fdp> a dcterms:Agent ;
+    rdfs:label "FAIR Data Point service of Plant Breeding group at Wageningen University and Research."^^xsd:string ;
+    dcterms:description "This service provides machine-readable descriptions about available datasets (metadata)."^^xsd:string ;
+    dcterms:hasPart <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> ;
     dcterms:hasVersion "0.1"^^xsd:string ;
-    dcterms:identifier "FDP-ASTRON"^^xsd:string ;
-    dcterms:issued "2018-06-27"^^xsd:date ;
+    dcterms:identifier "PBR-WUR"^^xsd:string ;
+    dcterms:issued "2019-04-09"^^xsd:date ;
     dcterms:language lang:en ;
-    dcterms:modified "2018-06-27"^^xsd:date ;
-    dcterms:publisher <http://orcid.org/0000-0003-1711-7961>,
-        <https://orcid.org/0000-0002-9834-1756> ;
-    dcterms:title "FAIR Data Point service of ASTRON, the Netherlands Institute for Radio Astronomy."^^xsd:string ;
-    rdfs:seeAlso <http://lofar-ld.lofarpipelines-astron.surf-hosted.nl:8890/catalog/astron-01> .
+    dcterms:modified "2019-04-09"^^xsd:date ;
+    dcterms:publisher <http://orcid.org/0000-0003-1711-7961> ;
+    dcterms:title "FAIR Data Point service of Plant Breeding group at Wageningen University and Research."^^xsd:string ;
+    rdfs:seeAlso <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/catalog/pbg-ld> .
 

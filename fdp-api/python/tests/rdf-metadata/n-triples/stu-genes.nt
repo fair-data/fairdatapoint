@@ -1,0 +1,20 @@
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://www.w3.org/ns/dcat#keyword> "Solanum tuberosum"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://purl.org/dc/terms/title> "Solanum tuberosum gene models."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://purl.org/dc/terms/modified> "2014-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://www.w3.org/ns/dcat#landingPage> <https://solgenomics.net/organism/Solanum_tuberosum/genome> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://www.w3.org/ns/dcat#theme> <http://dbpedia.org/resource/Gene> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://purl.org/dc/terms/issued> "2014-02-23"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://purl.org/dc/terms/identifier> "stu-genes"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://www.w3.org/ns/dcat#keyword> "potato"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/stu-genes-gff> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Dataset> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://purl.org/dc/terms/language> <http://id.loc.gov/vocabulary/iso639-1/en> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://purl.org/dc/terms/publisher> <http://solgenomics.net> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://purl.org/dc/terms/hasVersion> "4.03"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://www.w3.org/ns/dcat#theme> <http://dbpedia.org/resource/Solanum_tuberosum> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://www.w3.org/2000/01/rdf-schema#label> "Solanum tuberosum gene models."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://purl.org/dc/terms/description> "Solanum tuberosum gene models (PGSC v4.03)."^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://www.w3.org/ns/dcat#keyword> "gene models"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://www.w3.org/ns/dcat#distribution> <http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/stu-genes-gff> .
+<http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/stu-genes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/dcmitype/Dataset> .
+

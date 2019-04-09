@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/dataset/spe-genes">
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spe-genes</dcterms:identifier>
+    <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solanum pennellii gene models.</dcterms:description>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-27</dcterms:modified>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">gene models</dcat:keyword>
+    <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2.0</dcterms:hasVersion>
+    <dcterms:publisher rdf:resource="http://solgenomics.net"/>
+    <dcat:distribution rdf:resource="http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/spe-genes-gff"/>
+    <dcat:landingPage rdf:resource="https://solgenomics.net/organism/Solanum_pennellii/genome"/>
+    <dcat:theme rdf:resource="http://dbpedia.org/resource/Gene"/>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solanum pennellii</dcat:keyword>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solanum pennellii gene models.</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://pbg-ld.candygene-nlesc.surf-hosted.nl:8080/distribution/spe-genes-gff"/>
+    <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Solanum pennellii gene models.</dcterms:title>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2014-08-27</dcterms:issued>
+    <dcat:theme rdf:resource="http://dbpedia.org/resource/Solanum_pennellii"/>
+    <dcat:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wild tomato</dcat:keyword>
+    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+    <rdf:type rdf:resource="http://purl.org/dc/dcmitype/Dataset"/>
+  </rdf:Description>
+</rdf:RDF>
