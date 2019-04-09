@@ -4,7 +4,14 @@
 
 **Deploy without Docker**
 
-Edit metadata in `config.ini`.
+Clone this repo.
+
+```
+git clone https://github.com/NLeSC/ODEX-FAIRDataPoint.git
+cd ODEX-FAIRDataPoint/fdp-api/python
+```
+
+Install FDP into ENV.
 
 `docker run -p 8080:8080 -d nlesc/odex-fairdatapoint:lofar`
 
@@ -16,16 +23,14 @@ Clone this repo.
 git clone https://github.com/NLeSC/ODEX-FAIRDataPoint.git
 cd ODEX-FAIRDataPoint/fdp-api/python
 ```
-
-Install FDP into ENV.
-
-```
 python -m venv ENV
 source /ENV/bin/activate
 
 make install
 # make clean # removes files from doc dir (except swagger.json)
 ```
+
+Edit metadata in `config.ini`.
 
 ```
 # in development
