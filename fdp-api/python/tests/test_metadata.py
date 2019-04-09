@@ -19,11 +19,16 @@ reader = FAIRConfigReader()
 
 
 def test_sections():
-    set_a = set(['fdp', 'catalog/astron-01', 'dataset/lofar-lta-dbview',
-                 'distribution/lofar-lta-dbview-sparql',
-                 'distribution/lofar-lta-dbview-rdfdump',
-                 'distribution/lofar-lta-dbview-sqldump',
-                 'distribution/lofar-lta-dbview-csvdump'])
+    set_a = set([
+        'fdp',
+        'catalog/pbg-ld',
+        'dataset/sly-genes',
+        'dataset/spe-genes',
+        'dataset/stu-genes',
+        'distribution/sly-genes-gff',
+        'distribution/spe-genes-gff',
+        'distribution/stu-genes-gff'])
+    
     set_b = set(reader.getSectionHeaders())
     assert_true(set_a == set_b)
 
