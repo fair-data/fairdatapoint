@@ -10,11 +10,11 @@ RUN useradd fdp && \
     mkdir /home/fdp && \
     chown fdp:fdp /home/fdp
 
-COPY fdp-api/python /home/fdp
+COPY . /home/fdp
 
 WORKDIR /home/fdp
 
-RUN make install
+RUN pip install .
 
 EXPOSE ${PORT}
 

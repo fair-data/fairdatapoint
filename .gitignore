@@ -1,37 +1,25 @@
-/fdp-api/java/FairDataPoint/target/
-/fdp-api/python/*.pyc
-
-### Python files
-# Byte-compiled / optimized / DLL files
-__pycache__/
 *.py[cod]
-*$py.class
+*.egg-info
+*.eggs
+.ipynb_checkpoints
 
-# C extensions
-*.so
+build
+dist
+.cache
+__pycache__
 
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
+htmlcov
+.coverage
+coverage.xml
+.pytest_cache
 
+docs/_build
+docs/apidocs
 
-# Service output
-*log
-fdp-api/python/doc/*
+# ide
+.idea
+.eclipse
+.vscode
 
-# emacs
-*~
+# Mac
+.DS_Store
