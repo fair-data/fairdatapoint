@@ -60,5 +60,8 @@ setup(
     ],
     extras_require={
         'dev':  ['prospector[with_pyroma]', 'yapf', 'isort'],
-    }
+    },
+    scripts=[
+        'bin/fdp-run'
+    ]
 )

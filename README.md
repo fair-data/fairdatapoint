@@ -124,3 +124,19 @@ Note: FDP supports the following RDF serializations (MIME-types):
 * N-Triples: `application/n-triples`
 * RDF/XML: `application/rdf+xml`
 * JSON-LD: `application/ld+json`
+
+
+# FAIR Data Point
+#
+# FAIR Data Point (FDP) exposes the following endpoints (URL paths):
+#   [ /, /doc, /doc/ ]   = Redirects to the API documentation
+#   /fdp                 = Returns FDP metadata
+#   /catalog/{catalogID} = Returns catalog metadata (default: catalog-01)
+#   /dataset/{datasetID} = Returns dataset metadata (default: breedb)
+#   /distribution/{distributionID} = Returns distribution metadata
+#                                    (default: breedb-sparql)
+#
+# This services makes use of:
+#   Data Catalog Vocabulary, http://www.w3.org/TR/vocab-dcat/
+#   Dublin Core Metadata Terms, http://dublincore.org/documents/dcmi-terms/
+#   DBpedia, http://dbpedia.org/resource/)

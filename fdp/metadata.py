@@ -5,20 +5,14 @@ from rdflib.namespace import Namespace, RDF, RDFS, DCTERMS, XSD
 from rdflib.plugin import register, Serializer
 from datetime import datetime
 
-import six
-if six.PY2:
-    from urllib2 import urlparse
-    from ConfigParser import ConfigParser
-else:
-    from urllib.request import urlparse
-    from configparser import ConfigParser
+from urllib.request import urlparse
+from configparser import SafeConfigParser
+
+from .utils import FDPath
 
 # rdflib-jsonld module required
 register('application/ld+json', Serializer,
          'rdflib_jsonld.serializer', 'JsonLDSerializer')
-
-# default metadata config file
-_CONFIG_FILE = path.join(path.dirname(__file__), 'config.ini')
 
 # define additional namespaces
 DCMITYPE = Namespace('http://purl.org/dc/dcmitype/')
@@ -60,13 +54,6 @@ _ONTO_MAP = dict(fdp_id=[(DCTERMS.identifier, XSD.string)],
                  download_url=[(DCAT.downloadURL, XSD.anyURI)],
                  media_type=[(DCAT.mediaType, XSD.string)])
 
-# paths (endpoints) available through FDP
-_RESOURCE_PATH = dict(fdp='/fdp',
-                      doc='/doc',
-                      cat='/catalog',
-                      dat='/dataset',
-                      dist='/distribution')
-
 
 def _errorSectionNotFound(section):
     return "Section '%s' not found." % section
@@ -78,10 +65,6 @@ def _errorFieldNotFound(field):
 
 def _errorFieldInSectionNotFound(field, section):
     return "Field '%s' not found in section '%s'." % (field, section)
-
-
-def _errorResourceNotFound(resource):
-    return "Resource '%s' not found." % resource
 
 
 def _errorResourceIdNotUnique(id):
@@ -104,17 +87,9 @@ def mapFieldToOnto(field):
     return _ONTO_MAP[field]
 
 
-def FDPath(resource, var=None):
-    assert(resource in _RESOURCE_PATH), _errorResourceNotFound(resource)
-    path = _RESOURCE_PATH[resource]
-    var = '' if var is None else '/%s' % str(var)
-
-    return path + var
-
-
 class FAIRConfigReader(object):
-    def __init__(self, fname=_CONFIG_FILE):
-        parser = ConfigParser()
+    def __init__(self, fname):
+        parser = SafeConfigParser()
         self._parser = parser
         self._metadata = dict()
         self._readFile(fname)
@@ -227,7 +202,7 @@ class FAIRConfigReader(object):
 
 
 class FAIRGraph(object):
-    def __init__(self, base_uri):
+    def __init__(self, base_uri, dataFile):
         graph = ConjunctiveGraph()
         self._graph = graph
         self._base_uri = self._validateURI(base_uri)
@@ -241,11 +216,12 @@ class FAIRGraph(object):
         graph.bind('lang', LANG)
         #graph.bind('sd', SPARQLSD)
 
+        reader = FAIRConfigReader(dataFile)
+        for triple in reader.getTriples():
+            self.setMetadata(triple)
+
     def _validateURI(self, uri):
-        if six.PY2:
-            u = urlparse.urlparse(uri)
-        else:
-            u = urlparse(uri)
+        u = urlparse(uri)
 
         if u.scheme not in ('http', 'https', 'ftp'):
             raise ValueError(
