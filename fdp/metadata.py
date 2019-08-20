@@ -88,11 +88,12 @@ def mapFieldToOnto(field):
 
 
 class FAIRConfigReader(object):
-    def __init__(self, fname):
+    def __init__(self, fname=None):
         parser = SafeConfigParser()
         self._parser = parser
         self._metadata = dict()
-        self._readFile(fname)
+        if fname:
+            self._readFile(fname)
 
     def _readFile(self, fname):
         if path.isfile(fname) is False:
@@ -202,7 +203,7 @@ class FAIRConfigReader(object):
 
 
 class FAIRGraph(object):
-    def __init__(self, base_uri, dataFile):
+    def __init__(self, base_uri, dataFile=None):
         graph = ConjunctiveGraph()
         self._graph = graph
         self._base_uri = self._validateURI(base_uri)

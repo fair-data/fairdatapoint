@@ -6,7 +6,7 @@ from nose.tools import (assert_equals, assert_true, assert_false)
 
 # add parent folder to path
 sys.path.append('../')
-from metadata import (FAIRConfigReader, FAIRGraph)
+from fdp.metadata import (FAIRConfigReader, FAIRGraph)
 
 if six.PY2:
     from urllib2 import urlparse
@@ -28,7 +28,7 @@ def test_sections():
         'distribution/sly-genes-gff',
         'distribution/spe-genes-gff',
         'distribution/stu-genes-gff'])
-    
+
     set_b = set(reader.getSectionHeaders())
     assert_true(set_a == set_b)
 

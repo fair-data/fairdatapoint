@@ -5,7 +5,7 @@ from nose.tools import assert_equals
 from rdflib import Graph
 from rdflib.compare import graph_diff
 from rdflib.plugin import register, Parser
-from myglobals import (BASE_URL, DUMP_DIR, MIME_TYPES, URL_PATHS)
+from .myglobals import (BASE_URL, DUMP_DIR, MIME_TYPES, URL_PATHS)
 
 
 if six.PY2:
