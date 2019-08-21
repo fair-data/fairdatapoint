@@ -12,45 +12,43 @@ FDP is a RESTful web service that enables data owners to describe and to expose 
 FDP software specification can be found [here](https://dtl-fair.atlassian.net/wiki/spaces/FDP/pages/6127622/FAIR+Data+Point+Software+Specification).
 
 FDP has been implemented in:
-* [Python](https://github.com/NLeSC/ODEX-FAIRDataPoint/tree/master/fdp-api/python)
-* [Java](https://github.com/NLeSC/ODEX-FAIRDataPoint/tree/master/fdp-api/java) (deprecated, use [this](https://github.com/DTL-FAIRData/FAIRDataPoint) version instead)
+* [Python](https://github.com/NLeSC/ODEX-FAIRDataPoint/)
+* [Java](https://github.com/DTL-FAIRData/FAIRDataPoint)
 
-### Stuff from Cookiecutter
-The project setup is documented in `a separate document <project_setup.rst>`_. Feel free to remove this document (and/or the link to this document) if you don't need it.
-
-Installation
+## Installation
 ------------
 
 To install fdp, do:
 
 ```bash
-git clone https://github.com/NLeSC/fdp.git
-cd fdp
+git clone https://github.com/NLeSC/ODEX-FAIRDataPoint.git
+cd ODEX-FAIRDataPoint
 pip install .
 ```
+TODO: register on pypi and change this to `pip install fairdatapoint`
 
+## Running
+```bash
+fdp-run samples/plant_breeding_group.ttl
+```
 
+Then visit from your browser: http://localhost:8080/
+
+## Unit testing
 Run tests (including coverage) with:
 
 ```bash
 python setup.py test
 ```
 
-Documentation
-*************
+TODO: Include a link to your project's full documentation here.
 
-.. _README:
-
-Include a link to your project's full documentation here.
-
-Contributing
-************
+## Contributing
 
 If you want to contribute to the development of FAIR Data Point,
-have a look at the `contribution guidelines <CONTRIBUTING.rst>`_.
+have a look at the [contribution guidelines](CONTRIBUTING.rst).
 
-License
-*******
+## License
 
 Copyright (c) 2019,
 
@@ -66,17 +64,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-Credits
-*******
-This package was created with `Cookiecutter <https://github.com/audreyr/cookiecutter>`_ and the `NLeSC/python-template <https://github.com/NLeSC/python-template>`_.
-
-### Stuff from old FDP python README
-
-**Deploy with Docker**
+## Deploy with Docker
+TODO: update docker deployment
 
 `docker run -p 8080:8080 -d nlesc/odex-fairdatapoint`
 
-**Deploy without Docker**
+## Deploy without Docker
+TODO: update this section
 
 Clone this repo.
 
@@ -126,17 +120,23 @@ Note: FDP supports the following RDF serializations (MIME-types):
 * JSON-LD: `application/ld+json`
 
 
-# FAIR Data Point
-#
-# FAIR Data Point (FDP) exposes the following endpoints (URL paths):
-#   [ /, /doc, /doc/ ]   = Redirects to the API documentation
-#   /fdp                 = Returns FDP metadata
-#   /catalog/{catalogID} = Returns catalog metadata (default: catalog-01)
-#   /dataset/{datasetID} = Returns dataset metadata (default: breedb)
-#   /distribution/{distributionID} = Returns distribution metadata
-#                                    (default: breedb-sparql)
-#
-# This services makes use of:
-#   Data Catalog Vocabulary, http://www.w3.org/TR/vocab-dcat/
-#   Dublin Core Metadata Terms, http://dublincore.org/documents/dcmi-terms/
-#   DBpedia, http://dbpedia.org/resource/)
+## FAIR Data Point specification
+
+FAIR Data Point (FDP) exposes the following endpoints (URL paths):
+
+| Endpoints | Description |
+| -- | -- |
+| [ /, /doc, /doc/ ]   | Redirects to the API documentation |
+| /fdp                 | Returns FDP metadata |
+| /catalog/{catalogID} | Returns catalog metadata (default: catalog-01) |
+| /dataset/{datasetID} | Returns dataset metadata (default: breedb) |
+| /distribution/{distributionID} | Returns distribution metadata (default: breedb-sparql) |
+
+This services makes use of:
+ - [Data Catalog Vocabulary](http://www.w3.org/TR/vocab-dcat/)
+ - [Dublin Core Metadata Terms](http://dublincore.org/documents/dcmi-terms/)
+ - [DBpedia](http://dbpedia.org/resource/)
+
+ ## Credits
+
+ This package was created with [Cookiecutter](https://github.com/audreyr/cookiecutter) and the [NLeSC/python-template](https://github.com/NLeSC/python-template).
