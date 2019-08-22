@@ -1,14 +1,22 @@
 # -*- coding: utf-8 -*-
 
-#from bottle import get, run, static_file, redirect, response, request,  \
-#    install
 from flask import Flask, make_response, request, redirect, send_from_directory
-
-app = Flask(__name__)
+from flask_restplus import Api, Resource, Namespace
 
 from .utils import FDPath
 from .metadata import FAIRGraph as ConfigFAIRGraph
 from .fairgraph import FAIRGraph as RDFFAIRGraph
+from .__init__ import __version__ as version
+
+app = Flask(__name__)
+api = Api(app, version=version, title='FAIR Data Point API',
+    description='FAIR Data Point allows data owners to expose datasets in a FAIR ' \
+                'manner and data users to discover properties about offered datasets.',
+)
+
+ns = Namespace('metadata-controller', description='FDP metadata')
+api.add_namespace(ns, path='/')
+
 
 # Data structure for holding data used
 data = {}
@@ -64,30 +72,75 @@ def defaultPage():
 def sourceDocFiles(fname):
     return send_from_directory('doc', fname)
 
+@ns.route('')
+class FDPResource(Resource):
+    def get():
+        '''
+        FDP metadata
+        '''
+        graph = data['graph']
+        return httpResponse(graph, graph.fdpURI())
 
-@app.route(FDPath('fdp'), methods=['GET'])
-def getFdpMetadata():
-    graph = data['graph']
-    return httpResponse(graph, graph.fdpURI())
+    def patch():
+        '''
+        Update fdp metadata
+        '''
+        return '', 500
+
+@ns.route('catalog/<id>')
+class CatalogGetterResource(Resource):
+    def get(id):
+        '''
+        Catalog metadata
+        '''
+        graph = data['graph']
+        return httpResponse(graph, graph.catURI(id))
+
+@ns.route('catalog/')
+class CatalogPostResource(Resource):
+    def post():
+        '''
+        POST catalog metadata
+        '''
+        return '', 500
+
+@ns.route('dataset/<id>')
+class DatasetMetadataGetterResource(Resource):
+    def get(id):
+        '''
+        Dataset metadata
+        '''
+        graph = data['graph']
+        return httpResponse(graph, graph.datURI(id))
 
 
-@app.route(FDPath('cat', '<catalog_id>'), methods=['GET'])
-def getCatalogMetadata(catalog_id):
-    graph = data['graph']
-    return httpResponse(graph, graph.catURI(catalog_id))
+@ns.route('dataset/')
+class DatasetMetadataPostResource(Resource):
+    def post():
+        '''
+        POST dataset metadata
+        '''
+        return '', 500
 
 
-@app.route(FDPath('dat', '<dataset_id>'), methods=['GET'])
-def getDatasetMetadata(dataset_id):
-    graph = data['graph']
-    return httpResponse(graph, graph.datURI(dataset_id))
+@ns.route('distribution/<id>')
+class DistributionGetterResource(Resource):
+    def get(id):
+        '''
+        Dataset distribution metadata
+        '''
+        graph = data['graph']
+        return httpResponse(graph, graph.distURI(id))
 
+@ns.route('distribution/')
+class DistributionPostResource(Resource):
+    def post():
+        '''
+        POST distribution metadata
+        '''
+        return '', 500
 
-@app.route(FDPath('dist', '<distribution_id>'), methods=['GET'])
-def getDistributionMetadata(distribution_id):
-    graph = data['graph']
-    return httpResponse(graph, graph.distURI(distribution_id))
 
 def run_app(host, port, dataFile):
     initGraph(host=host, port=port, dataFile=dataFile)
-    app.run(host=host, port=port)
+    app.run(host=host, port=port, debug=True)
