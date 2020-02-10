@@ -51,7 +51,7 @@ master_doc = 'index'
 # General information about the project.
 project = u'FAIR Data Point'
 copyright = u'2019, '
-author = u"Carlos Martinez-Ortiz"
+author = fdp.__author__
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
