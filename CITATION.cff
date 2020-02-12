@@ -1,17 +1,22 @@
 # YAML 1.2
 # Metadata for citation of this software according to the CFF format (https://citation-file-format.github.io/)
---- 
-authors: 
-  - 
+---
+authors:
+  -
     affiliation: "Netherlands eScience Center"
     family-names: Kuzniar
     given-names: Arnold
     orcid: "https://orcid.org/0000-0003-1711-7961"
-  - 
+  -
     affiliation: "Leiden University Medical Center"
     family-names: Kaliyaperumal
     given-names: Rajaram
     orcid: "https://orcid.org/0000-0002-1215-167X"
+  -
+    affiliation: "Netherlands eScience Center"
+    family-names: Martinez-Ortiz
+    given-names: Carlos
+    orcid: "https://orcid.org/0000-0001-5565-7577"
 cff-version: "1.0.3"
 date-released: 2017-12-05
 doi: 10.5281/zenodo.1083951
@@ -19,4 +24,4 @@ license: Apache-2.0
 message: "If you use this software, please cite it using these metadata."
 repository-code: "https://github.com/NLeSC/ODEX-FAIRDataPoint"
 title: "FAIR Data Point"
-version: "0.5"
+version: '0.6.0'

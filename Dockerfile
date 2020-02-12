@@ -10,14 +10,15 @@ RUN useradd fdp && \
     mkdir /home/fdp && \
     chown fdp:fdp /home/fdp
 
-COPY fdp-api/python /home/fdp
+COPY . /home/fdp
 
 WORKDIR /home/fdp
 
-RUN make install
+RUN pip install .
 
 EXPOSE ${PORT}
 
+# TODO: change this to run from bin
 CMD python -m bottle -b ${HOST}:${PORT} fdp
 
 HEALTHCHECK --interval=5s CMD curl --silent --fail ${HOST}:${PORT} || exit 1
