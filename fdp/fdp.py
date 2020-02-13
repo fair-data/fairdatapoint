@@ -72,16 +72,16 @@ def defaultPage():
 def sourceDocFiles(fname):
     return send_from_directory('doc', fname)
 
-@ns.route('')
+@ns.route('fdp/')
 class FDPResource(Resource):
-    def get():
+    def get(self):
         '''
         FDP metadata
         '''
         graph = data['graph']
         return httpResponse(graph, graph.fdpURI())
 
-    def patch():
+    def patch(self):
         '''
         Update fdp metadata
         '''
@@ -89,7 +89,7 @@ class FDPResource(Resource):
 
 @ns.route('catalog/<id>')
 class CatalogGetterResource(Resource):
-    def get(id):
+    def get(self, id):
         '''
         Catalog metadata
         '''
@@ -98,7 +98,7 @@ class CatalogGetterResource(Resource):
 
 @ns.route('catalog/')
 class CatalogPostResource(Resource):
-    def post():
+    def post(self):
         '''
         POST catalog metadata
         '''
@@ -106,7 +106,7 @@ class CatalogPostResource(Resource):
 
 @ns.route('dataset/<id>')
 class DatasetMetadataGetterResource(Resource):
-    def get(id):
+    def get(self, id):
         '''
         Dataset metadata
         '''
@@ -116,7 +116,7 @@ class DatasetMetadataGetterResource(Resource):
 
 @ns.route('dataset/')
 class DatasetMetadataPostResource(Resource):
-    def post():
+    def post(self):
         '''
         POST dataset metadata
         '''
@@ -125,7 +125,7 @@ class DatasetMetadataPostResource(Resource):
 
 @ns.route('distribution/<id>')
 class DistributionGetterResource(Resource):
-    def get(id):
+    def get(self, id):
         '''
         Dataset distribution metadata
         '''
@@ -134,7 +134,7 @@ class DistributionGetterResource(Resource):
 
 @ns.route('distribution/')
 class DistributionPostResource(Resource):
-    def post():
+    def post(self):
         '''
         POST distribution metadata
         '''
