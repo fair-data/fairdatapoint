@@ -1,0 +1,52 @@
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
+
+schema:DatasetShape
+    a sh:NodeShape ;
+    sh:targetClass dcat:Catalog ;
+    sh:property [
+        sh:name "Catalog title" ;
+        sh:path dct:title ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Catalog version" ;
+        sh:path dct:hasVersion ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:name "Catalog publisher" ;
+        sh:path dct:publisher ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Catalog metadata identifier" ;
+        sh:path fdp:metadataIdentifier ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Catalog metadata issued date" ;
+        sh:path fdp:metadataIssued ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Catalog metadata modified date" ;
+        sh:path fdp:metadataModified ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Contained datasets" ;
+        sh:path dcat:dataset ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Dataset theme Taxonomy" ;
+        sh:path dcat:themeTaxonomy ;
+        sh:minCount 1 ;
+    ] .
