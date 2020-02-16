@@ -8,50 +8,49 @@
 
 schema:DatasetShape
     a sh:NodeShape ;
-    sh:targetClass dcat:Catalog ;
+    sh:targetClass dcat:Dataset ;
     sh:property [
-        sh:name "Catalog title" ;
+        sh:name "Name of the dataset" ;
         sh:path dct:title ;
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:name "Catalog version" ;
-        sh:path dct:hasVersion ;
-        sh:minCount 1 ;
-        sh:datatype xsd:string ;
-    ] ;
-    sh:property [
-        sh:name "Catalog publisher" ;
+        sh:name "Organisation(s) or Persons(s) responsible for the dataset" ;
         sh:path dct:publisher ;
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:name "Catalog relation to the parent metadata" ;
+        sh:name "Version of the dataset" ;
+        sh:path dct:hasVersion ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Dataset relation to the parent metadata" ;
         sh:path dct:isPartOf ;
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:name "Catalog metadata identifier" ;
+        sh:name "Dataset metadata identifier" ;
         sh:path fdp:metadataIdentifier ;
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:name "Catalog metadata issued date" ;
+        sh:name "Dataset metadata issued date" ;
         sh:path fdp:metadataIssued ;
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:name "Catalog metadata modified date" ;
+        sh:name "Dataset metadata modified date" ;
         sh:path fdp:metadataModified ;
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:name "List of dataset URLs" ;
-        sh:path dcat:dataset ;
+        sh:name "List of distributions URLs" ;
+        sh:path dcat:distribution	 ;
         sh:minCount 1 ;
     ] ;
     sh:property [
-        sh:name "List of taxonomy URLs" ;
-        sh:path dcat:themeTaxonomy ;
+        sh:name "List of concepts that describe the dataset" ;
+        sh:path dcat:theme ;
         sh:minCount 1 ;
     ] .

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, make_response, request, redirect, send_from_directory
-from flask_restplus import Api, Resource, Namespace
+from flask_restplus import Api, Resource, Namespace, fields
 
 from .utils import FDPath
 from .metadata import FAIRGraph as ConfigFAIRGraph
@@ -98,6 +98,10 @@ class CatalogGetterResource(Resource):
 
 @ns.route('catalog/')
 class CatalogPostResource(Resource):
+    model = api.parser()
+    model.add_argument('text', type=str, location='json')
+
+    @api.expect(model)
     def post(self):
         '''
         POST catalog metadata

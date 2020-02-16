@@ -1,7 +1,7 @@
 from pyshacl import validate
 
-# This should be loaded from a file: fdp/schema/dataset.ttl or something
-with open('dataset.shacl') as fin:
+# This should be loaded from a file: fdp/schema/catalog.shacl or something
+with open('distribution.shacl') as fin:
     shapes_file = fin.read()
 shapes_file_format = 'turtle'
 
@@ -15,19 +15,25 @@ data_file = '''
 @prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
 @prefix dbp: <http://dbpedia.org/resource/> .
 
-<dataset/breedb> a dcat:Dataset ;
-    dct:title "BreeDB tomato passport data"^^xsd:string ;
-    dct:publisher <http://orcid.org/0000-0002-4368-8058> ;
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix lang: <http://id.loc.gov/vocabulary/iso639-1/> .
+
+<distribution/breedb-sparql> a dcat:Distribution ;
+    dct:title "SPARQL endpoint for BreeDB tomato passport data"^^xsd:string ;
+    dct:license <http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0> ;
     dct:hasVersion "1.0"^^xsd:string ;
-    dct:isPartOf <catalog/catalog-01> ;
+    dct:isPartOf <dataset/breedb> ;
 
     fdp:metadataIdentifier <http://example.org/metadataID> ;
 	fdp:metadataIssued "2016-10-27"^^xsd:date ;
 	fdp:metadataModified "2016-10-27"^^xsd:date ;
 
-    dcat:distribution <distribution/breedb-sparql>,
-        <distribution/breedb-sqldump> ;
-    dcat:theme dbp:Plant_breeding .
+    dcat:mediaType "application/n-triples"^^xsd:string,
+        "application/rdf+xml"^^xsd:string ;
+
+    # One or the other, but not both
+    dcat:accessURL <http://virtuoso.biotools.nl:8888/sparql> .
+    # dcat:downloadURL <http://virtuoso.biotools.nl:8888/sparql>  .
 '''
 data_file_format = 'turtle'
 
@@ -37,7 +43,6 @@ conforms, v_graph, v_text = validate(data_file, shacl_graph=shapes_file,
                                      shacl_graph_format=shapes_file_format,
                                      inference='rdfs', debug=False,
                                      serialize_report_graph=True)
-
 print('conforms >>>>>>>>>>>>>>>>>')
 print(conforms)
 print('v_graph >>>>>>>>>>>>>>>>>>')
