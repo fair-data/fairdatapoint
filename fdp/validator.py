@@ -17,15 +17,13 @@ def _validate(data_file, shapes_file):
 
 class FDPValidator():
     def __init__(self):
+        import pkg_resources
         print('Loading catalog shapes')
-        with open('fdp/schema/catalog.shacl') as fin:
-            self.catalog_shapes = fin.read()
+        self.catalog_shapes = pkg_resources.resource_string(__name__, 'schema/catalog.shacl')
         print('Loading dataset shapes')
-        with open('fdp/schema/dataset.shacl') as fin:
-            self.dataset_shapes = fin.read()
+        self.dataset_shapes = pkg_resources.resource_string(__name__, 'schema/dataset.shacl')
         print('Loading distribution shapes')
-        with open('fdp/schema/distribution.shacl') as fin:
-            self.distribution_shapes = fin.read()
+        self.distribution_shapes = pkg_resources.resource_string(__name__, 'schema/distribution.shacl')
 
     def validateCatalog(self, cat_data):
         return _validate(cat_data, self.catalog_shapes)
