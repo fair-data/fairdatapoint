@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, make_response, request, redirect, send_from_directory
-from flask_restplus import Api, Resource, Namespace, fields
+from flask_restplus import Api, Resource, Namespace
 
 from .utils import FDPath
 from .metadata import FAIRGraph as ConfigFAIRGraph
 from .fairgraph import FAIRGraph as RDFFAIRGraph
+from .validator import FDPValidator
 from .__init__ import __version__ as version
 
 app = Flask(__name__)
@@ -17,6 +18,7 @@ api = Api(app, version=version, title='FAIR Data Point API',
 ns = Namespace('metadata-controller', description='FDP metadata')
 api.add_namespace(ns, path='/')
 
+validator = FDPValidator()
 
 # Data structure for holding data used
 data = {}
@@ -106,7 +108,15 @@ class CatalogPostResource(Resource):
         '''
         POST catalog metadata
         '''
-        return '', 500
+        req_data = request.data
+        req_data = req_data.decode('utf-8')
+
+        valid = validator.validateCatalog(req_data)
+        if valid:
+            data['graph']._graph.parse(data=req_data, format='turtle')
+            return 'Ok', 200
+        else:
+            return 'Invalid format', 500
 
 @ns.route('dataset/<id>')
 class DatasetMetadataGetterResource(Resource):
@@ -120,11 +130,23 @@ class DatasetMetadataGetterResource(Resource):
 
 @ns.route('dataset/')
 class DatasetMetadataPostResource(Resource):
+    model = api.parser()
+    model.add_argument('text', type=str, location='json')
+
+    @api.expect(model)
     def post(self):
         '''
         POST dataset metadata
         '''
-        return '', 500
+        req_data = request.data
+        req_data = req_data.decode('utf-8')
+
+        valid = validator.validateDataset(req_data)
+        if valid:
+            data['graph']._graph.parse(data=req_data, format='turtle')
+            return 'Ok', 200
+        else:
+            return 'Invalid format', 500
 
 
 @ns.route('distribution/<id>')
@@ -138,11 +160,38 @@ class DistributionGetterResource(Resource):
 
 @ns.route('distribution/')
 class DistributionPostResource(Resource):
+    model = api.parser()
+    model.add_argument('text', type=str, location='json')
+
+    @api.expect(model)
     def post(self):
         '''
         POST distribution metadata
         '''
-        return '', 500
+        req_data = request.data
+        req_data = req_data.decode('utf-8')
+
+        valid = validator.validateDistribution(req_data)
+        if valid:
+            data['graph']._graph.parse(data=req_data, format='turtle')
+            return 'Ok', 200
+        else:
+            return 'Invalid format', 500
+
+
+@ns.route('dump/')
+class DumpResource(Resource):
+    def get(self):
+        '''
+        Dataset distribution metadata
+        '''
+        graph = data['graph']
+        serialized_graph = graph._graph.serialize(format='turtle').decode('utf-8')
+        resp = make_response(serialized_graph)
+
+        resp.headers['Content-Type'] = 'text/plain'
+        resp.headers['Allow'] = 'GET'
+        return resp
 
 
 def run_app(host, port, dataFile):

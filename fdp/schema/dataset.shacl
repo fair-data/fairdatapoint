@@ -1,0 +1,56 @@
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
+
+schema:DatasetShape
+    a sh:NodeShape ;
+    sh:targetClass dcat:Dataset ;
+    sh:property [
+        sh:name "Name of the dataset" ;
+        sh:path dct:title ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Organisation(s) or Persons(s) responsible for the dataset" ;
+        sh:path dct:publisher ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Version of the dataset" ;
+        sh:path dct:hasVersion ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Dataset relation to the parent metadata" ;
+        sh:path dct:isPartOf ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Dataset metadata identifier" ;
+        sh:path fdp:metadataIdentifier ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Dataset metadata issued date" ;
+        sh:path fdp:metadataIssued ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "Dataset metadata modified date" ;
+        sh:path fdp:metadataModified ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "List of distributions URLs" ;
+        sh:path dcat:distribution	 ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "List of concepts that describe the dataset" ;
+        sh:path dcat:theme ;
+        sh:minCount 1 ;
+    ] .
