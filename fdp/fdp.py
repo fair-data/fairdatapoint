@@ -111,12 +111,12 @@ class CatalogPostResource(Resource):
         req_data = request.data
         req_data = req_data.decode('utf-8')
 
-        valid = validator.validateCatalog(req_data)
+        valid, message = validator.validateCatalog(req_data)
         if valid:
             data['graph']._graph.parse(data=req_data, format='turtle')
-            return 'Ok', 200
+            return make_response({'message': 'Ok'}, 200)
         else:
-            return 'Invalid format', 500
+            return make_response({'message': message}, 500)
 
 @ns.route('dataset/<id>')
 class DatasetMetadataGetterResource(Resource):
@@ -141,12 +141,12 @@ class DatasetMetadataPostResource(Resource):
         req_data = request.data
         req_data = req_data.decode('utf-8')
 
-        valid = validator.validateDataset(req_data)
+        valid, message = validator.validateDataset(req_data)
         if valid:
             data['graph']._graph.parse(data=req_data, format='turtle')
-            return 'Ok', 200
+            return make_response({'message': 'Ok'}, 200)
         else:
-            return 'Invalid format', 500
+            return make_response({'message': message}, 500)
 
 
 @ns.route('distribution/<id>')
@@ -171,12 +171,12 @@ class DistributionPostResource(Resource):
         req_data = request.data
         req_data = req_data.decode('utf-8')
 
-        valid = validator.validateDistribution(req_data)
+        valid, message = validator.validateDistribution(req_data)
         if valid:
             data['graph']._graph.parse(data=req_data, format='turtle')
-            return 'Ok', 200
+            return make_response({'message': 'Ok'}, 200)
         else:
-            return 'Invalid format', 500
+            return make_response({'message': message}, 500)
 
 
 @ns.route('dump/')
