@@ -9,7 +9,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # UPGRADE: can we change this dynamically if base_uri is different?
-@base <http://localhost:8080/> .
+@base <http://0.0.0.0:8080/> .
 
 <fdp> a dct:Agent ;
     rdfs:label "FAIR Data Point of the Plant Breeding Group, Wageningen UR"^^xsd:string ;
