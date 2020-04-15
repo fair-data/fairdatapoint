@@ -1,6 +1,6 @@
 .PHONY: all requirements doc install install-test reinstall clean dump-rdf serve-dev
 
-fdata = './sample/config.ini'
+fdata = './samples/config.ini'
 
 all: install
 
