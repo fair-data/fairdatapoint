@@ -1,5 +1,5 @@
 DUMP_DIR = 'tests/rdf-metadata'
-BASE_URL = 'http://127.0.0.1:8080'
+BASE_URL = 'http://0.0.0.0:8080'
 
 # example catalog, dataset and distributions
 URL_PATHS = [
@@ -20,4 +20,3 @@ MIME_TYPES = {
     'application/ld+json'   : 'jsonld',
     'application/n-triples' : 'nt'
 }
-
