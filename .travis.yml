@@ -2,13 +2,11 @@
 dist: xenial   # required for Python >= 3.7
 language: python
 python:
-  - "3.5"
-  - "3.6"
   - "3.7"
 
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
+  - make install_test
 
 # command to run tests
 script:
@@ -16,12 +14,6 @@ script:
   - sleep 10
   - make test
 
-# deploy automatically to pypi when a release is made
-deploy:
-  provider: pypi
-  user: nlesc
-  password:
-    secure: FIXME; see README for more info
-  on:
-    tags: true
-    branch: master
+after-script:
+  - python-codacy-coverage -r coverage.xml
+  - coveralls
