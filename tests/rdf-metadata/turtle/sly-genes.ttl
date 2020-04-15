@@ -1,0 +1,30 @@
+@prefix dbp: <http://dbpedia.org/resource/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix lang: <http://id.loc.gov/vocabulary/iso639-1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://0.0.0.0:8080/dataset/sly-genes> a dcmitype:Dataset,
+        dcat:Dataset ;
+    rdfs:label "Solanum lycopersicum gene models."^^xsd:string ;
+    dcterms:description "Solanum lycopersicum gene models (ITAG v2.4)."^^xsd:string ;
+    dcterms:hasVersion "2.4"^^xsd:string ;
+    dcterms:identifier "sly-genes"^^xsd:string ;
+    dcterms:issued "2014-02-23"^^xsd:date ;
+    dcterms:language lang:en ;
+    dcterms:modified "2014-02-23"^^xsd:date ;
+    dcterms:publisher <http://solgenomics.net> ;
+    dcterms:title "Solanum lycopersicum gene models."^^xsd:string ;
+    rdfs:seeAlso <http://0.0.0.0:8080/distribution/sly-genes-gff> ;
+    dcat:distribution <http://0.0.0.0:8080/distribution/sly-genes-gff> ;
+    dcat:keyword "Solanum lycopersicum"^^xsd:string,
+        "gene models"^^xsd:string,
+        "tomato"^^xsd:string ;
+    dcat:landingPage <https://solgenomics.net/organism/Solanum_lycopersicum/genome> ;
+    dcat:theme dbp:Gene,
+        dbp:Solanum_lycopersicum .
+

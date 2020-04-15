@@ -2,18 +2,13 @@
   {
     "@graph": [
       {
-        "@id": "http://0.0.0.0:8080/fdp",
+        "@id": "http://0.0.0.0:8080/catalog/pbg-ld",
         "@type": [
-          "http://purl.org/dc/terms/Agent"
+          "http://www.w3.org/ns/dcat#Catalog"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "This service provides machine-readable descriptions about available datasets (metadata)."
-          }
-        ],
-        "http://purl.org/dc/terms/hasPart": [
-          {
-            "@id": "http://0.0.0.0:8080/catalog/pbg-ld"
+            "@value": "pbg-ld catalog of datasets"
           }
         ],
         "http://purl.org/dc/terms/hasVersion": [
@@ -23,7 +18,7 @@
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "PBR-WUR"
+            "@value": "pbg-ld"
           }
         ],
         "http://purl.org/dc/terms/issued": [
@@ -50,21 +45,49 @@
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "FAIR Data Point service of Plant Breeding group at Wageningen University and Research."
+            "@value": "pbg-ld catalog of datasets"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "FAIR Data Point service of Plant Breeding group at Wageningen University and Research."
+            "@value": "pbg-ld catalog of datasets"
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
           {
-            "@id": "http://0.0.0.0:8080/catalog/pbg-ld"
+            "@id": "http://0.0.0.0:8080/dataset/stu-genes"
+          },
+          {
+            "@id": "http://0.0.0.0:8080/dataset/sly-genes"
+          },
+          {
+            "@id": "http://0.0.0.0:8080/dataset/spe-genes"
+          }
+        ],
+        "http://www.w3.org/ns/dcat#dataset": [
+          {
+            "@id": "http://0.0.0.0:8080/dataset/stu-genes"
+          },
+          {
+            "@id": "http://0.0.0.0:8080/dataset/sly-genes"
+          },
+          {
+            "@id": "http://0.0.0.0:8080/dataset/spe-genes"
+          }
+        ],
+        "http://www.w3.org/ns/dcat#themeTaxonomy": [
+          {
+            "@id": "http://dbpedia.org/resource/Genomics"
+          },
+          {
+            "@id": "http://dbpedia.org/resource/Plant_breeding"
+          },
+          {
+            "@id": "http://dbpedia.org/resource/QTL"
           }
         ]
       }
     ],
-    "@id": "http://0.0.0.0:8080/fdp"
+    "@id": "http://0.0.0.0:8080/catalog/pbg-ld"
   }
 ]

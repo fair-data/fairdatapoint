@@ -2,29 +2,29 @@
   {
     "@graph": [
       {
-        "@id": "http://127.0.0.1:8080/catalog/catalog-01",
+        "@id": "http://0.0.0.0:8080/distribution/spe-genes-gff",
         "@type": [
-          "http://www.w3.org/ns/dcat#Catalog"
+          "http://www.w3.org/ns/dcat#Distribution"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "Plant Breeding Data Catalog"
+            "@value": "Solanum pennellii gene models in Generic Feature Format (GFF)."
           }
         ],
         "http://purl.org/dc/terms/hasVersion": [
           {
-            "@value": "1.0"
+            "@value": "2.0"
           }
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "catalog-01"
+            "@value": "spe-genes-gff"
           }
         ],
         "http://purl.org/dc/terms/issued": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2015-11-24"
+            "@value": "2014-08-27"
           }
         ],
         "http://purl.org/dc/terms/language": [
@@ -32,44 +32,44 @@
             "@id": "http://id.loc.gov/vocabulary/iso639-1/en"
           }
         ],
+        "http://purl.org/dc/terms/license": [
+          {
+            "@id": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        ],
         "http://purl.org/dc/terms/modified": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2015-11-24"
+            "@value": "2014-08-27"
           }
         ],
         "http://purl.org/dc/terms/publisher": [
           {
-            "@id": "http://orcid.org/0000-0002-4368-8058"
+            "@id": "http://solgenomics.net"
           }
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "Plant Breeding Data Catalog"
+            "@value": "Solanum pennellii gene models in Generic Feature Format (GFF)."
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "Plant Breeding Data Catalog"
+            "@value": "Solanum pennellii gene models in Generic Feature Format (GFF)."
           }
         ],
-        "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+        "http://www.w3.org/ns/dcat#downloadURL": [
           {
-            "@id": "http://127.0.0.1:8080/dataset/breedb"
+            "@id": "ftp://ftp.solgenomics.net/genomes/Solanum_pennellii/spenn_v2.0_gene_models_annot.gff"
           }
         ],
-        "http://www.w3.org/ns/dcat#dataset": [
+        "http://www.w3.org/ns/dcat#mediaType": [
           {
-            "@id": "http://127.0.0.1:8080/dataset/breedb"
-          }
-        ],
-        "http://www.w3.org/ns/dcat#themeTaxonomy": [
-          {
-            "@id": "http://dbpedia.org/resource/Breeding"
+            "@value": "text/tab-separated-values"
           }
         ]
       }
     ],
-    "@id": "http://127.0.0.1:8080/catalog/catalog-01"
+    "@id": "http://0.0.0.0:8080/distribution/spe-genes-gff"
   }
 ]
