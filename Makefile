@@ -1,7 +1,6 @@
-.PHONY: all requirements doc install reinstall clean dump-rdf serve-dev serve-prod
+.PHONY: all requirements doc install install-test reinstall clean dump-rdf serve-dev
 
-APP = fdp
-HOST = 127.0.0.1:8080
+fdata = './samples/config.ini'
 
 all: install
 
@@ -9,6 +8,9 @@ install: requirements doc
 
 requirements:
 	pip install -r requirements.txt
+
+install-test:
+	pip install -e .[tests]
 
 doc:
 	git clone https://github.com/swagger-api/swagger-ui.git
@@ -24,13 +26,14 @@ clean:
 	cd doc && find . ! -name swagger.json -delete
 
 test:
-	nosetests -v
+	pytest
 
 dump-rdf:
 	python tests/dump_metadata.py
 
 serve-dev:
-	python -m bottle --debug --reload --bind $(HOST) $(APP)
+	fdp-run $(fdata)
+	# python -m bottle --debug --reload --bind $(HOST) $(APP)
 
-serve-prod:
-	nohup python -m bottle -b $(HOST) $(APP) &
+# serve-prod:
+# 	nohup python -m bottle -b $(HOST) $(APP) &

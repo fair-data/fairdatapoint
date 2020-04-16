@@ -45,21 +45,10 @@ setup(
     ],
     test_suite='tests',
     install_requires=install_requires,
-    setup_requires=[
-        # dependency for `python setup.py test`
-        'pytest-runner',
-        # dependencies for `python setup.py build_sphinx`
-        'sphinx',
-        'sphinx_rtd_theme',
-        'recommonmark'
-    ],
-    tests_require=[
-        'pytest',
-        'pytest-cov',
-        'pycodestyle',
-    ],
     extras_require={
-        'dev':  ['prospector[with_pyroma]', 'yapf', 'isort'],
+        'dev': ['prospector[with_pyroma]', 'yapf', 'isort'],
+        'tests': ['requests', 'pytest', 'pytest-cov', 'coveralls'],
+        'docs': ['sphinx', 'sphinx_rtd_theme', 'recommonmark'],
     },
     scripts=[
         'bin/fdp-run'

@@ -6,7 +6,7 @@ from rdflib.plugin import register, Serializer
 from datetime import datetime
 
 from urllib.request import urlparse
-from configparser import SafeConfigParser
+from configparser import ConfigParser
 
 from .utils import FDPath
 
@@ -89,7 +89,7 @@ def mapFieldToOnto(field):
 
 class FAIRConfigReader(object):
     def __init__(self, fname=None):
-        parser = SafeConfigParser()
+        parser = ConfigParser()
         self._parser = parser
         self._metadata = dict()
         if fname:

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dcat="http://www.w3.org/ns/dcat#"
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://0.0.0.0:8080/catalog/pbg-ld">
+    <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/Genomics"/>
+    <dcterms:publisher rdf:resource="http://orcid.org/0000-0003-1711-7961"/>
+    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+    <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/Plant_breeding"/>
+    <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pbg-ld catalog of datasets</dcterms:title>
+    <dcterms:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pbg-ld</dcterms:identifier>
+    <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.1</dcterms:hasVersion>
+    <rdfs:seeAlso rdf:resource="http://0.0.0.0:8080/dataset/stu-genes"/>
+    <rdfs:seeAlso rdf:resource="http://0.0.0.0:8080/dataset/sly-genes"/>
+    <dcat:dataset rdf:resource="http://0.0.0.0:8080/dataset/stu-genes"/>
+    <dcterms:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pbg-ld catalog of datasets</dcterms:description>
+    <rdfs:seeAlso rdf:resource="http://0.0.0.0:8080/dataset/spe-genes"/>
+    <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-09</dcterms:issued>
+    <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/QTL"/>
+    <dcat:dataset rdf:resource="http://0.0.0.0:8080/dataset/sly-genes"/>
+    <dcat:dataset rdf:resource="http://0.0.0.0:8080/dataset/spe-genes"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pbg-ld catalog of datasets</rdfs:label>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-09</dcterms:modified>
+  </rdf:Description>
+</rdf:RDF>

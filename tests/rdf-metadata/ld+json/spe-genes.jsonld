@@ -2,30 +2,30 @@
   {
     "@graph": [
       {
-        "@id": "http://127.0.0.1:8080/dataset/breedb",
+        "@id": "http://0.0.0.0:8080/dataset/spe-genes",
         "@type": [
-          "http://purl.org/dc/dcmitype/Dataset",
-          "http://www.w3.org/ns/dcat#Dataset"
+          "http://www.w3.org/ns/dcat#Dataset",
+          "http://purl.org/dc/dcmitype/Dataset"
         ],
         "http://purl.org/dc/terms/description": [
           {
-            "@value": "BreeDB tomato passport data"
+            "@value": "Solanum pennellii gene models."
           }
         ],
         "http://purl.org/dc/terms/hasVersion": [
           {
-            "@value": "1.0"
+            "@value": "2.0"
           }
         ],
         "http://purl.org/dc/terms/identifier": [
           {
-            "@value": "breedb"
+            "@value": "spe-genes"
           }
         ],
         "http://purl.org/dc/terms/issued": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2015-11-24"
+            "@value": "2014-08-27"
           }
         ],
         "http://purl.org/dc/terms/language": [
@@ -36,66 +36,60 @@
         "http://purl.org/dc/terms/modified": [
           {
             "@type": "http://www.w3.org/2001/XMLSchema#date",
-            "@value": "2015-11-24"
+            "@value": "2014-08-27"
           }
         ],
         "http://purl.org/dc/terms/publisher": [
           {
-            "@id": "http://orcid.org/0000-0002-4368-8058"
+            "@id": "http://solgenomics.net"
           }
         ],
         "http://purl.org/dc/terms/title": [
           {
-            "@value": "BreeDB tomato passport data"
+            "@value": "Solanum pennellii gene models."
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#label": [
           {
-            "@value": "BreeDB tomato passport data"
+            "@value": "Solanum pennellii gene models."
           }
         ],
         "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
           {
-            "@id": "http://127.0.0.1:8080/distribution/breedb-sqldump"
-          },
-          {
-            "@id": "http://127.0.0.1:8080/distribution/breedb-sparql"
+            "@id": "http://0.0.0.0:8080/distribution/spe-genes-gff"
           }
         ],
         "http://www.w3.org/ns/dcat#distribution": [
           {
-            "@id": "http://127.0.0.1:8080/distribution/breedb-sqldump"
-          },
-          {
-            "@id": "http://127.0.0.1:8080/distribution/breedb-sparql"
+            "@id": "http://0.0.0.0:8080/distribution/spe-genes-gff"
           }
         ],
         "http://www.w3.org/ns/dcat#keyword": [
           {
-            "@value": "passport data"
+            "@value": "Solanum pennellii"
           },
           {
-            "@value": "germplasm"
+            "@value": "wild tomato"
           },
           {
-            "@value": "BreeDB"
-          },
-          {
-            "@value": "Plant breeding"
+            "@value": "gene models"
           }
         ],
         "http://www.w3.org/ns/dcat#landingPage": [
           {
-            "@id": "http://www.eu-sol.wur.nl/passport"
+            "@id": "https://solgenomics.net/organism/Solanum_pennellii/genome"
           }
         ],
         "http://www.w3.org/ns/dcat#theme": [
           {
-            "@id": "http://dbpedia.org/resource/Plant_breeding"
+            "@id": "http://dbpedia.org/resource/Solanum_pennellii"
+          },
+          {
+            "@id": "http://dbpedia.org/resource/Gene"
           }
         ]
       }
     ],
-    "@id": "http://127.0.0.1:8080/dataset/breedb"
+    "@id": "http://0.0.0.0:8080/dataset/spe-genes"
   }
 ]
