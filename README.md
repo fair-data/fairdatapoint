@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ee39bdf985364b22b8d6d6a5f7f6d42b)](https://app.codacy.com/manual/c.martinez/FAIRDataPoint?utm_source=github.com&utm_medium=referral&utm_content=c-martinez/FAIRDataPoint&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/NLeSC/ODEX-FAIRDataPoint.svg?branch=master)](https://travis-ci.org/NLeSC/ODEX-FAIRDataPoint)
 [![DOI](https://zenodo.org/badge/37470907.svg)](https://zenodo.org/badge/latestdoi/37470907)
 
