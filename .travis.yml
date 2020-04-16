@@ -15,5 +15,4 @@ script:
   - make test
 
 after-script:
-  - python-codacy-coverage -r coverage.xml
   - coveralls
