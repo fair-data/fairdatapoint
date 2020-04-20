@@ -6,6 +6,7 @@ from flask_restplus import Api, Resource, Namespace
 from .utils import FDPath
 from .metadata import FAIRGraph as ConfigFAIRGraph
 from .fairgraph import FAIRGraph as RDFFAIRGraph
+from .storegraph import StoreFAIRGraph
 from .validator import FDPValidator
 from .__init__ import __version__ as version
 
@@ -23,17 +24,20 @@ validator = FDPValidator()
 # Data structure for holding data used
 data = {}
 
-def initGraph(host, port, dataFile):
+def initGraph(host, port, dataFile, endpoint):
     scheme = 'http'
     host = '{}:{}'.format(host, port) # TODO: fix for port 80
     base_uri = '{}://{}'.format(scheme, host)
 
-    if dataFile.endswith('.ini'):
+    if dataFile and dataFile.endswith('.ini'):
         # populate FAIR metadata from config file
         g = ConfigFAIRGraph(base_uri, dataFile)
-    elif dataFile.endswith('.ttl'):
+    elif dataFile and dataFile.endswith('.ttl'):
         # populate FAIR metadata from turtle file
         g = RDFFAIRGraph(base_uri, dataFile)
+    elif endpoint:
+        print('Using store graph')
+        g = StoreFAIRGraph(base_uri, endpoint)
     else:
         raise Exception('Unknown data format')
     data['graph'] = g
@@ -113,7 +117,7 @@ class CatalogPostResource(Resource):
 
         valid, message = validator.validateCatalog(req_data)
         if valid:
-            data['graph']._graph.parse(data=req_data, format='turtle')
+            data['graph'].addCatURI(data=req_data, format='turtle')
             return make_response({'message': 'Ok'}, 200)
         else:
             return make_response({'message': message}, 500)
@@ -194,6 +198,6 @@ class DumpResource(Resource):
         return resp
 
 
-def run_app(host, port, dataFile):
-    initGraph(host=host, port=port, dataFile=dataFile)
+def run_app(host, port, dataFile, endpoint):
+    initGraph(host=host, port=port, dataFile=dataFile, endpoint=endpoint)
     app.run(host=host, port=port, debug=True)

@@ -2,16 +2,19 @@
 """FDP run.
 
 Usage:
-  fdp-run <data-file>
+  fdp-run --data <data-file>
+  fdp-run --sparql <sparql-endpoint>
   fdp-run (-h | --help)
 
 Options:
   -h --help     Show this screen.
-  <data-file>   ini or ttl file containing FDP data
+  --data <data-file>   ini or ttl file containing FDP data
+  --sparql <sparql-endpoint>  sparql endpoint URL
 """
 from docopt import docopt
 from fdp import __version__
 from fdp.fdp import run_app
 
 args = docopt(__doc__, version='FDP run ' + __version__)
-run_app(host='0.0.0.0', port=8080, dataFile=args['<data-file>'])
+run_app(host='0.0.0.0', port=8080, dataFile=args['--data'],
+        endpoint=args['--sparql'])
