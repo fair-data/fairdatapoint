@@ -1,9 +1,9 @@
-from rdflib import ConjunctiveGraph, Graph
+from rdflib import ConjunctiveGraph, Graph, Namespace
 from rdflib.plugins.stores.sparqlstore import SPARQLUpdateStore
 from rdflib.term import URIRef
 
-API_ENDPOINTS = {'/fdp', '/doc', '/catalog', '/dataset', '/distribution'}
-
+API_ENDPOINTS = {'/fdp', '/doc', '/catalog/', '/dataset/', '/distribution/'}
+DCAT = Namespace("http://www.w3.org/ns/dcat#")
 
 class StoreFAIRGraph(object):
     def __init__(self, base_uri, endpoint):
@@ -15,30 +15,38 @@ class StoreFAIRGraph(object):
 
     def _buildURI(self, endpoint, id=None):
         assert (endpoint in API_ENDPOINTS), 'Invalid endpoint'
-        id = '' if id is None else '/%s' % str(id)
+        id = '' if id is None else '%s' % str(id)
         return self._base_uri + endpoint + id
 
     def fdpURI(self):
         return self._buildURI('/fdp')
 
-    def catURI(self, id):
-        return self._buildURI('/catalog', id)
+    def catURI(self, id=None):
+        return self._buildURI('/catalog/', id)
 
-    def addCatURI(self, data, format):
-        # Load data on the graph
-        g = ConjunctiveGraph()
-        g.parse(data=data, format=format)
-        for s, p, o in g:
-            self._graph.add((s, p, o))
-        self._graph.commit()
+    def datURI(self, id=None):
+        return self._buildURI('/dataset/', id)
 
-    def datURI(self, id):
-        return self._buildURI('/dataset', id)
-
-    def distURI(self, id):
-        return self._buildURI('/distribution', id)
+    def distURI(self, id=None):
+        return self._buildURI('/distribution/', id)
 
     def serialize(self, uri, mime_type):
+        #TODO mime_type not used
+        g = self.matchURI(uri)
+        if len(g.all_nodes()) > 0:
+            return g.serialize(format='turtle').decode('utf-8')
+        else:
+            return None  # 404 !
+
+    def URIexists(self, uri):
+        g = self.matchURI(uri)
+
+        if len(g.all_nodes()) > 0:
+            return True
+        else:
+            return False
+
+    def matchURI(self, uri):
         g = Graph()
         # Copy namespaces from base graph
         for prefix, ns_uri in self._graph.namespaces():
@@ -46,9 +54,60 @@ class StoreFAIRGraph(object):
 
         # Search for triples which match the given subject
         matchPattern = (URIRef(uri), None, None)
+
         g += self._graph.triples(matchPattern)
 
-        if len(g.all_nodes()) > 0:
-            return g.serialize(format='turtle').decode('utf-8')
-        else:
-            return None  # 404 !
+        return g
+
+    def post(self, data, format):
+        """Overwrite all existing triples of a specific subject.
+        """
+        # Load data on the graph
+        g = ConjunctiveGraph()
+        g.parse(data=data, format=format)
+        # Remove all triples of specific subjects
+        s_set = set([s for s, p, o in g])
+        if s_set:
+            for s in s_set:
+                self._graph.remove((s,None,None))
+        # Add new triples
+        for s, p, o in g:
+            self._graph.add((s, p, o))
+        self._graph.commit()
+
+    def deleteURI(self, uri):
+        """Delete all triples with the given URI as subject.
+        """
+        self._graph.remove((URIRef(uri), None, None))
+        self._graph.commit()
+
+    def deleteURILayer(self, layer):
+        """Delete all URIs of the given layer.
+
+        Args:
+            layer(str): layer name. Available names:
+                "Catalog", "Dataset", "Distribution".
+        """
+        # self._graph.processUpdate(
+        for i in self.navURI(layer):
+            self.deleteURI(i)
+        # self._graph.update(
+        #     'DELETE {?s ?p ?o} WHERE {?s a ?l}',
+        #     initBindings={'l': DCAT[layer]}
+        #     )
+
+    def navURI(self, layer):
+        """Navigate existing URIs for given layer.
+
+        Args:
+            layer(str): layer name. Available names:
+                "Catalog", "Dataset", "Distribution".
+
+        Returns:
+            list: URIs
+        """
+        qres = self._graph.query(
+            'SELECT ?s, ?l WHERE {?s a ?l}',
+            initBindings={'l': DCAT[layer]}
+            )
+        return [row.s for row in qres]
