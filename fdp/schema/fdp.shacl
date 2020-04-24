@@ -1,0 +1,47 @@
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
+@prefix r3d: <http://www.re3data.org/schema/3-0> .
+
+schema:DatasetShape
+    a sh:NodeShape ;
+    sh:targetClass r3d:Repository;
+    sh:property [
+        sh:name "FDP title" ;
+        sh:path dct:title ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "FDP version" ;
+        sh:path dct:hasVersion ;
+        sh:minCount 1 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:name "FDP publisher" ;
+        sh:path dct:publisher ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "FDP relation to the parent metadata" ;
+        sh:path dct:isPartOf ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "FDP metadata identifier" ;
+        sh:path fdp:metadataIdentifier ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "FDP metadata issued date" ;
+        sh:path fdp:metadataIssued ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:name "FDP metadata modified date" ;
+        sh:path fdp:metadataModified ;
+        sh:minCount 1 ;
+    ] .
