@@ -22,6 +22,9 @@ class FAIRGraph(object):
     def catURI(self, id):
         return self._buildURI('/catalog', id)
 
+    def addCatURI(self, data, format):
+        self._graph.parse(data=data, format=format)
+
     def datURI(self, id):
         return self._buildURI('/dataset', id)
 
