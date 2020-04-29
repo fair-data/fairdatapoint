@@ -21,8 +21,6 @@ api.add_namespace(ns, path='/')
 
 validator = FDPValidator()
 
-# Data structure for holding data used
-data = {}
 
 def initGraph(host, port, dataFile, endpoint):
     scheme = 'http'
@@ -40,7 +38,7 @@ def initGraph(host, port, dataFile, endpoint):
         g = StoreFAIRGraph(base_uri, endpoint)
     else:
         raise Exception('Unknown data format')
-    data['graph'] = g
+    app.graph = g
 
 def httpResponse(graph, uri):
     """HTTP response: FAIR metadata in RDF and JSON-LD formats"""
@@ -101,8 +99,7 @@ class FDPResource(Resource):
         '''
         FDP metadata
         '''
-        graph = data['graph']
-        return httpResponse(graph, graph.fdpURI())
+        return httpResponse(app.graph, app.graph.fdpURI())
 
     @api.expect(model)
     def post(self):
@@ -113,10 +110,9 @@ class FDPResource(Resource):
         req_data = req_data.decode('utf-8')
         valid, message = validator.validateFDP(req_data)
         # TODO validate to make sure there is only one subject
-        graph = data['graph']
         if valid:
-            graph.post(data=req_data, format='turtle')
-            return make_response({'message': 'OK'}, 200)
+            app.graph.post(data=req_data, format='turtle')
+            return make_response({'message': 'Ok'}, 200)
         else:
             return make_response({'message': message}, 500)
 
@@ -135,8 +131,7 @@ class CatalogGetterResource(Resource):
         '''
         Catalog metadata
         '''
-        graph = data['graph']
-        return httpResponse(graph, graph.catURI(id))
+        return httpResponse(app.graph, app.graph.catURI(id))
 
     @api.expect(model)
     def post(self, id):
@@ -147,10 +142,9 @@ class CatalogGetterResource(Resource):
         req_data = req_data.decode('utf-8')
         valid, message = validator.validateCatalog(req_data)
         # TODO validate to make sure there is only one subject
-        graph = data['graph']
         if valid:
-            graph.post(data=req_data, format='turtle')
-            return make_response({'message': 'OK'}, 200)
+            app.graph.post(data=req_data, format='turtle')
+            return make_response({'message': 'Ok'}, 200)
         else:
             return make_response({'message': message}, 500)
 
@@ -158,11 +152,10 @@ class CatalogGetterResource(Resource):
         '''
         Delete the catalog ID and metadata
         '''
-        graph = data['graph']
-        if not graph.URIexists(graph.catURI(id)):
+        if not app.graph.URIexists(app.graph.catURI(id)):
             return make_response({'message': 'Not Found'}, 404)
-        graph.deleteURI(graph.catURI(id))
-        return make_response({'message': 'OK'}, 200)
+        app.graph.deleteURI(app.graph.catURI(id))
+        return make_response({'message': 'Ok'}, 200)
 
 @ns.route('catalog/')
 class CatalogPostResource(Resource):
@@ -173,8 +166,7 @@ class CatalogPostResource(Resource):
         '''
         Get the list of catalog URIs
         '''
-        graph = data['graph']
-        return httpResponceNav(graph, 'Catalog')
+        return httpResponceNav(app.graph, 'Catalog')
 
     @api.expect(model)
     def post(self):
@@ -184,18 +176,16 @@ class CatalogPostResource(Resource):
         req_data = request.data
         req_data = req_data.decode('utf-8')
         valid, message = validator.validateCatalog(req_data)
-        graph = data['graph']
         if valid:
-            data['graph'].post(data=req_data, format='turtle')
+            app.graph.post(data=req_data, format='turtle')
             return make_response({'message': 'Ok'}, 200)
         else:
             return make_response({'message': message}, 500)
 
     def delete(self):
         """Delete all catalog metadata"""
-        graph = data['graph']
-        graph.deleteURILayer('Catalog')
-        return make_response({'message': 'OK'}, 200)
+        app.graph.deleteURILayer('Catalog')
+        return make_response({'message': 'Ok'}, 200)
 
 @ns.route('dataset/<id>')
 class DatasetMetadataGetterResource(Resource):
@@ -205,8 +195,7 @@ class DatasetMetadataGetterResource(Resource):
         '''
         Dataset metadata
         '''
-        graph = data['graph']
-        return httpResponse(graph, graph.datURI(id))
+        return httpResponse(app.graph, app.graph.datURI(id))
 
     @api.expect(model)
     def post(self, id):
@@ -217,10 +206,9 @@ class DatasetMetadataGetterResource(Resource):
         req_data = req_data.decode('utf-8')
         valid, message = validator.validateDataset(req_data)
         # TODO validate to make sure there is only one subject
-        graph = data['graph']
         if valid:
-            graph.post(data=req_data, format='turtle')
-            return make_response({'message': 'OK'}, 200)
+            app.graph.post(data=req_data, format='turtle')
+            return make_response({'message': 'Ok'}, 200)
         else:
             return make_response({'message': message}, 500)
 
@@ -228,11 +216,10 @@ class DatasetMetadataGetterResource(Resource):
         '''
         Delete the dataset ID and metadata
         '''
-        graph = data['graph']
-        if not graph.URIexists(graph.datURI(id)):
+        if not app.graph.URIexists(app.graph.datURI(id)):
             return make_response({'message': 'Not Found'}, 404)
-        graph.deleteURI(graph.datURI(id))
-        return make_response({'message': 'OK'}, 200)
+        app.graph.deleteURI(app.graph.datURI(id))
+        return make_response({'message': 'Ok'}, 200)
 
 @ns.route('dataset/')
 class DatasetMetadataPostResource(Resource):
@@ -243,8 +230,7 @@ class DatasetMetadataPostResource(Resource):
         '''
         Get the list of dataset URIs
         '''
-        graph = data['graph']
-        return httpResponceNav(graph, 'Dataset')
+        return httpResponceNav(app.graph, 'Dataset')
 
     @api.expect(model)
     def post(self):
@@ -255,16 +241,15 @@ class DatasetMetadataPostResource(Resource):
         req_data = req_data.decode('utf-8')
         valid, message = validator.validateDataset(req_data)
         if valid:
-            data['graph'].post(data=req_data, format='turtle')
+            app.graph.post(data=req_data, format='turtle')
             return make_response({'message': 'Ok'}, 200)
         else:
             return make_response({'message': message}, 500)
 
     def delete(self):
         """Delete all dataset metadata"""
-        graph = data['graph']
-        graph.deleteURILayer('Dataset')
-        return make_response({'message': 'OK'}, 200)
+        app.graph.deleteURILayer('Dataset')
+        return make_response({'message': 'Ok'}, 200)
 
 @ns.route('distribution/<id>')
 class DistributionGetterResource(Resource):
@@ -274,8 +259,7 @@ class DistributionGetterResource(Resource):
         '''
         Dataset distribution metadata
         '''
-        graph = data['graph']
-        return httpResponse(graph, graph.distURI(id))
+        return httpResponse(app.graph, app.graph.distURI(id))
 
     @api.expect(model)
     def post(self, id):
@@ -286,10 +270,9 @@ class DistributionGetterResource(Resource):
         req_data = req_data.decode('utf-8')
         # TODO validate to make sure there is only one subject
         valid, message = validator.validateDistribution(req_data)
-        graph = data['graph']
         if valid:
-            graph.post(data=req_data, format='turtle')
-            return make_response({'message': 'OK'}, 200)
+            app.graph.post(data=req_data, format='turtle')
+            return make_response({'message': 'Ok'}, 200)
         else:
             return make_response({'message': message}, 500)
 
@@ -297,11 +280,10 @@ class DistributionGetterResource(Resource):
         '''
         Delete the distribution ID and metadata
         '''
-        graph = data['graph']
-        if not graph.URIexists(graph.distURI(id)):
+        if not app.graph.URIexists(app.graph.distURI(id)):
             return make_response({'message': 'Not Found'}, 404)
-        graph.deleteURI(graph.distURI(id))
-        return make_response({'message': 'OK'}, 200)
+        app.graph.deleteURI(app.graph.distURI(id))
+        return make_response({'message': 'Ok'}, 200)
 
 @ns.route('distribution/')
 class DistributionPostResource(Resource):
@@ -312,8 +294,7 @@ class DistributionPostResource(Resource):
         '''
         Get the list of distribution URIs
         '''
-        graph = data['graph']
-        return httpResponceNav(graph, 'Distribution')
+        return httpResponceNav(app.graph, 'Distribution')
 
     @api.expect(model)
     def post(self):
@@ -325,16 +306,15 @@ class DistributionPostResource(Resource):
 
         valid, message = validator.validateDistribution(req_data)
         if valid:
-            data['graph'].post(data=req_data, format='turtle')
+            app.graph.post(data=req_data, format='turtle')
             return make_response({'message': 'Ok'}, 200)
         else:
             return make_response({'message': message}, 500)
 
     def delete(self):
         """Delete all distribution metadata"""
-        graph = data['graph']
-        graph.deleteURILayer('Distribution')
-        return make_response({'message': 'OK'}, 200)
+        app.graph.deleteURILayer('Distribution')
+        return make_response({'message': 'Ok'}, 200)
 
 @ns.route('dump/')
 class DumpResource(Resource):
@@ -342,8 +322,7 @@ class DumpResource(Resource):
         '''
         Dataset distribution metadata
         '''
-        graph = data['graph']
-        serialized_graph = graph._graph.serialize(format='turtle').decode('utf-8')
+        serialized_graph = app.graph.serialize(format='turtle').decode('utf-8')
         resp = make_response(serialized_graph)
 
         resp.headers['Content-Type'] = 'text/plain'
