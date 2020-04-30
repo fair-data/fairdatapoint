@@ -47,7 +47,7 @@ setup(
     install_requires=install_requires,
     extras_require={
         'dev': ['prospector[with_pyroma]', 'yapf', 'isort'],
-        'tests': ['requests', 'pytest', 'pytest-cov', 'coveralls'],
+        'tests': ['requests', 'pytest', 'pytest-cov', 'coveralls', 'pytest-datadir-ng'],
         'docs': ['sphinx', 'sphinx_rtd_theme', 'recommonmark'],
     },
     scripts=[
