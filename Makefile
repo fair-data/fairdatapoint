@@ -32,7 +32,7 @@ dump-rdf:
 	python tests/dump_metadata.py
 
 serve-dev:
-	fdp-run $(fdata)
+	fdp-run --data $(fdata)
 	# python -m bottle --debug --reload --bind $(HOST) $(APP)
 
 # serve-prod:
