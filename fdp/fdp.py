@@ -53,13 +53,16 @@ def httpResponse(graph, uri):
 
     if accept_header in mime_types:
         fmt = mime_types[accept_header]
+    else:
+        accept_header = 'text/turtle'
 
     serialized_graph = graph.serialize(uri, fmt)
     if serialized_graph is None:
+        #TODO redesign the response body?
         resp = make_response({'message': 'Not Found'}, 404)
     else:
         resp = make_response(serialized_graph)
-        resp.headers['Content-Type'] = 'text/plain'
+        resp.headers['Content-Type'] = accept_header
         resp.headers['Allow'] = 'GET'
 
     return resp
