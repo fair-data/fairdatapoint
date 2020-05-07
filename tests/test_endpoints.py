@@ -3,14 +3,10 @@ import pytest
 from fdp.fdp import app, initGraph
 
 
-def setup_module(module):
-    '''Initialize in-memory graph with minimal data.'''
-    initGraph(host='0.0.0.0', port=8080, dataFile=None, endpoint='http://0.0.0.0:8890/sparql')
-
-
 @pytest.fixture
 def client():
     '''Build http client'''
+    initGraph(host='0.0.0.0', port=8080, dataFile=None, endpoint='http://0.0.0.0:8890/sparql')
     with app.test_client() as client:
         yield client
     # Nothing to do, no connections to close.
@@ -24,13 +20,21 @@ def test_fdp(client, datadir):
     assert 'message' in rv.json
     assert rv.json['message'] == 'Ok'
 
+    # TODO check fdp shacl
+    # rv = client.post('/fdp', data=datadir['fdp_post_invalid.ttl'])
+    # assert rv.status_code == 500
+    # assert 'message' in rv.json
+    # assert 'Validation Report' in rv.json['message']
+
     rv = client.get('/fdp')
     assert rv.status_code == 200
-    # TODO: validate rv.data?
+    assert 'Allow' in rv.headers
+    assert 'GET' in rv.headers['Allow']
+    assert rv.mimetype == 'text/turtle'
+    assert b'rdfs:seeAlso <http://0.0.0.0:8080/catalog/pbg-ld>' in rv.data
 
     rv = client.delete('/fdp')
     assert rv.status_code == 405
-
     assert 'message' in rv.json
     assert rv.json['message'] == 'Method Not Allowed'
 
@@ -39,26 +43,37 @@ def test_catalog(client, datadir):
     """Testing post and get to catalog"""
     rv = client.post('/catalog/', data=datadir['catalog01_post.ttl'])
     assert rv.status_code == 200
-    assert 'message' in rv.json
     assert rv.json['message'] == 'Ok'
+
+    rv = client.post('/catalog/', data=datadir['catalog01_post_invalid.ttl'])
+    assert rv.status_code == 500
+    assert 'Validation Report' in rv.json['message']
 
     rv = client.post('/catalog/', data=datadir['catalog02_post.ttl'])
     assert rv.status_code == 200
-    assert 'message' in rv.json
     assert rv.json['message'] == 'Ok'
 
     rv = client.get('/catalog/')
     assert rv.status_code == 200
-    # TODO: validate rv.data?
-    # TODO: validate return list as JSON structure
+    assert 'GET' in rv.headers['Allow']
+    assert rv.mimetype == 'text/plain'
+    assert b'catalog-01' in rv.data
+    assert b'catalog-02' in rv.data
 
     rv = client.get('/catalog/catalog-01')
     assert rv.status_code == 200
-    # TODO: validate response
+    assert 'Allow' in rv.headers
+    assert 'GET' in rv.headers['Allow']
+    assert rv.mimetype == 'text/turtle'
+    assert b'catalog-01' in rv.data
 
-    rv = client.get('/catalog/catalog-02')
+    rv = client.get('/catalog/catalog-02',
+                    headers = {'Accept': 'application/ld+json'})
     assert rv.status_code == 200
-    # TODO: validate response
+    assert 'Allow' in rv.headers
+    assert 'GET' in rv.headers['Allow']
+    assert rv.mimetype == 'application/ld+json'
+    assert b'catalog-02' in rv.data
 
     rv = client.delete('/catalog/catalog-01')
     assert rv.status_code == 200
@@ -70,9 +85,23 @@ def test_catalog(client, datadir):
     assert 'message' in rv.json
     assert rv.json['message'] == 'Not Found'
 
+    rv = client.delete('/catalog/catalog-01')
+    assert rv.status_code == 404
+    assert 'message' in rv.json
+    assert rv.json['message'] == 'Not Found'
+
     rv = client.get('/catalog/')
     assert rv.status_code == 200
-    # TODO: validate rv.data -- catalog-01 should not be listed
+    assert b'catalog-01' not in rv.data
+    assert b'catalog-02' in rv.data
+
+    rv = client.delete('/catalog/catalog-02')
+    assert rv.status_code == 200
+    assert 'message' in rv.json
+    assert rv.json['message'] == 'Ok'
+
+    rv = client.get('/catalog/')
+    assert rv.status_code == 204
 
 
 def test_dataset(client, datadir):
@@ -81,22 +110,33 @@ def test_dataset(client, datadir):
     assert rv.status_code == 200
     assert rv.json['message'] == 'Ok'
 
+    rv = client.post('/dataset/', data=datadir['dataset01_post_invalid.ttl'])
+    assert rv.status_code == 500
+    assert 'Validation Report' in rv.json['message']
+
     rv = client.post('/dataset/', data=datadir['dataset02_post.ttl'])
     assert rv.status_code == 200
     assert rv.json['message'] == 'Ok'
 
     rv = client.get('/dataset/')
     assert rv.status_code == 200
-    # TODO: validate rv.data?
-    # TODO: validate return list as JSON structure
+    assert 'GET' in rv.headers['Allow']
+    assert rv.mimetype == 'text/plain'
+    assert b'breedb' in rv.data
+    assert b'dataset02' in rv.data
 
-    rv = client.get('/dataset/breedb')
+    rv = client.get('/dataset/breedb', )
     assert rv.status_code == 200
-    # TODO: validate response
+    assert 'GET' in rv.headers['Allow']
+    assert rv.mimetype == 'text/turtle'
+    assert b'breedb' in rv.data
 
-    rv = client.get('/dataset/dataset02')
+    rv = client.get('/dataset/dataset02',
+                    headers = {'Accept': 'application/ld+json'})
     assert rv.status_code == 200
-    # TODO: validate response
+    assert 'GET' in rv.headers['Allow']
+    assert rv.mimetype == 'application/ld+json'
+    assert b'dataset02' in rv.data
 
     rv = client.delete('/dataset/breedb')
     assert rv.status_code == 200
@@ -108,9 +148,23 @@ def test_dataset(client, datadir):
     assert 'message' in rv.json
     assert rv.json['message'] == 'Not Found'
 
+    rv = client.delete('/dataset/breedb')
+    assert rv.status_code == 404
+    assert 'message' in rv.json
+    assert rv.json['message'] == 'Not Found'
+
     rv = client.get('/dataset/')
     assert rv.status_code == 200
-    # TODO: validate rv.data -- datased breedb should not be listed
+    assert b'breedb' not in rv.data
+    assert b'dataset02' in rv.data
+
+    rv = client.delete('/dataset/dataset02')
+    assert rv.status_code == 200
+    assert 'message' in rv.json
+    assert rv.json['message'] == 'Ok'
+
+    rv = client.get('/dataset/')
+    assert rv.status_code == 204
 
 
 def test_distribution(client, datadir):
@@ -120,33 +174,54 @@ def test_distribution(client, datadir):
     assert rv.status_code == 200
     assert rv.json['message'] == 'Ok'
 
+    rv = client.post('/distribution/', data=datadir['dist01_post_invalid.ttl'])
+    assert rv.status_code == 500
+    assert 'message' in rv.json
+    assert 'Validation Report' in rv.json['message']
+
     rv = client.post('/distribution/', data=datadir['dist02_post.ttl'])
     assert rv.status_code == 200
     assert rv.json['message'] == 'Ok'
 
     rv = client.get('/distribution/')
     assert rv.status_code == 200
-    # TODO: validate rv.data?
-    # TODO: validate return list as JSON structure
+    assert 'GET' in rv.headers['Allow']
+    assert rv.mimetype == 'text/plain'
+    assert b'breedb-sparql' in rv.data
+    assert b'dist02' in rv.data
 
     rv = client.get('/distribution/breedb-sparql')
     assert rv.status_code == 200
-    # TODO: validate response
+    assert 'GET' in rv.headers['Allow']
+    assert rv.mimetype == 'text/turtle'
+    assert b'breedb-sparql' in rv.data
 
-    rv = client.get('/distribution/dist02')
+    rv = client.get('/distribution/dist02',
+                    headers = {'Accept': 'application/ld+json'})
     assert rv.status_code == 200
-    # TODO: validate response
+    assert 'GET' in rv.headers['Allow']
+    assert rv.mimetype == 'application/ld+json'
+    assert b'dist02' in rv.data
 
-    rv = client.delete('/distribution/dist02')
+    rv = client.delete('/distribution/breedb-sparql')
     assert rv.status_code == 200
     assert 'message' in rv.json
     assert rv.json['message'] == 'Ok'
 
-    rv = client.get('/distribution/dist02')
+    rv = client.get('/distribution/breedb-sparql')
     assert rv.status_code == 404
     assert 'message' in rv.json
     assert rv.json['message'] == 'Not Found'
 
     rv = client.get('/distribution/')
     assert rv.status_code == 200
-    # TODO: validate rv.data -- catalog-01 should not be listed
+    assert b'breedb-sparql' not in rv.data
+    assert b'dist02' in rv.data
+
+    rv = client.delete('/distribution/dist02')
+    assert rv.status_code == 200
+    assert 'message' in rv.json
+    assert rv.json['message'] == 'Ok'
+
+    rv = client.get('/distribution/')
+    assert rv.status_code == 204
