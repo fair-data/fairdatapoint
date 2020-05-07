@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/37470907.svg)](https://zenodo.org/badge/latestdoi/37470907)
 [![Build Status](https://travis-ci.org/c-martinez/FAIRDataPoint.svg?branch=dev)](https://travis-ci.org/c-martinez/FAIRDataPoint)
-[![Coverage Status](https://coveralls.io/repos/github/c-martinez/FAIRDataPoint/badge.svg)](https://coveralls.io/github/c-martinez/FAIRDataPoint)
+[![Coverage Status](https://coveralls.io/repos/github/c-martinez/FAIRDataPoint/badge.svg?branch=dev)](https://coveralls.io/github/c-martinez/FAIRDataPoint?branch=dev)
 
 
 ### FAIR Data Point (FDP)
