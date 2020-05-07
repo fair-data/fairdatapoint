@@ -75,7 +75,7 @@ def httpResponceNav(graph, layer):
     if s:
         resp = make_response('\n'.join(s), 200)
     else:
-        resp = make_response({'message': 'No Content'}, 204)
+        resp = make_response('', 204)
 
     resp.headers['Content-Type'] = 'text/plain'
     resp.headers['Allow'] = 'GET'
