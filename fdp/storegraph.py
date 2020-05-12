@@ -2,36 +2,19 @@ from rdflib import ConjunctiveGraph, Graph, Namespace
 from rdflib.plugins.stores.sparqlstore import SPARQLUpdateStore
 from rdflib.term import URIRef
 
-API_ENDPOINTS = {'/fdp', '/doc', '/catalog/', '/dataset/', '/distribution/'}
-DCAT = Namespace("http://www.w3.org/ns/dcat#")
+from .basegraph import BaseFAIRGraph
 
-class StoreFAIRGraph(object):
+
+class StoreFAIRGraph(BaseFAIRGraph):
     def __init__(self, base_uri, endpoint):
         default_graph = URIRef(base_uri)
 
         self._store = SPARQLUpdateStore(endpoint)
         self._graph = Graph(self._store, identifier=default_graph)
-        self._base_uri = base_uri
-
-    def _buildURI(self, endpoint, id=None):
-        assert (endpoint in API_ENDPOINTS), 'Invalid endpoint'
-        id = '' if id is None else '%s' % str(id)
-        return self._base_uri + endpoint + id
-
-    def fdpURI(self):
-        return self._buildURI('/fdp')
-
-    def catURI(self, id=None):
-        return self._buildURI('/catalog/', id)
-
-    def datURI(self, id=None):
-        return self._buildURI('/dataset/', id)
-
-    def distURI(self, id=None):
-        return self._buildURI('/distribution/', id)
+        super().__init__(base_uri)
 
     def serialize(self, uri, mime_type):
-        #TODO mime_type not used
+        # TODO mime_type not used
         g = self.matchURI(uri)
         if len(g.all_nodes()) > 0:
             return g.serialize(format='turtle').decode('utf-8')
@@ -69,7 +52,7 @@ class StoreFAIRGraph(object):
         s_set = set([s for s, p, o in g])
         if s_set:
             for s in s_set:
-                self._graph.remove((s,None,None))
+                self._graph.remove((s, None, None))
         # Add new triples
         for s, p, o in g:
             self._graph.add((s, p, o))

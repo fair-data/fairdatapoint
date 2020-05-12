@@ -357,3 +357,31 @@ class FAIRGraph(object):
                     mo = Literal(mo, datatype=dtype)
 
                 yield (s, mp, mo)
+
+    def post(self, data, format):
+        """Overwrite all existing triples of a specific subject.
+        """
+        g = ConjunctiveGraph()
+        g.parse(data=data, format=format)
+        # Remove all triples of specific subjects
+        s_set = set([s for s, p, o in g])
+        if s_set:
+            for s in s_set:
+                self._graph.remove((s, None, None))
+        # Add new triples
+        for s, p, o in g:
+            self._graph.add((s, p, o))
+        # import ipdb; ipdb.set_trace()
+
+    def navURI(self, layer):
+        """Navigate existing URIs for given layer.
+
+        Args:
+            layer(str): layer name. Available names:
+                "Catalog", "Dataset", "Distribution".
+
+        Returns:
+            list: URIs
+        """
+        qres = self._graph.subjects(object=DCAT[layer])
+        return [s for s in qres]

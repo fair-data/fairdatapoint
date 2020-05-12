@@ -3,6 +3,13 @@ import pytest
 from fdp.fdp import app, initGraph
 
 
+def setup_module(module):
+    '''Initialize in-memory graph with minimal data.'''
+    initGraph(host='0.0.0.0', port=8080, dataFile='./samples/config.ini', endpoint=None)
+    # initGraph(host='0.0.0.0', port=8080, dataFile='./samples/minimal.ttl', endpoint=None)
+    # initGraph(host='0.0.0.0', port=8080, dataFile=None, endpoint='http://0.0.0.0:8890/sparql')
+
+
 @pytest.fixture
 def client():
     '''Build http client'''
