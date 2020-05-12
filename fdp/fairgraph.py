@@ -3,6 +3,9 @@ from rdflib.term import URIRef
 
 from .basegraph import BaseFAIRGraph
 
+from rdflib import Namespace
+DCAT = Namespace("http://www.w3.org/ns/dcat#")
+
 
 class FAIRGraph(BaseFAIRGraph):
     def __init__(self, base_uri, ttl_file):
@@ -56,11 +59,6 @@ class FAIRGraph(BaseFAIRGraph):
         Returns:
             list: URIs
         """
-        from rdflib import Namespace
-        DCAT = Namespace("http://www.w3.org/ns/dcat#")
-
-        # import ipdb; ipdb.set_trace()
-
         qres = self._graph.subjects(object=DCAT[layer])
         return [s for s in qres]
 

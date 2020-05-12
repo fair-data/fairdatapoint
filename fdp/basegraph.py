@@ -8,20 +8,6 @@ API_ENDPOINTS = {'/fdp', '/doc', '/catalog/', '/dataset/', '/distribution/'}
 DCAT = Namespace("http://www.w3.org/ns/dcat#")
 
 
-# BaseFAIRGraph must include:
-# app.graph.fdpURI()
-# app.graph.catURI()
-# app.graph.datURI()
-# app.graph.distURI()
-# instance specific
-# app.graph.post()
-# app.graph.URIexists()
-# app.graph.deleteURI()
-# app.graph.deleteURILayer()
-# app.graph.serialize(format='turtle').decode('utf-8')
-# TODO: 
-# graph.navURI(layer) -- abstract from fairgraph and storegraph
-
 class BaseFAIRGraph(ABC):
     @abstractmethod
     def __init__(self, base_uri):

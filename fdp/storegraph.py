@@ -4,6 +4,9 @@ from rdflib.term import URIRef
 
 from .basegraph import BaseFAIRGraph
 
+from rdflib import Namespace
+DCAT = Namespace("http://www.w3.org/ns/dcat#")
+
 
 class StoreFAIRGraph(BaseFAIRGraph):
     def __init__(self, base_uri, endpoint):
@@ -89,8 +92,5 @@ class StoreFAIRGraph(BaseFAIRGraph):
         Returns:
             list: URIs
         """
-        qres = self._graph.query(
-            'SELECT ?s, ?l WHERE {?s a ?l}',
-            initBindings={'l': DCAT[layer]}
-            )
-        return [row.s for row in qres]
+        qres = self._graph.subjects(object=DCAT[layer])
+        return [s for s in qres]
