@@ -21,6 +21,7 @@
         <http://0.0.0.0:8080/catalog/catalog-01>,
         <http://0.0.0.0:8080/catalog/catalog-02>;
     r3d:repositoryIdentifier ex:fdp_repositoryID;
-    r3d:seeAlso                                         # unknown term
+    r3d:seeAlso
         <http://0.0.0.0:8080/catalog/catalog-01>,
         <http://0.0.0.0:8080/catalog/catalog-02>.
+    # r3d:seeAlso is unknown term
