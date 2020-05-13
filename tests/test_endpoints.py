@@ -23,12 +23,13 @@ def test_fdp(client, datadir):
     rv = client.post('/fdp', data=datadir['fdp_invalid_missingRequired.ttl'])
     assert rv.status_code == 500
     assert 'message' in rv.json
-    assert 'Validation Report' in rv.json['message']
+    assert 'Validation Report\nConforms: False\nResults (8)' in rv.json['message']
 
     rv = client.post('/fdp', data=datadir['fdp_invalid_unknownTerms.ttl'])
     assert rv.status_code == 500
     assert 'message' in rv.json
-    assert 'Validation Report' in rv.json['message']
+    print(rv.json['message'])
+    assert 'Validation Report\nConforms: False\nResults (2)' in rv.json['message']
 
     rv = client.post('/fdp', data=datadir['fdp_invalid_blank.ttl'])
     assert rv.status_code == 500
@@ -62,7 +63,7 @@ def test_catalog(client, datadir):
 
     rv = client.post('/catalog/', data=datadir['catalog01_invalid_missingRequired.ttl'])
     assert rv.status_code == 500
-    assert 'Validation Report' in rv.json['message']
+    assert 'Validation Report\nConforms: False\nResults (9)' in rv.json['message']
 
     rv = client.post('/catalog/', data=datadir['catalog02.ttl'])
     assert rv.status_code == 200
@@ -127,7 +128,7 @@ def test_dataset(client, datadir):
 
     rv = client.post('/dataset/', data=datadir['dataset01_invalid_missingRequired.ttl'])
     assert rv.status_code == 500
-    assert 'Validation Report' in rv.json['message']
+    assert 'Validation Report\nConforms: False\nResults (9)' in rv.json['message']
 
     rv = client.post('/dataset/', data=datadir['dataset02.ttl'])
     assert rv.status_code == 200
@@ -192,12 +193,12 @@ def test_distribution(client, datadir):
     rv = client.post('/distribution/', data=datadir['dist01_invalid_missingRequired.ttl'])
     assert rv.status_code == 500
     assert 'message' in rv.json
-    assert 'Validation Report' in rv.json['message']
+    assert 'Validation Report\nConforms: False\nResults (9)' in rv.json['message']
 
     rv = client.post('/distribution/', data=datadir['dist01_invalid_2URLs.ttl'])
     assert rv.status_code == 500
     assert 'message' in rv.json
-    assert 'Validation Report' in rv.json['message']
+    assert 'Validation Report\nConforms: False\nResults (1)' in rv.json['message']
 
     rv = client.post('/distribution/', data=datadir['dist02.ttl'])
     assert rv.status_code == 200
