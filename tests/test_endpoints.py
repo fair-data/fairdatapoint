@@ -8,49 +8,64 @@ def client():
     '''Build http client'''
     with app.test_client() as client:
         yield client
-    # Nothing to do, no connections to close.
-
 
 class BaseEndpointTests:
     '''All implementations fo FDP should work for all endpoints.'''
 
     # datadir fixture provided via pytest-datadir-ng
-    def test_fdp(self, client, datadir):
+    def test_fdp(client, datadir):
         """Testing post and get to fdp"""
-        rv = client.post('/fdp', data=datadir['fdp_post.ttl'])
+        rv = client.post('/fdp', data=datadir['fdp.ttl'])
         assert rv.status_code == 200
         assert 'message' in rv.json
         assert rv.json['message'] == 'Ok'
 
-        # TODO check fdp shacl
-        # rv = client.post('/fdp', data=datadir['fdp_post_invalid.ttl'])
-        # assert rv.status_code == 500
-        # assert 'message' in rv.json
-        # assert 'Validation Report' in rv.json['message']
+        rv = client.post('/fdp', data=datadir['fdp_invalid_missingRequired.ttl'])
+        assert rv.status_code == 500
+        assert 'message' in rv.json
+        assert 'Validation Report\nConforms: False\nResults (8)' in rv.json['message']
+
+        rv = client.post('/fdp', data=datadir['fdp_invalid_unknownTerms.ttl'])
+        assert rv.status_code == 500
+        assert 'message' in rv.json
+        print(rv.json['message'])
+        assert 'Validation Report\nConforms: False\nResults (2)' in rv.json['message']
+
+        rv = client.post('/fdp', data=datadir['fdp_invalid_blank.ttl'])
+        assert rv.status_code == 500
+        assert 'message' in rv.json
+        assert 'Empty content in metadtata' in rv.json['message']
+
+        rv = client.post('/fdp', data=datadir['fdp_invalid_2foucsNodes.ttl'])
+        assert rv.status_code == 500
+        assert 'message' in rv.json
+        assert 'FDP layer allows only one subject in metadata' in rv.json['message']
 
         rv = client.get('/fdp')
         assert rv.status_code == 200
         assert 'Allow' in rv.headers
         assert 'GET' in rv.headers['Allow']
         assert rv.mimetype == 'text/turtle'
-        assert b'rdfs:seeAlso <http://0.0.0.0:8080/catalog/pbg-ld>' in rv.data
+        assert b'hasVersion "0.1"' in rv.data
+        assert b'metadataIssued "2019-04-09T10:01:00"^^xsd:dateTime' in rv.data
 
         rv = client.delete('/fdp')
         assert rv.status_code == 405
         assert 'message' in rv.json
         assert rv.json['message'] == 'Method Not Allowed'
 
-    def test_catalog(self, client, datadir):
+
+    def test_catalog(client, datadir):
         """Testing post and get to catalog"""
-        rv = client.post('/catalog/', data=datadir['catalog01_post.ttl'])
+        rv = client.post('/catalog/', data=datadir['catalog01.ttl'])
         assert rv.status_code == 200
         assert rv.json['message'] == 'Ok'
 
-        rv = client.post('/catalog/', data=datadir['catalog01_post_invalid.ttl'])
+        rv = client.post('/catalog/', data=datadir['catalog01_invalid_missingRequired.ttl'])
         assert rv.status_code == 500
-        assert 'Validation Report' in rv.json['message']
+        assert 'Validation Report\nConforms: False\nResults (9)' in rv.json['message']
 
-        rv = client.post('/catalog/', data=datadir['catalog02_post.ttl'])
+        rv = client.post('/catalog/', data=datadir['catalog02.ttl'])
         assert rv.status_code == 200
         assert rv.json['message'] == 'Ok'
 
@@ -58,45 +73,45 @@ class BaseEndpointTests:
         assert rv.status_code == 200
         assert 'GET' in rv.headers['Allow']
         assert rv.mimetype == 'text/plain'
-        assert b'catalog-01' in rv.data
-        assert b'catalog-02' in rv.data
+        assert b'catalog01' in rv.data
+        assert b'catalog02' in rv.data
 
-        rv = client.get('/catalog/catalog-01')
+        rv = client.get('/catalog/catalog01')
         assert rv.status_code == 200
         assert 'Allow' in rv.headers
         assert 'GET' in rv.headers['Allow']
         assert rv.mimetype == 'text/turtle'
-        assert b'catalog-01' in rv.data
+        assert b'catalog01' in rv.data
 
-        rv = client.get('/catalog/catalog-02',
+        rv = client.get('/catalog/catalog02',
                         headers = {'Accept': 'application/ld+json'})
         assert rv.status_code == 200
         assert 'Allow' in rv.headers
         assert 'GET' in rv.headers['Allow']
         assert rv.mimetype == 'application/ld+json'
-        assert b'catalog-02' in rv.data
+        assert b'catalog02' in rv.data
 
-        rv = client.delete('/catalog/catalog-01')
+        rv = client.delete('/catalog/catalog01')
         assert rv.status_code == 200
         assert 'message' in rv.json
         assert rv.json['message'] == 'Ok'
 
-        rv = client.get('/catalog/catalog-01')
+        rv = client.get('/catalog/catalog01')
         assert rv.status_code == 404
         assert 'message' in rv.json
         assert rv.json['message'] == 'Not Found'
 
-        rv = client.delete('/catalog/catalog-01')
+        rv = client.delete('/catalog/catalog01')
         assert rv.status_code == 404
         assert 'message' in rv.json
         assert rv.json['message'] == 'Not Found'
 
         rv = client.get('/catalog/')
         assert rv.status_code == 200
-        assert b'catalog-01' not in rv.data
-        assert b'catalog-02' in rv.data
+        assert b'catalog01' not in rv.data
+        assert b'catalog02' in rv.data
 
-        rv = client.delete('/catalog/catalog-02')
+        rv = client.delete('/catalog/catalog02')
         assert rv.status_code == 200
         assert 'message' in rv.json
         assert rv.json['message'] == 'Ok'
@@ -104,17 +119,18 @@ class BaseEndpointTests:
         rv = client.get('/catalog/')
         assert rv.status_code == 204
 
-    def test_dataset(self, client, datadir):
+
+    def test_dataset(client, datadir):
         """Testing post and get to dataset"""
-        rv = client.post('/dataset/', data=datadir['dataset01_post.ttl'])
+        rv = client.post('/dataset/', data=datadir['dataset01.ttl'])
         assert rv.status_code == 200
         assert rv.json['message'] == 'Ok'
 
-        rv = client.post('/dataset/', data=datadir['dataset01_post_invalid.ttl'])
+        rv = client.post('/dataset/', data=datadir['dataset01_invalid_missingRequired.ttl'])
         assert rv.status_code == 500
-        assert 'Validation Report' in rv.json['message']
+        assert 'Validation Report\nConforms: False\nResults (9)' in rv.json['message']
 
-        rv = client.post('/dataset/', data=datadir['dataset02_post.ttl'])
+        rv = client.post('/dataset/', data=datadir['dataset02.ttl'])
         assert rv.status_code == 200
         assert rv.json['message'] == 'Ok'
 
@@ -166,19 +182,25 @@ class BaseEndpointTests:
         rv = client.get('/dataset/')
         assert rv.status_code == 204
 
-    def test_distribution(self, client, datadir):
+
+    def test_distribution(client, datadir):
         """Testing post and get to distribution"""
 
-        rv = client.post('/distribution/', data=datadir['dist01_post.ttl'])
+        rv = client.post('/distribution/', data=datadir['dist01.ttl'])
         assert rv.status_code == 200
         assert rv.json['message'] == 'Ok'
 
-        rv = client.post('/distribution/', data=datadir['dist01_post_invalid.ttl'])
+        rv = client.post('/distribution/', data=datadir['dist01_invalid_missingRequired.ttl'])
         assert rv.status_code == 500
         assert 'message' in rv.json
-        assert 'Validation Report' in rv.json['message']
+        assert 'Validation Report\nConforms: False\nResults (9)' in rv.json['message']
 
-        rv = client.post('/distribution/', data=datadir['dist02_post.ttl'])
+        rv = client.post('/distribution/', data=datadir['dist01_invalid_2URLs.ttl'])
+        assert rv.status_code == 500
+        assert 'message' in rv.json
+        assert 'Validation Report\nConforms: False\nResults (1)' in rv.json['message']
+
+        rv = client.post('/distribution/', data=datadir['dist02.ttl'])
         assert rv.status_code == 200
         assert rv.json['message'] == 'Ok'
 
@@ -224,6 +246,7 @@ class BaseEndpointTests:
 
         rv = client.get('/distribution/')
         assert rv.status_code == 204
+
 
 
 class TestFairgraphEndpoints(BaseEndpointTests):

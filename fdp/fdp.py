@@ -112,7 +112,6 @@ class FDPResource(Resource):
         req_data = request.data
         req_data = req_data.decode('utf-8')
         valid, message = validator.validateFDP(req_data)
-        # TODO validate to make sure there is only one subject
         if valid:
             app.graph.post(data=req_data, format='turtle')
             return make_response({'message': 'Ok'}, 200)
@@ -144,7 +143,6 @@ class CatalogGetterResource(Resource):
         req_data = request.data
         req_data = req_data.decode('utf-8')
         valid, message = validator.validateCatalog(req_data)
-        # TODO validate to make sure there is only one subject
         if valid:
             app.graph.post(data=req_data, format='turtle')
             return make_response({'message': 'Ok'}, 200)
@@ -208,7 +206,6 @@ class DatasetMetadataGetterResource(Resource):
         req_data = request.data
         req_data = req_data.decode('utf-8')
         valid, message = validator.validateDataset(req_data)
-        # TODO validate to make sure there is only one subject
         if valid:
             app.graph.post(data=req_data, format='turtle')
             return make_response({'message': 'Ok'}, 200)
@@ -271,7 +268,6 @@ class DistributionGetterResource(Resource):
         '''
         req_data = request.data
         req_data = req_data.decode('utf-8')
-        # TODO validate to make sure there is only one subject
         valid, message = validator.validateDistribution(req_data)
         if valid:
             app.graph.post(data=req_data, format='turtle')
