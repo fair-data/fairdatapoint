@@ -1,12 +1,9 @@
 from abc import ABC, abstractmethod
-
-from rdflib import ConjunctiveGraph, Graph, Namespace
-from rdflib.plugins.stores.sparqlstore import SPARQLUpdateStore
+from rdflib import Graph, Namespace
 from rdflib.term import URIRef
 
 API_ENDPOINTS = {'/fdp', '/doc', '/catalog/', '/dataset/', '/distribution/'}
 DCAT = Namespace("http://www.w3.org/ns/dcat#")
-
 
 class BaseFAIRGraph(ABC):
     @abstractmethod
@@ -30,27 +27,51 @@ class BaseFAIRGraph(ABC):
     def distURI(self, id=None):
         return self._buildURI('/distribution/', id)
 
-    @abstractmethod
     def serialize(self, uri, mime_type):
-        pass
+        # TODO mime_type not used
+        g = self.matchURI(uri)
+        if len(g.all_nodes()) > 0:
+            return g.serialize(format='turtle').decode('utf-8')
+        else:
+            return None  # 404 !
 
-    @abstractmethod
     def URIexists(self, uri):
-        pass
+        return (URIRef(uri), None, None) in self._graph
 
-    @abstractmethod
+    def matchURI(self, uri):
+        g = Graph()
+        # Copy namespaces from base graph
+        for prefix, ns_uri in self._graph.namespaces():
+            g.bind(prefix, ns_uri)
+
+        # Search for triples which match the given subject
+        matchPattern = (URIRef(uri), None, None)
+
+        g += self._graph.triples(matchPattern)
+
+        return g
+
     def post(self, data, format):
         """Overwrite all existing triples of a specific subject.
         """
-        pass
+        # Load data on the graph
+        g = Graph()
+        g.parse(data=data, format=format)
+        # Remove all triples of specific subjects
+        s_set = set(g.subjects())
+        if s_set:
+            for s in s_set:
+                self._graph.remove((s, None, None))
+            # Add new triples
+            self._graph += g
+            self._graph.commit()
 
-    @abstractmethod
     def deleteURI(self, uri):
         """Delete all triples with the given URI as subject.
         """
-        pass
+        self._graph.remove((URIRef(uri), None, None))
+        self._graph.commit()
 
-    @abstractmethod
     def deleteURILayer(self, layer):
         """Delete all URIs of the given layer.
 
@@ -58,9 +79,11 @@ class BaseFAIRGraph(ABC):
             layer(str): layer name. Available names:
                 "Catalog", "Dataset", "Distribution".
         """
-        pass
+        self._graph.remove((None, None, DCAT[layer]))
+        self._graph.commit()
+        # for i in self.navURI(layer):
+        #     self.deleteURI(i)
 
-    @abstractmethod
     def navURI(self, layer):
         """Navigate existing URIs for given layer.
 
@@ -71,4 +94,5 @@ class BaseFAIRGraph(ABC):
         Returns:
             list: URIs
         """
-        pass
+        qres = self._graph.subjects(object=DCAT[layer])
+        return [s for s in qres]

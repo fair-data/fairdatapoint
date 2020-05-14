@@ -1,4 +1,3 @@
-from __future__ import print_function
 from os import path
 from rdflib import ConjunctiveGraph, URIRef, Literal
 from rdflib.namespace import Namespace, RDF, RDFS, DCTERMS, XSD
@@ -8,7 +7,7 @@ from datetime import datetime
 from urllib.request import urlparse
 from configparser import ConfigParser
 
-from .utils import FDPath
+from .basegraph import BaseFAIRGraph
 
 # rdflib-jsonld module required
 register('application/ld+json', Serializer,
@@ -202,7 +201,7 @@ class FAIRConfigReader(object):
                     section, dist_id, dist)
 
 
-class FAIRGraph(object):
+class FAIRGraph(BaseFAIRGraph):
     def __init__(self, base_uri, dataFile=None):
         graph = ConjunctiveGraph()
         self._graph = graph
@@ -240,31 +239,6 @@ class FAIRGraph(object):
             raise ValueError("Incorrect date format '%s' [YYYY-MM-DD]." % date)
         else:
             return date
-
-    def baseURI(self):
-        return self._base_uri
-
-    def URI(self, resource, id=None):
-        return self.baseURI() + FDPath(resource, id)
-
-    def docURI(self):
-        return self.URI('doc')
-
-    def fdpURI(self):
-        return self.URI('fdp')
-
-    def catURI(self, id):
-        return self.URI('cat', id)
-
-    def datURI(self, id):
-        return self.URI('dat', id)
-
-    def distURI(self, id):
-        return self.URI('dist', id)
-
-    def serialize(self, uri, mime_type):
-        if len(self._graphContext(uri).all_nodes()) > 0:
-            return self._graphContext(uri).serialize(format=mime_type)
 
     def setMetadata(self, triple):
         assert(isinstance(triple, tuple) and len(triple)
@@ -357,31 +331,3 @@ class FAIRGraph(object):
                     mo = Literal(mo, datatype=dtype)
 
                 yield (s, mp, mo)
-
-    def post(self, data, format):
-        """Overwrite all existing triples of a specific subject.
-        """
-        g = ConjunctiveGraph()
-        g.parse(data=data, format=format)
-        # Remove all triples of specific subjects
-        s_set = set([s for s, p, o in g])
-        if s_set:
-            for s in s_set:
-                self._graph.remove((s, None, None))
-        # Add new triples
-        for s, p, o in g:
-            self._graph.add((s, p, o))
-        # import ipdb; ipdb.set_trace()
-
-    def navURI(self, layer):
-        """Navigate existing URIs for given layer.
-
-        Args:
-            layer(str): layer name. Available names:
-                "Catalog", "Dataset", "Distribution".
-
-        Returns:
-            list: URIs
-        """
-        qres = self._graph.subjects(object=DCAT[layer])
-        return [s for s in qres]
