@@ -232,10 +232,10 @@ class TestFairgraphEndpoints(BaseEndpointTests):
         initGraph(host='0.0.0.0', port=8080, dataFile='./samples/minimal.ttl', endpoint=None)
 
 
-class TestMetadataEndpoints(BaseEndpointTests):
-    '''Test endpoints using the metadata.py graph implementation'''
-    def setup_class(self):
-        initGraph(host='0.0.0.0', port=8080, dataFile='./samples/config.ini', endpoint=None)
+# class TestMetadataEndpoints(BaseEndpointTests):
+#     '''Test endpoints using the metadata.py graph implementation'''
+#     def setup_class(self):
+#         initGraph(host='0.0.0.0', port=8080, dataFile='./samples/config.ini', endpoint=None)
 
 
 class TestStoregraphEndpoints(BaseEndpointTests):
