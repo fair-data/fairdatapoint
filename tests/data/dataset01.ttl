@@ -6,13 +6,12 @@
 @prefix dbp: <http://dbpedia.org/resource/> .
 
 <http://0.0.0.0:8080/dataset/breedb> a dcat:Dataset ;
-    dct:title "BreeDB tomato passport data"^^xsd:string ;
+    dct:title "BreeDB tomato passport dataset"^^xsd:string ;
     dct:publisher <http://orcid.org/0000-0002-4368-8058> ;
     dct:hasVersion "1.0"^^xsd:string ;
-    dct:isPartOf <catalog/catalog-01> ;
-    fdp:metadataIdentifier <http://example.org/metadataID> ;
-    fdp:metadataIssued "2016-10-27"^^xsd:date ;
-    fdp:metadataModified "2016-10-27"^^xsd:date ;
-    dcat:distribution <distribution/breedb-sparql>,
-        <distribution/breedb-sqldump> ;
+    dct:isPartOf <http://0.0.0.0:8080/catalog/catalog01> ;
+    fdp:metadataIdentifier <http://example.org/dataset01> ;
+    fdp:metadataIssued "2016-10-27T09:30:00"^^xsd:dateTime ;
+    fdp:metadataModified "2016-10-27T09:30:00"^^xsd:dateTime ;
+    dcat:distribution <http://0.0.0.0:8080/distribution/breedb-sparql> ;
     dcat:theme dbp:Plant_breeding .

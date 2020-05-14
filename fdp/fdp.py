@@ -53,13 +53,16 @@ def httpResponse(graph, uri):
 
     if accept_header in mime_types:
         fmt = mime_types[accept_header]
+    else:
+        accept_header = 'text/turtle'
 
     serialized_graph = graph.serialize(uri, fmt)
     if serialized_graph is None:
+        #TODO redesign the response body?
         resp = make_response({'message': 'Not Found'}, 404)
     else:
         resp = make_response(serialized_graph)
-        resp.headers['Content-Type'] = 'text/plain'
+        resp.headers['Content-Type'] = accept_header
         resp.headers['Allow'] = 'GET'
 
     return resp
@@ -72,7 +75,7 @@ def httpResponceNav(graph, layer):
     if s:
         resp = make_response('\n'.join(s), 200)
     else:
-        resp = make_response({'message': 'No Content'}, 204)
+        resp = make_response('', 204)
 
     resp.headers['Content-Type'] = 'text/plain'
     resp.headers['Allow'] = 'GET'
@@ -109,7 +112,6 @@ class FDPResource(Resource):
         req_data = request.data
         req_data = req_data.decode('utf-8')
         valid, message = validator.validateFDP(req_data)
-        # TODO validate to make sure there is only one subject
         if valid:
             app.graph.post(data=req_data, format='turtle')
             return make_response({'message': 'Ok'}, 200)
@@ -141,7 +143,6 @@ class CatalogGetterResource(Resource):
         req_data = request.data
         req_data = req_data.decode('utf-8')
         valid, message = validator.validateCatalog(req_data)
-        # TODO validate to make sure there is only one subject
         if valid:
             app.graph.post(data=req_data, format='turtle')
             return make_response({'message': 'Ok'}, 200)
@@ -205,7 +206,6 @@ class DatasetMetadataGetterResource(Resource):
         req_data = request.data
         req_data = req_data.decode('utf-8')
         valid, message = validator.validateDataset(req_data)
-        # TODO validate to make sure there is only one subject
         if valid:
             app.graph.post(data=req_data, format='turtle')
             return make_response({'message': 'Ok'}, 200)
@@ -268,7 +268,6 @@ class DistributionGetterResource(Resource):
         '''
         req_data = request.data
         req_data = req_data.decode('utf-8')
-        # TODO validate to make sure there is only one subject
         valid, message = validator.validateDistribution(req_data)
         if valid:
             app.graph.post(data=req_data, format='turtle')
