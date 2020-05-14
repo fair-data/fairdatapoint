@@ -13,7 +13,7 @@ class BaseEndpointTests:
     '''All implementations fo FDP should work for all endpoints.'''
 
     # datadir fixture provided via pytest-datadir-ng
-    def test_fdp(client, datadir):
+    def test_fdp(self, client, datadir):
         """Testing post and get to fdp"""
         rv = client.post('/fdp', data=datadir['fdp.ttl'])
         assert rv.status_code == 200
@@ -55,7 +55,7 @@ class BaseEndpointTests:
         assert rv.json['message'] == 'Method Not Allowed'
 
 
-    def test_catalog(client, datadir):
+    def test_catalog(self, client, datadir):
         """Testing post and get to catalog"""
         rv = client.post('/catalog/', data=datadir['catalog01.ttl'])
         assert rv.status_code == 200
@@ -120,7 +120,7 @@ class BaseEndpointTests:
         assert rv.status_code == 204
 
 
-    def test_dataset(client, datadir):
+    def test_dataset(self, client, datadir):
         """Testing post and get to dataset"""
         rv = client.post('/dataset/', data=datadir['dataset01.ttl'])
         assert rv.status_code == 200
@@ -183,7 +183,7 @@ class BaseEndpointTests:
         assert rv.status_code == 204
 
 
-    def test_distribution(client, datadir):
+    def test_distribution(self, client, datadir):
         """Testing post and get to distribution"""
 
         rv = client.post('/distribution/', data=datadir['dist01.ttl'])
