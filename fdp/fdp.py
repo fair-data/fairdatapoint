@@ -4,9 +4,7 @@ from flask import Flask, make_response, request, redirect, send_from_directory
 from flask_restplus import Api, Resource, Namespace
 
 from .utils import FDPath
-from .metadata import FAIRGraph as ConfigFAIRGraph
-from .fairgraph import FAIRGraph as RDFFAIRGraph
-from .storegraph import StoreFAIRGraph
+from .fairgraph import FAIRGraph
 from .validator import FDPValidator
 from .__init__ import __version__ as version
 
@@ -22,22 +20,14 @@ api.add_namespace(ns, path='/')
 validator = FDPValidator()
 
 
-def initGraph(host, port, dataFile, endpoint):
+def initGraph(host, port, endpoint=None):
     scheme = 'http'
     host = '{}:{}'.format(host, port) # TODO: fix for port 80
     base_uri = '{}://{}'.format(scheme, host)
-
-    if dataFile and dataFile.endswith('.ini'):
-        # populate FAIR metadata from config file
-        g = ConfigFAIRGraph(base_uri, dataFile)
-    elif dataFile and dataFile.endswith('.ttl'):
-        # populate FAIR metadata from turtle file
-        g = RDFFAIRGraph(base_uri, dataFile)
-    elif endpoint:
-        print('Using store graph')
-        g = StoreFAIRGraph(base_uri, endpoint)
+    if endpoint is None:
+        g = FAIRGraph(base_uri)
     else:
-        raise Exception('Unknown data format')
+        g = FAIRGraph(base_uri, endpoint)
     app.graph = g
 
 def httpResponse(graph, uri):
@@ -328,7 +318,6 @@ class DumpResource(Resource):
         resp.headers['Allow'] = 'GET'
         return resp
 
-
-def run_app(host, port, dataFile, endpoint):
-    initGraph(host=host, port=port, dataFile=dataFile, endpoint=endpoint)
+def run_app(host, port, endpoint):
+    initGraph(host=host, port=port, endpoint=endpoint)
     app.run(host=host, port=port, debug=True)

@@ -252,16 +252,16 @@ class BaseEndpointTests:
 class TestFairgraphEndpoints(BaseEndpointTests):
     '''Test endpoints the in-memory graph implementation'''
     def setup_class(self):
-        initGraph(host='0.0.0.0', port=8080, dataFile='./samples/minimal.ttl', endpoint=None)
-
+        # initGraph(host='0.0.0.0', port=8080, dataFile='./samples/minimal.ttl', endpoint=None)
+        initGraph(host='0.0.0.0', port=8080)
 
 # class TestMetadataEndpoints(BaseEndpointTests):
 #     '''Test endpoints using the metadata.py graph implementation'''
 #     def setup_class(self):
 #         initGraph(host='0.0.0.0', port=8080, dataFile='./samples/config.ini', endpoint=None)
 
-
 class TestStoregraphEndpoints(BaseEndpointTests):
     '''Test endpoints using the SPARQL graph implementation'''
     def setup_class(self):
-        initGraph(host='0.0.0.0', port=8080, dataFile=None, endpoint='http://0.0.0.0:8890/sparql')
+        # initGraph(host='0.0.0.0', port=8080, dataFile=None, endpoint='http://0.0.0.0:8890/sparql')
+        initGraph(host='0.0.0.0', port=8080, endpoint='http://0.0.0.0:8890/sparql')
