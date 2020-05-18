@@ -20,7 +20,7 @@ def _validate(data, shapes_file, layer):
         g.parse(data=data, format=data_format)
         s_set = set([s for s, p, o in g])
         if len(s_set) == 0:
-            raise ValueError('Empty content in metadtata')
+            raise ValueError('Empty content in metadata')
         elif len(s_set) > 1 and layer=='fdp':
             raise ValueError('FDP layer allows only one subject in metadata')
 

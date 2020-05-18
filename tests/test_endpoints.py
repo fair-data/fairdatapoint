@@ -45,7 +45,7 @@ class BaseEndpointTests:
         rv = client.post('/fdp', data=datadir['fdp_invalid_blank.ttl'])
         assert rv.status_code == 500
         assert 'message' in rv.json
-        assert 'Empty content in metadtata' in rv.json['message']
+        assert 'Empty content in metadata' in rv.json['message']
 
         rv = client.post('/fdp', data=datadir['fdp_invalid_2foucsNodes.ttl'])
         assert rv.status_code == 500
