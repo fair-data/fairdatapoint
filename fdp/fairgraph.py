@@ -1,6 +1,5 @@
-from rdflib import Graph, Namespace
+from rdflib import Graph, Namespace, URIRef
 from rdflib.plugins.stores.sparqlstore import SPARQLUpdateStore
-from rdflib.term import URIRef
 
 API_ENDPOINTS = {'/fdp', '/doc', '/catalog/', '/dataset/', '/distribution/'}
 DCAT = Namespace("http://www.w3.org/ns/dcat#")
