@@ -16,9 +16,20 @@ class BaseEndpointTests:
     def test_fdp(self, client, datadir):
         """Testing post and get to fdp"""
         rv = client.post('/fdp', data=datadir['fdp.ttl'])
+        print(rv.json)
         assert rv.status_code == 200
         assert 'message' in rv.json
         assert rv.json['message'] == 'Ok'
+
+        rv = client.post('/fdp', data=datadir['fdp_invalid_missingRDFtype.ttl'])
+        assert rv.status_code == 500
+        assert 'message' in rv.json
+        assert 'Not found required RDF type' in rv.json['message']
+
+        rv = client.post('/fdp', data=datadir['fdp_invalid_wrongRDFtype.ttl'])
+        assert rv.status_code == 500
+        assert 'message' in rv.json
+        assert 'Not found required RDF type' in rv.json['message']
 
         rv = client.post('/fdp', data=datadir['fdp_invalid_missingRequired.ttl'])
         assert rv.status_code == 500
@@ -245,6 +256,7 @@ class BaseEndpointTests:
         assert rv.json['message'] == 'Ok'
 
         rv = client.get('/distribution/')
+        print(rv.data)
         assert rv.status_code == 204
 
 
@@ -252,11 +264,9 @@ class BaseEndpointTests:
 class TestFairgraphEndpoints(BaseEndpointTests):
     '''Test endpoints the in-memory graph implementation'''
     def setup_class(self):
-        # initGraph(host='0.0.0.0', port=8080, dataFile='./samples/minimal.ttl', endpoint=None)
         initGraph(host='0.0.0.0', port=8080)
 
 class TestStoregraphEndpoints(BaseEndpointTests):
     '''Test endpoints using the SPARQL graph implementation'''
     def setup_class(self):
-        # initGraph(host='0.0.0.0', port=8080, dataFile=None, endpoint='http://0.0.0.0:8890/sparql')
         initGraph(host='0.0.0.0', port=8080, endpoint='http://0.0.0.0:8890/sparql')
