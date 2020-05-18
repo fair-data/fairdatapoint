@@ -18,7 +18,7 @@ def _validate(data, shapes_file, layer):
         # validate number of subjects or focus nodes
         g = Graph()
         g.parse(data=data, format=data_format)
-        s_set = set([s for s, p, o in g])
+        s_set = set(g.subjects())
         if len(s_set) == 0:
             raise ValueError('Empty content in metadata')
         elif len(s_set) > 1 and layer=='fdp':
