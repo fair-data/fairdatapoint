@@ -31,13 +31,9 @@ def _validate(data, shapes_file, fdp=False):
 
 class FDPValidator():
     def __init__(self):
-        print('Loading fdp shapes')
         self.fdp_shapes = pkg_resources.resource_string(__name__, 'schema/fdp.shacl')
-        print('Loading catalog shapes')
         self.catalog_shapes = pkg_resources.resource_string(__name__, 'schema/catalog.shacl')
-        print('Loading dataset shapes')
         self.dataset_shapes = pkg_resources.resource_string(__name__, 'schema/dataset.shacl')
-        print('Loading distribution shapes')
         self.distribution_shapes = pkg_resources.resource_string(__name__, 'schema/distribution.shacl')
 
     def validateFDP(self, data):
