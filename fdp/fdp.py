@@ -66,7 +66,7 @@ def httpResponse(uri):
 
     return resp
 
-def httpResponceNav(layer):
+def httpResponseNav(layer):
     """HTTP responce to a GET request for metadata navagation.
 
     Args:
@@ -186,7 +186,7 @@ class CatalogPostResource(Resource):
         '''
         Get the list of catalog URIs
         '''
-        return httpResponceNav('Catalog')
+        return httpResponseNav('Catalog')
 
     @api.expect(model)
     def post(self):
@@ -235,7 +235,7 @@ class DatasetMetadataPostResource(Resource):
         '''
         Get the list of dataset URIs
         '''
-        return httpResponceNav('Dataset')
+        return httpResponseNav('Dataset')
 
     @api.expect(model)
     def post(self):
@@ -284,7 +284,7 @@ class DistributionPostResource(Resource):
         '''
         Get the list of distribution URIs
         '''
-        return httpResponceNav('Distribution')
+        return httpResponseNav('Distribution')
 
     @api.expect(model)
     def post(self):
