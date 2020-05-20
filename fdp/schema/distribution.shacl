@@ -4,7 +4,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 
 ex:DistributionShape
@@ -14,21 +14,21 @@ ex:DistributionShape
     sh:property [
         sh:name "Distribution title" ;
         sh:description "Name of the distribution with the language tag" ;
-        sh:path dct:title ;
+        sh:path dcterms:title ;
         sh:minCount 1 ;
         sh:nodeKind sh:Literal ;
     ] ;
     sh:property [
         sh:name "Distribution metadata specification" ;
         sh:description "The specification of the distribution metadata schema" ;
-        sh:path dct:conformsTo ;
+        sh:path dcterms:conformsTo ;
         sh:minCount 0 ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         sh:name "Distribution license" ;
         sh:description "Link to the license description";
-        sh:path dct:license ;
+        sh:path dcterms:license ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
@@ -36,7 +36,7 @@ ex:DistributionShape
     sh:property [
         sh:name "Distribution version" ;
         sh:description "Version of the distribution" ;
-        sh:path dct:hasVersion ;
+        sh:path dcterms:hasVersion ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
@@ -44,7 +44,7 @@ ex:DistributionShape
     sh:property [
         sh:name "Distribution entry issued date and time" ;
         sh:description "Created date of the distribution entry" ;
-        sh:path dct:issued ;
+        sh:path dcterms:issued ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:datatype xsd:dateTime ;
@@ -52,7 +52,7 @@ ex:DistributionShape
     sh:property [
         sh:name "Distribution entry modified date and time" ;
         sh:description "Last modified date of the distribution entry" ;
-        sh:path dct:modified ;
+        sh:path dcterms:modified ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:datatype xsd:dateTime ;
@@ -60,33 +60,33 @@ ex:DistributionShape
     sh:property [
         sh:name "Distribution description" ;
         sh:description "Description of the distribution with the language tag" ;
-        sh:path dct:description ;
+        sh:path dcterms:description ;
         sh:minCount 0 ;
         sh:nodeKind sh:Literal ;
     ] ;
     sh:property [
         sh:name "Distribution rights" ;
-        sh:path dct:rights ;
+        sh:path dcterms:rights ;
         sh:minCount 0 ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         sh:name "Distribution access rights" ;
-        sh:path dct:accessRights ;
+        sh:path dcterms:accessRights ;
         sh:minCount 0 ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         sh:name "Distribution parent reference" ;
         sh:description "Relation to the parent metadata" ;
-        sh:path dct:isPartOf ;
+        sh:path dcterms:isPartOf ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         sh:name "Distribution metadata identifier";
-        sh:description "Identifier of the metadata entry. Define new sub property ‘metadataID’ for dct:identifier" ;
+        sh:description "Identifier of the metadata entry. Define new sub property ‘metadataID’ for dcterms:identifier" ;
         sh:path fdp:metadataIdentifier;
         sh:minCount 1;
         sh:maxCount 1;

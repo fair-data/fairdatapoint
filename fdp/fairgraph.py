@@ -31,11 +31,10 @@ class FAIRGraph(object):
     def distURI(self, id=None):
         return self._buildURI('/distribution/', id)
 
-    def serialize(self, uri, mime_type):
-        # TODO mime_type not used
+    def serialize(self, uri, format):
         g = self.matchURI(uri)
         if len(g.all_nodes()) > 0:
-            return g.serialize(format='turtle').decode('utf-8')
+            return g.serialize(format=format).decode('utf-8')
         else:
             return None  # 404 !
 
@@ -85,8 +84,6 @@ class FAIRGraph(object):
         """
         self._graph.remove((None, None, DCAT[layer]))
         self._graph.commit()
-        # for i in self.navURI(layer):
-        #     self.deleteURI(i)
 
     def navURI(self, layer):
         """Navigate existing URIs for given layer.

@@ -11,15 +11,15 @@ data_file = '''
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
 @prefix dbp: <http://dbpedia.org/resource/> .
 
 <catalog/catalog-01> a dcat:Catalog ;
-    dct:title "Title" ;
-    dct:hasVersion "1.0" ;
-    dct:publisher <http://orcid.org/0000-0002-4368-8058> ;
-    dct:isPartOf <fdp> ;
+    dcterms:title "Title" ;
+    dcterms:hasVersion "1.0" ;
+    dcterms:publisher <http://orcid.org/0000-0002-4368-8058> ;
+    dcterms:isPartOf <fdp> ;
 
     fdp:metadataIdentifier <http://example.org/metadataID> ;
 	fdp:metadataIssued "2016-10-27"^^xsd:date ;

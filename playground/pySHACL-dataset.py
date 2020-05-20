@@ -11,15 +11,15 @@ data_file = '''
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
 @prefix dbp: <http://dbpedia.org/resource/> .
 
 <dataset/breedb> a dcat:Dataset ;
-    dct:title "BreeDB tomato passport data"^^xsd:string ;
-    dct:publisher <http://orcid.org/0000-0002-4368-8058> ;
-    dct:hasVersion "1.0"^^xsd:string ;
-    dct:isPartOf <catalog/catalog-01> ;
+    dcterms:title "BreeDB tomato passport data"^^xsd:string ;
+    dcterms:publisher <http://orcid.org/0000-0002-4368-8058> ;
+    dcterms:hasVersion "1.0"^^xsd:string ;
+    dcterms:isPartOf <catalog/catalog-01> ;
 
     fdp:metadataIdentifier <http://example.org/metadataID> ;
 	fdp:metadataIssued "2016-10-27"^^xsd:date ;

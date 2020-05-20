@@ -16,7 +16,6 @@ class BaseEndpointTests:
     def test_fdp(self, client, datadir):
         """Testing post and get to fdp"""
         rv = client.post('/fdp', data=datadir['fdp.ttl'])
-        print(rv.json)
         assert rv.status_code == 200
         assert 'message' in rv.json
         assert rv.json['message'] == 'Ok'
@@ -24,12 +23,12 @@ class BaseEndpointTests:
         rv = client.post('/fdp', data=datadir['fdp_invalid_missingRDFtype.ttl'])
         assert rv.status_code == 500
         assert 'message' in rv.json
-        assert 'Not found required RDF type' in rv.json['message']
+        assert 'Not found subject with required RDF type' in rv.json['message']
 
         rv = client.post('/fdp', data=datadir['fdp_invalid_wrongRDFtype.ttl'])
         assert rv.status_code == 500
         assert 'message' in rv.json
-        assert 'Not found required RDF type' in rv.json['message']
+        assert 'Not found subject with required RDF type' in rv.json['message']
 
         rv = client.post('/fdp', data=datadir['fdp_invalid_missingRequired.ttl'])
         assert rv.status_code == 500
@@ -45,12 +44,17 @@ class BaseEndpointTests:
         rv = client.post('/fdp', data=datadir['fdp_invalid_blank.ttl'])
         assert rv.status_code == 500
         assert 'message' in rv.json
-        assert 'Empty content in metadata' in rv.json['message']
+        assert 'Not found subject with required RDF type' in rv.json['message']
 
         rv = client.post('/fdp', data=datadir['fdp_invalid_2foucsNodes.ttl'])
         assert rv.status_code == 500
         assert 'message' in rv.json
-        assert 'FDP layer allows only one subject in metadata' in rv.json['message']
+        assert 'FDP layer allows only one subject' in rv.json['message']
+
+        rv = client.post('/fdp', data=datadir['fdp_invalid_mixedMetadata.ttl'])
+        assert rv.status_code == 500
+        assert 'message' in rv.json
+        assert 'Not allowed RDF type for layer FDP' in rv.json['message']
 
         rv = client.get('/fdp')
         assert rv.status_code == 200
@@ -258,7 +262,6 @@ class BaseEndpointTests:
         rv = client.get('/distribution/')
         print(rv.data)
         assert rv.status_code == 204
-
 
 
 class TestFairgraphEndpoints(BaseEndpointTests):
