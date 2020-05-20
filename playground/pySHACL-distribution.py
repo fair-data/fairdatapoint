@@ -11,7 +11,7 @@ data_file = '''
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
 @prefix dbp: <http://dbpedia.org/resource/> .
 
@@ -19,10 +19,10 @@ data_file = '''
 @prefix lang: <http://id.loc.gov/vocabulary/iso639-1/> .
 
 <distribution/breedb-sparql> a dcat:Distribution ;
-    dct:title "SPARQL endpoint for BreeDB tomato passport data"^^xsd:string ;
-    dct:license <http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0> ;
-    dct:hasVersion "1.0"^^xsd:string ;
-    dct:isPartOf <dataset/breedb> ;
+    dcterms:title "SPARQL endpoint for BreeDB tomato passport data"^^xsd:string ;
+    dcterms:license <http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0> ;
+    dcterms:hasVersion "1.0"^^xsd:string ;
+    dcterms:isPartOf <dataset/breedb> ;
 
     fdp:metadataIdentifier <http://example.org/metadataID> ;
 	fdp:metadataIssued "2016-10-27"^^xsd:date ;

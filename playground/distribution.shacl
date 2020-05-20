@@ -3,7 +3,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
 
 schema:DistributionShape
@@ -11,22 +11,22 @@ schema:DistributionShape
     sh:targetClass dcat:Distribution ;
     sh:property [
         sh:name "Name of the distribution" ;
-        sh:path dct:title ;
+        sh:path dcterms:title ;
         sh:minCount 1 ;
     ] ;
     sh:property [
         sh:name "Link to the license description" ;
-        sh:path dct:license ;
+        sh:path dcterms:license ;
         sh:minCount 1 ;
     ] ;
     sh:property [
         sh:name "Version of the distribution" ;
-        sh:path dct:hasVersion ;
+        sh:path dcterms:hasVersion ;
         sh:minCount 1 ;
     ] ;
     sh:property [
         sh:name "Distribution relation to the parent metadata" ;
-        sh:path dct:isPartOf ;
+        sh:path dcterms:isPartOf ;
         sh:minCount 1 ;
     ] ;
     sh:property [

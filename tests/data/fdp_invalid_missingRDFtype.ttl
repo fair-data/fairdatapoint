@@ -1,19 +1,19 @@
 @prefix ex: <http://example.com/ns#> .
 @prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix lang: <http://id.loc.gov/vocabulary/iso639-1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix r3d: <http://www.re3data.org/schema/3-0#> .
 
 <http://0.0.0.0:8080/fdp>
-    dct:title "FAIR Data Point service of Plant Breeding group at Wageningen University and Research.";
-    dct:title "FAIR Data Point service van Plant Breeding group van Wageningen University and Research."@nl;
-    dct:hasVersion "0.1";
-    dct:description "This service provides machine-readable descriptions about available datasets (metadata).";
-    dct:publisher <http://orcid.org/0000-0003-1711-7961> ;
-    dct:language lang:en ;
-    dct:conformsTo <https://github.com/FAIRDataTeam/FAIRDataPoint-Spec> ;
+    dcterms:title "FAIR Data Point service of Plant Breeding group at Wageningen University and Research.";
+    dcterms:title "FAIR Data Point service van Plant Breeding group van Wageningen University and Research."@nl;
+    dcterms:hasVersion "0.1";
+    dcterms:description "This service provides machine-readable descriptions about available datasets (metadata).";
+    dcterms:publisher <http://orcid.org/0000-0003-1711-7961> ;
+    dcterms:language lang:en ;
+    dcterms:conformsTo <https://github.com/FAIRDataTeam/FAIRDataPoint-Spec> ;
     fdp:metadataIdentifier ex:fdp;
     fdp:metadataIssued "2019-04-09T10:01:00"^^xsd:dateTime;
     fdp:metadataModified "2019-05-10T09:00:00"^^xsd:dateTime;

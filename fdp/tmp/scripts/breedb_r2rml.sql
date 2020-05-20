@@ -15,7 +15,7 @@ DB.DBA.TTLP('
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix gterm: <http://purl.org/germplasm/germplasmTerm#> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <#TriplesMap1>
@@ -82,7 +82,7 @@ DB.DBA.TTLP('
       rr:objectMap [
         rr:termType rr:Literal ;
         rr:column "collectionSiteCountry" ; # contains three-letter country codes (FIXME)
-        rr:datatype dct:Location # dct:ISO3166
+        rr:datatype dcterms:Location # dcterms:ISO3166
       ] ;
     ] ;
 
@@ -114,7 +114,7 @@ DB.DBA.TTLP('
     ] ;
 
     rr:predicateObjectMap [
-      rr:predicate dct:modified ;
+      rr:predicate dcterms:modified ;
       rr:objectMap [
         rr:termType rr:Literal ;
         rr:column "lastUpdate" ;
@@ -123,7 +123,7 @@ DB.DBA.TTLP('
     ] ;
 
     rr:predicateObjectMap [
-      rr:predicate dct:created ;
+      rr:predicate dcterms:created ;
       rr:objectMap [
         rr:termType rr:Literal ;
         rr:column "dateCreated" ;

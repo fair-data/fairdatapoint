@@ -4,7 +4,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 
@@ -15,14 +15,14 @@ ex:CatalogShape
     sh:property [
         sh:name "Catalog title" ;
         sh:description "Name of the catalog with the language tag" ;
-        sh:path dct:title ;
+        sh:path dcterms:title ;
         sh:minCount 1 ;
         sh:nodeKind sh:Literal ;
     ] ;
     sh:property [
         sh:name "Catalog version" ;
         sh:description "Version of the catalog" ;
-        sh:path dct:hasVersion ;
+        sh:path dcterms:hasVersion ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:datatype xsd:string ;
@@ -30,26 +30,26 @@ ex:CatalogShape
     sh:property [
         sh:name "Catalog publisher" ;
         sh:description "Organisation(s) or person(s) responsible for the catalog" ;
-        sh:path dct:publisher ;
+        sh:path dcterms:publisher ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         sh:name "Catalog description" ;
         sh:description "Description of the catalog with the language tag" ;
-        sh:path dct:description ;
+        sh:path dcterms:description ;
         sh:minCount 0 ;
         sh:nodeKind sh:Literal ;
     ] ;
     sh:property [
         sh:name "Catalog language" ;
-        sh:path dct:language ;
+        sh:path dcterms:language ;
         sh:minCount 0 ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         sh:name "Catalog license" ;
-        sh:path dct:license ;
+        sh:path dcterms:license ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
@@ -57,7 +57,7 @@ ex:CatalogShape
     sh:property [
         sh:name "Catalog entry issued date and time" ;
         sh:description "Created date of the catalog entry" ;
-        sh:path dct:issued ;
+        sh:path dcterms:issued ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:datatype xsd:dateTime ;
@@ -65,7 +65,7 @@ ex:CatalogShape
     sh:property [
         sh:name "Catalog entry modified date and time" ;
         sh:description "Last modified date of the catalog entry" ;
-        sh:path dct:modified ;
+        sh:path dcterms:modified ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:datatype xsd:dateTime ;
@@ -73,33 +73,33 @@ ex:CatalogShape
     sh:property [
         sh:name "Catalog metadata specification" ;
         sh:description "The specification of the catalog metadata schema" ;
-        sh:path dct:conformsTo ;
+        sh:path dcterms:conformsTo ;
         sh:minCount 0 ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         sh:name "Catalog rights" ;
-        sh:path dct:rights ;
+        sh:path dcterms:rights ;
         sh:minCount 0 ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         sh:name "Catalog access rights" ;
-        sh:path dct:accessRights ;
+        sh:path dcterms:accessRights ;
         sh:minCount 0 ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         sh:name "Catalog parent reference" ;
         sh:description "Relation to the parent metadata" ;
-        sh:path dct:isPartOf ;
+        sh:path dcterms:isPartOf ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:nodeKind sh:IRI ;
     ] ;
     sh:property [
         sh:name "Catalog metadata identifier";
-        sh:description "Identifier of the metadata entry. Define new sub property ‘metadataID’ for dct:identifier" ;
+        sh:description "Identifier of the metadata entry. Define new sub property ‘metadataID’ for dcterms:identifier" ;
         sh:path fdp:metadataIdentifier;
         sh:minCount 1;
         sh:maxCount 1;

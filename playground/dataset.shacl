@@ -3,7 +3,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
 
 schema:DatasetShape
@@ -11,22 +11,22 @@ schema:DatasetShape
     sh:targetClass dcat:Dataset ;
     sh:property [
         sh:name "Name of the dataset" ;
-        sh:path dct:title ;
+        sh:path dcterms:title ;
         sh:minCount 1 ;
     ] ;
     sh:property [
         sh:name "Organisation(s) or Persons(s) responsible for the dataset" ;
-        sh:path dct:publisher ;
+        sh:path dcterms:publisher ;
         sh:minCount 1 ;
     ] ;
     sh:property [
         sh:name "Version of the dataset" ;
-        sh:path dct:hasVersion ;
+        sh:path dcterms:hasVersion ;
         sh:minCount 1 ;
     ] ;
     sh:property [
         sh:name "Dataset relation to the parent metadata" ;
-        sh:path dct:isPartOf ;
+        sh:path dcterms:isPartOf ;
         sh:minCount 1 ;
     ] ;
     sh:property [
