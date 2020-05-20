@@ -84,8 +84,6 @@ class FAIRGraph(object):
         """
         self._graph.remove((None, None, DCAT[layer]))
         self._graph.commit()
-        # for i in self.navURI(layer):
-        #     self.deleteURI(i)
 
     def navURI(self, layer):
         """Navigate existing URIs for given layer.
