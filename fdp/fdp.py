@@ -102,7 +102,6 @@ def httpResponsePost(layer):
         mimetype = 'text/turtle'
     elif mimetype not in MIME_TYPES:
         return make_response({'message': 'Unsupported Media Type'}, 415)
-    mimetype = 'text/turtle'
     fmt = MIME_TYPES[mimetype]
 
     req_data = request.data

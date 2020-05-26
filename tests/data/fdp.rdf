@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:fdp="http://rdf.biosemantics.org/ontologies/fdp-o#"
+   xmlns:r3d="http://www.re3data.org/schema/3-0#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://0.0.0.0:8080/fdp">
+    <rdf:type rdf:resource="http://www.re3data.org/schema/3-0#Repository"/>
+    <r3d:dataCatalog rdf:resource="http://0.0.0.0:8080/catalog/catalog01"/>
+    <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+    <r3d:dataCatalog rdf:resource="http://0.0.0.0:8080/catalog/catalog02"/>
+    <dcterms:conformsTo rdf:resource="https://github.com/FAIRDataTeam/FAIRDataPoint-Spec"/>
+    <dcterms:title>FAIR Data Point service of Plant Breeding group at Wageningen University and Research.</dcterms:title>
+    <dcterms:title xml:lang="nl">FAIR Data Point service van Plant Breeding group van Wageningen University and Research.</dcterms:title>
+    <dcterms:publisher rdf:resource="http://orcid.org/0000-0003-1711-7961"/>
+    <fdp:metadataModified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-05-10T09:00:00</fdp:metadataModified>
+    <fdp:metadataIssued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2019-04-09T10:01:00</fdp:metadataIssued>
+    <r3d:repositoryIdentifier rdf:resource="http://example.com/ns#fdp_repositoryID"/>
+    <rdfs:label>FAIR Data Point service of Plant Breeding group at Wageningen University and Research.</rdfs:label>
+    <fdp:metadataIdentifier rdf:resource="http://example.com/ns#fdp"/>
+    <dcterms:description>This service provides machine-readable descriptions about available datasets (metadata).</dcterms:description>
+    <dcterms:hasVersion>0.1</dcterms:hasVersion>
+  </rdf:Description>
+</rdf:RDF>

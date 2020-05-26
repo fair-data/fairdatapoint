@@ -1,6 +1,4 @@
-.PHONY: all requirements doc install install-test reinstall clean dump-rdf serve-dev
-
-fdata = './samples/config.ini'
+.PHONY: all requirements doc install install-test reinstall clean serve-dev
 
 all: install
 
@@ -28,12 +26,9 @@ clean:
 test:
 	pytest
 
-dump-rdf:
-	python tests/dump_metadata.py
-
 serve-dev:
-	fdp-run --data $(fdata)
+	fdp-run
 	# python -m bottle --debug --reload --bind $(HOST) $(APP)
 
 # serve-prod:
-# 	nohup python -m bottle -b $(HOST) $(APP) &
+#   nohup python -m bottle -b $(HOST) $(APP) &

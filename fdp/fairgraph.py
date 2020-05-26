@@ -34,7 +34,7 @@ class FAIRGraph(object):
     def serialize(self, uri, format):
         g = self.matchURI(uri)
         if len(g.all_nodes()) > 0:
-            return g.serialize(format=format).decode('utf-8')
+            return g.serialize(format=format)
         else:
             return None  # 404 !
 
@@ -46,12 +46,9 @@ class FAIRGraph(object):
         # Copy namespaces from base graph
         for prefix, ns_uri in self._graph.namespaces():
             g.bind(prefix, ns_uri)
-
         # Search for triples which match the given subject
         matchPattern = (URIRef(uri), None, None)
-
         g += self._graph.triples(matchPattern)
-
         return g
 
     def post(self, data, format):
@@ -65,7 +62,9 @@ class FAIRGraph(object):
         if s_set:
             for s in s_set:
                 self._graph.remove((s, None, None))
-            # Add new triples
+            # if prefix conflicts with differnt ns_uris, it'll be suffixed with a number
+            for prefix, ns_uri in g.namespaces():
+                self._graph.bind(prefix, ns_uri)
             self._graph += g
             self._graph.commit()
 

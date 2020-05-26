@@ -16,6 +16,8 @@ coverage.xml
 docs/_build
 docs/apidocs
 
+playground
+
 # ide
 .idea
 .eclipse
