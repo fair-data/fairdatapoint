@@ -160,13 +160,6 @@ class CatalogGetterResource(Resource):
         '''
         return httpResponse(app.graph.catURI(id))
 
-    @api.expect(model)
-    def post(self, id):
-        '''
-        POST catalog metadata
-        '''
-        return httpResponsePost('Catalog')
-
     def delete(self, id):
         '''
         Delete the catalog ID and metadata
@@ -209,13 +202,6 @@ class DatasetMetadataGetterResource(Resource):
         '''
         return httpResponse(app.graph.datURI(id))
 
-    @api.expect(model)
-    def post(self, id):
-        '''
-        POST dataset metadata
-        '''
-        return httpResponsePost('Dataset')
-
     def delete(self, id):
         '''
         Delete the dataset ID and metadata
@@ -257,13 +243,6 @@ class DistributionGetterResource(Resource):
         Dataset distribution metadata
         '''
         return httpResponse(app.graph.distURI(id))
-
-    @api.expect(model)
-    def post(self, id):
-        '''
-        POST distribution metadata
-        '''
-        return httpResponsePost('Distribution')
 
     def delete(self, id):
         '''
