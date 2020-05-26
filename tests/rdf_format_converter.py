@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""RDF format converter
+"""RDF format converter.
+
+Mainly internal use to prepare test sample files from '.ttl' files.
 """
 
 from os import path
