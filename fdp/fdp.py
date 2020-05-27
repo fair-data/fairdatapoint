@@ -314,4 +314,8 @@ class DumpResource(Resource):
 
 def run_app(host, port, endpoint):
     initGraph(host=host, port=port, endpoint=endpoint)
+    return app
+
+def test_app(host, port, endpoint):
+    initGraph(host=host, port=port, endpoint=endpoint)
     app.run(host=host, port=port, debug=True)
