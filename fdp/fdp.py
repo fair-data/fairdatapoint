@@ -29,9 +29,11 @@ MIME_TYPES = {
 }
 
 def initGraph(host, port, endpoint=None):
-    scheme = 'http'
-    host = '{}:{}'.format(host, port) # TODO: fix for port 80
-    base_uri = '{}://{}'.format(scheme, host)
+    if host == 'localhost':
+        host = 'http://127.0.0.1'
+    elif not host.startswith('http'):
+        host = f'http://{host}'
+    base_uri = f'{host}:{port}'
     if endpoint is None:
         g = FAIRGraph(base_uri)
     else:
