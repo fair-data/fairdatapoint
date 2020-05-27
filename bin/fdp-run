@@ -12,7 +12,7 @@ Options:
 """
 from docopt import docopt
 from fdp import __version__
-from fdp.fdp import run_app
+from fdp.fdp import test_app
 
 args = docopt(__doc__, version='FDP run ' + __version__)
-run_app(host='0.0.0.0', port=8080, endpoint=args['--sparql'])
+test_app(host = '0.0.0.0', port = 8080, endpoint = args['--sparql'])
