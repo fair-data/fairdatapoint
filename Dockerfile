@@ -12,10 +12,3 @@ COPY . /home/fdp
 WORKDIR /home/fdp
 
 RUN pip install .
-RUN pip install bottle paste
-
-EXPOSE 8080
-
-CMD ["/bin/bash", "fdp.sh"]
-
-HEALTHCHECK --interval=5s CMD curl --silent --fail ${HOST_NAME}:${HOST_PORT} || exit 1
