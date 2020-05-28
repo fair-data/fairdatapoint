@@ -27,4 +27,4 @@ test:
 	pytest
 
 serve-dev:
-	fdp-run
+	fdp-run localhost 8080
