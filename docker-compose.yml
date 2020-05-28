@@ -1,0 +1,16 @@
+version: '3'
+services:
+  fdp:
+    build: .
+    command: fdp-run 0.0.0.0 8080 --db http://db:8890/sparql
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  db:
+    image: "tenforce/virtuoso"
+    ports:
+        - "8890:8890"
+        - "1111:1111"
+    environment:
+        SPARQL_UPDATE: "true"
