@@ -312,6 +312,6 @@ class DumpResource(Resource):
         resp.headers['Allow'] = 'GET'
         return resp
 
-def run_app(host, port, endpoint):
+def init_app(host, port, endpoint):
     initGraph(host=host, port=port, endpoint=endpoint)
     return app
