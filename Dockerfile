@@ -12,3 +12,9 @@ COPY . /home/fdp
 WORKDIR /home/fdp
 
 RUN pip install .
+
+ENV HOST=0.0.0.0
+ENV PORT=8080
+
+CMD fdp-run ${HOST} ${PORT}
+HEALTHCHECK --interval=5s CMD curl --silent --fail ${HOST}:${PORT} || exit 1
