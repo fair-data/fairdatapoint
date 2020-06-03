@@ -27,8 +27,4 @@ test:
 	pytest
 
 serve-dev:
-	fdp-run
-	# python -m bottle --debug --reload --bind $(HOST) $(APP)
-
-# serve-prod:
-#   nohup python -m bottle -b $(HOST) $(APP) &
+	fdp-run localhost 8080
