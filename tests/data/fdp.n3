@@ -1,0 +1,26 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <http://example.com/ns#> .
+@prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
+@prefix lang: <http://id.loc.gov/vocabulary/iso639-1/> .
+@prefix r3d: <http://www.re3data.org/schema/3-0#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://0.0.0.0:8080/fdp> a r3d:Repository ;
+    rdfs:label "FAIR Data Point service of Plant Breeding group at Wageningen University and Research." ;
+    dcterms:conformsTo <https://github.com/FAIRDataTeam/FAIRDataPoint-Spec> ;
+    dcterms:description "This service provides machine-readable descriptions about available datasets (metadata)." ;
+    dcterms:hasVersion "0.1" ;
+    dcterms:language lang:en ;
+    dcterms:publisher <http://orcid.org/0000-0003-1711-7961> ;
+    dcterms:title "FAIR Data Point service of Plant Breeding group at Wageningen University and Research.",
+        "FAIR Data Point service van Plant Breeding group van Wageningen University and Research."@nl ;
+    fdp:metadataIdentifier ex:fdp ;
+    fdp:metadataIssued "2019-04-09T10:01:00"^^xsd:dateTime ;
+    fdp:metadataModified "2019-05-10T09:00:00"^^xsd:dateTime ;
+    r3d:dataCatalog <http://0.0.0.0:8080/catalog/catalog01>,
+        <http://0.0.0.0:8080/catalog/catalog02> ;
+    r3d:repositoryIdentifier ex:fdp_repositoryID .
+

@@ -1,10 +1,7 @@
-FROM python:3.6-stretch
+FROM python:3-slim
 
-ENV HOST=0.0.0.0
-ENV PORT=8080
-
-RUN apt-get update -y && \
-    apt-get install git make curl -y
+RUN apt-get -y update && \
+    apt-get -y install git make curl
 
 RUN useradd fdp && \
     mkdir /home/fdp && \
@@ -16,9 +13,8 @@ WORKDIR /home/fdp
 
 RUN pip install .
 
-EXPOSE ${PORT}
+ENV HOST=0.0.0.0
+ENV PORT=8080
 
-# TODO: change this to run from bin
-CMD python -m bottle -b ${HOST}:${PORT} fdp
-
+CMD fdp-run ${HOST} ${PORT}
 HEALTHCHECK --interval=5s CMD curl --silent --fail ${HOST}:${PORT} || exit 1

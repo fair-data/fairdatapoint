@@ -1,0 +1,77 @@
+[
+  {
+    "@id": "http://0.0.0.0:8080/fdp",
+    "@type": [
+      "http://www.re3data.org/schema/3-0#Repository"
+    ],
+    "http://purl.org/dc/terms/conformsTo": [
+      {
+        "@id": "https://github.com/FAIRDataTeam/FAIRDataPoint-Spec"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@value": "This service provides machine-readable descriptions about available datasets (metadata)."
+      }
+    ],
+    "http://purl.org/dc/terms/hasVersion": [
+      {
+        "@value": "0.1"
+      }
+    ],
+    "http://purl.org/dc/terms/language": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/iso639-1/en"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@id": "http://orcid.org/0000-0003-1711-7961"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "FAIR Data Point service of Plant Breeding group at Wageningen University and Research."
+      },
+      {
+        "@language": "nl",
+        "@value": "FAIR Data Point service van Plant Breeding group van Wageningen University and Research."
+      }
+    ],
+    "http://rdf.biosemantics.org/ontologies/fdp-o#metadataIdentifier": [
+      {
+        "@id": "http://example.com/ns#fdp"
+      }
+    ],
+    "http://rdf.biosemantics.org/ontologies/fdp-o#metadataIssued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2019-04-09T10:01:00"
+      }
+    ],
+    "http://rdf.biosemantics.org/ontologies/fdp-o#metadataModified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2019-05-10T09:00:00"
+      }
+    ],
+    "http://www.re3data.org/schema/3-0#dataCatalog": [
+      {
+        "@id": "http://0.0.0.0:8080/catalog/catalog01"
+      },
+      {
+        "@id": "http://0.0.0.0:8080/catalog/catalog02"
+      }
+    ],
+    "http://www.re3data.org/schema/3-0#repositoryIdentifier": [
+      {
+        "@id": "http://example.com/ns#fdp_repositoryID"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "FAIR Data Point service of Plant Breeding group at Wageningen University and Research."
+      }
+    ]
+  }
+]

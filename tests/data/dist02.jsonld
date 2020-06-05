@@ -1,0 +1,55 @@
+[
+  {
+    "@id": "http://0.0.0.0:8080/distribution/dist02",
+    "@type": [
+      "http://www.w3.org/ns/dcat#Distribution"
+    ],
+    "http://purl.org/dc/terms/hasVersion": [
+      {
+        "@value": "1.0"
+      }
+    ],
+    "http://purl.org/dc/terms/isPartOf": [
+      {
+        "@id": "http://0.0.0.0:8080/dataset/dataset02"
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "File for the BreeDB tomato passport data"
+      }
+    ],
+    "http://rdf.biosemantics.org/ontologies/fdp-o#metadataIdentifier": [
+      {
+        "@id": "http://example.org/dist_dist02"
+      }
+    ],
+    "http://rdf.biosemantics.org/ontologies/fdp-o#metadataIssued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2016-10-27T09:30:00"
+      }
+    ],
+    "http://rdf.biosemantics.org/ontologies/fdp-o#metadataModified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2016-10-27T09:30:00"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#downloadURL": [
+      {
+        "@id": "http://example.org/dist_dist02.ttl"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#mediaType": [
+      {
+        "@value": "text/turtle"
+      }
+    ]
+  }
+]

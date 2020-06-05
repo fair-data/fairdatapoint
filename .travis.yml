@@ -2,13 +2,18 @@
 dist: xenial   # required for Python >= 3.7
 language: python
 python:
-  - "3.5"
-  - "3.6"
   - "3.7"
+
+services:
+  - docker
+
+before_install:
+- docker pull tenforce/virtuoso
+- docker run -d -e SPARQL_UPDATE=true -p 1111:1111 -p 8890:8890 tenforce/virtuoso
 
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
+  - make install-test
 
 # command to run tests
 script:
@@ -16,12 +21,5 @@ script:
   - sleep 10
   - make test
 
-# deploy automatically to pypi when a release is made
-deploy:
-  provider: pypi
-  user: nlesc
-  password:
-    secure: FIXME; see README for more info
-  on:
-    tags: true
-    branch: master
+after-script:
+  - coveralls
