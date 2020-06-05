@@ -1,0 +1,153 @@
+@prefix ex: <http://example.com/ns#> .
+@prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+ex:CatalogShape
+    a sh:NodeShape ;
+    sh:targetClass dcat:Catalog;
+    sh:nodeKind sh:IRI ;
+    sh:property [
+        sh:name "Catalog title" ;
+        sh:description "Name of the catalog with the language tag" ;
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "Catalog version" ;
+        sh:description "Version of the catalog" ;
+        sh:path dcterms:hasVersion ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:name "Catalog publisher" ;
+        sh:description "Organisation(s) or person(s) responsible for the catalog" ;
+        sh:path dcterms:publisher ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Catalog description" ;
+        sh:description "Description of the catalog with the language tag" ;
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "Catalog language" ;
+        sh:path dcterms:language ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Catalog license" ;
+        sh:path dcterms:license ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Catalog entry issued date and time" ;
+        sh:description "Created date of the catalog entry" ;
+        sh:path dcterms:issued ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+    ] ;
+    sh:property [
+        sh:name "Catalog entry modified date and time" ;
+        sh:description "Last modified date of the catalog entry" ;
+        sh:path dcterms:modified ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+    ] ;
+    sh:property [
+        sh:name "Catalog metadata specification" ;
+        sh:description "The specification of the catalog metadata schema" ;
+        sh:path dcterms:conformsTo ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Catalog rights" ;
+        sh:path dcterms:rights ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Catalog access rights" ;
+        sh:path dcterms:accessRights ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Catalog parent reference" ;
+        sh:description "Relation to the parent metadata" ;
+        sh:path dcterms:isPartOf ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Catalog metadata identifier";
+        sh:description "Identifier of the metadata entry. Define new sub property ‘metadataID’ for dcterms:identifier" ;
+        sh:path fdp:metadataIdentifier;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "Catalog metadata issued date and time";
+        sh:description "Created date and time of the metadata entry";
+        sh:path fdp:metadataIssued;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:dateTime;
+    ] ;
+    sh:property [
+        sh:name "Catalog metadata modified date and time" ;
+        sh:description "Last modified date and time of the metadata entry";
+        sh:path fdp:metadataModified;
+        sh:minCount 1;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime;
+    ] ;
+    sh:property [
+        sh:name "Catalog label" ;
+        sh:description "Name of the catalog with the language tag";
+        sh:path rdfs:label;
+        sh:minCount 0;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "Catalog homepage" ;
+        sh:path foaf:homepage;
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "Catalog dataset list" ;
+        sh:description "List of dataset URLs";
+        sh:path dcat:dataset;
+        sh:minCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "Catalog theme taxonomy list" ;
+        sh:description "List of taxonomy URLs";
+        sh:path dcat:themeTaxonomy;
+        sh:minCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:closed true ;  # other terms are not allowed
+	sh:ignoredProperties (rdf:type) .

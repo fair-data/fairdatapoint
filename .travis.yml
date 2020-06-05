@@ -1,20 +1,25 @@
+# Config file for automatic testing at travis-ci.org
+dist: xenial   # required for Python >= 3.7
 language: python
-
-sudo: false
-
-dist: trusty
-
 python:
-  - "2.7"
-  - "3.6"
+  - "3.7"
+
+services:
+  - docker
 
 before_install:
-  - cd fdp-api/python
+- docker pull tenforce/virtuoso
+- docker run -d -e SPARQL_UPDATE=true -p 1111:1111 -p 8890:8890 tenforce/virtuoso
 
+# command to install dependencies
 install:
-  - make install
+  - make install-test
 
+# command to run tests
 script:
   - make serve-dev &
   - sleep 10
   - make test
+
+after-script:
+  - coveralls

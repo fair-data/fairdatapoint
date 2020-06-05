@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+"""FDP run.
+
+Usage:
+  fdp-run <host> <port> [--db=<sparql-endpoint>] [--debug=<debug>]
+  fdp-run (-h | --help | --version)
+
+Options:
+  -h --help                   Show this screen and exit
+  --version                   Show FDP version
+  --db=<sparql-endpoint>      Set a SPARQL endpoint URL. If not set, using memory store.
+  --debug=<debug>             Debug mode [default: False]
+"""
+from docopt import docopt
+from fdp import __version__
+from fdp.fdp import init_app
+from bottle import run
+
+args = docopt(__doc__, version='FDP run ' + __version__)
+run(init_app(host=args['<host>'], port=args['<port>'], endpoint=args['--db']),
+    host = args['<host>'],
+    port = args['<port>'],
+    server = 'paste',
+    debug = args['--debug'])

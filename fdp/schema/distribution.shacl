@@ -1,0 +1,162 @@
+@prefix ex: <http://example.com/ns#> .
+@prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+ex:DistributionShape
+    a sh:NodeShape ;
+    sh:targetClass dcat:Distribution;
+    sh:nodeKind sh:IRI ;
+    sh:property [
+        sh:name "Distribution title" ;
+        sh:description "Name of the distribution with the language tag" ;
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "Distribution metadata specification" ;
+        sh:description "The specification of the distribution metadata schema" ;
+        sh:path dcterms:conformsTo ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Distribution license" ;
+        sh:description "Link to the license description";
+        sh:path dcterms:license ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Distribution version" ;
+        sh:description "Version of the distribution" ;
+        sh:path dcterms:hasVersion ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:name "Distribution entry issued date and time" ;
+        sh:description "Created date of the distribution entry" ;
+        sh:path dcterms:issued ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+    ] ;
+    sh:property [
+        sh:name "Distribution entry modified date and time" ;
+        sh:description "Last modified date of the distribution entry" ;
+        sh:path dcterms:modified ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+    ] ;
+    sh:property [
+        sh:name "Distribution description" ;
+        sh:description "Description of the distribution with the language tag" ;
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "Distribution rights" ;
+        sh:path dcterms:rights ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Distribution access rights" ;
+        sh:path dcterms:accessRights ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Distribution parent reference" ;
+        sh:description "Relation to the parent metadata" ;
+        sh:path dcterms:isPartOf ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Distribution metadata identifier";
+        sh:description "Identifier of the metadata entry. Define new sub property ‘metadataID’ for dcterms:identifier" ;
+        sh:path fdp:metadataIdentifier;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "Distribution metadata issued date and time";
+        sh:description "Created date and time of the metadata entry";
+        sh:path fdp:metadataIssued;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:dateTime;
+    ] ;
+    sh:property [
+        sh:name "Distribution metadata modified date and time" ;
+        sh:description "Last modified date and time of the metadata entry";
+        sh:path fdp:metadataModified;
+        sh:minCount 1;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime;
+    ] ;
+    sh:property [
+        sh:name "Distribution label" ;
+        sh:description "Name of the distribution with the language tag";
+        sh:path rdfs:label;
+        sh:minCount 0;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:xone (
+        [
+        sh:property [
+            sh:name "Distribution access URL";
+            sh:description "A landing page, feed, SPARQL endpoint or other type of resource that gives access to the distribution of the dataset" ;
+            sh:path dcat:accessURL ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI;
+            ]
+        ]
+        [
+        sh:property [
+            sh:name "Distribution download URL";
+            sh:description "A file that contains the distribution of the dataset in a given format" ;
+            sh:path dcat:downloadURL ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:IRI;
+            ]
+        ]
+    ) ;
+    sh:property [
+        sh:name "Distribution media type" ;
+        sh:description "The media type of the distribution";
+        sh:path dcat:mediaType;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:string;
+    ] ;
+    sh:property [
+        sh:name "Distribution format" ;
+        sh:path dcat:format;
+        sh:minCount 0;
+        sh:datatype xsd:string;
+    ] ;
+    sh:property [
+        sh:name "Distribution byte size" ;
+        sh:path dcat:byteSize;
+        sh:minCount 0;
+        sh:datatype xsd:decimal;
+    ] ;
+    sh:closed true ;    # other terms are not allowed. Properties in recursive shapes cannot be detected by pyshacl.
+    sh:ignoredProperties (rdf:type dcat:downloadURL dcat:accessURL) .
+        # pyshacl can validate the ignored properties that exist in recursive shapes (e.g. xone).

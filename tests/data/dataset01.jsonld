@@ -1,0 +1,55 @@
+[
+  {
+    "@id": "http://0.0.0.0:8080/dataset/breedb",
+    "@type": [
+      "http://www.w3.org/ns/dcat#Dataset"
+    ],
+    "http://purl.org/dc/terms/hasVersion": [
+      {
+        "@value": "1.0"
+      }
+    ],
+    "http://purl.org/dc/terms/isPartOf": [
+      {
+        "@id": "http://0.0.0.0:8080/catalog/catalog01"
+      }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      {
+        "@id": "http://orcid.org/0000-0002-4368-8058"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@value": "BreeDB tomato passport dataset"
+      }
+    ],
+    "http://rdf.biosemantics.org/ontologies/fdp-o#metadataIdentifier": [
+      {
+        "@id": "http://example.org/dataset01"
+      }
+    ],
+    "http://rdf.biosemantics.org/ontologies/fdp-o#metadataIssued": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2016-10-27T09:30:00"
+      }
+    ],
+    "http://rdf.biosemantics.org/ontologies/fdp-o#metadataModified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2016-10-27T09:30:00"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#distribution": [
+      {
+        "@id": "http://0.0.0.0:8080/distribution/breedb-sparql"
+      }
+    ],
+    "http://www.w3.org/ns/dcat#theme": [
+      {
+        "@id": "http://dbpedia.org/resource/Plant_breeding"
+      }
+    ]
+  }
+]

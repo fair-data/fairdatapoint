@@ -1,0 +1,158 @@
+@prefix ex: <http://example.com/ns#> .
+@prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix r3d: <http://www.re3data.org/schema/3-0#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+
+ex:FDPShape
+    a sh:NodeShape ;
+    sh:targetClass r3d:Repository;
+    sh:nodeKind sh:IRI ;
+    sh:property [
+        sh:name "FDP title" ;
+        sh:description "Name of the repository with the language tag" ;
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "FDP version" ;
+        sh:description "Version of the repository" ;
+        sh:path dcterms:hasVersion ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:name "FDP description" ;
+        sh:description "Description of the repository with the language tag" ;
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "FDP publisher" ;
+        sh:description "Organisation(s) responsible for the repository" ;
+        sh:path dcterms:publisher ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "FDP language" ;
+        sh:path dcterms:language ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "FDP license" ;
+        sh:path dcterms:license ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "FDP metadata specification" ;
+        sh:description "The specification of the repository metadata schema" ;
+        sh:path dcterms:conformsTo ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "FDP rights" ;
+        sh:path dcterms:rights ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "FDP references" ;
+        sh:description "Reference to documentation (API or otherwise)" ;
+        sh:path dcterms:references ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "FDP access rights" ;
+        sh:path dcterms:accessRights ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "FDP metadata identifier";
+        sh:description "Identifier of the metadata entry. Define new sub property ‘metadataID’ for dcterms:identifier" ;
+        sh:path fdp:metadataIdentifier;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "FDP metadata issued date and time";
+        sh:description "Created date and time of the metadata entry";
+        sh:path fdp:metadataIssued;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:dateTime;
+    ] ;
+    sh:property [
+        sh:name "FDP metadata modified date and time" ;
+        sh:description "Last modified date and time of the metadata entry";
+        sh:path fdp:metadataModified;
+        sh:minCount 1;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime;
+    ] ;
+    sh:property [
+        sh:name "FDP label" ;
+        sh:description "Name of the repository with the language tag";
+        sh:path rdfs:label;
+        sh:minCount 0;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "FDP institution" ;
+        sh:path r3d:institution;
+        sh:minCount 0;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "FDP repository release date and time";
+        sh:description "Release date and time of the repository";
+        sh:path r3d:startDate;
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:datatype xsd:dateTime;
+    ] ;
+    sh:property [
+        sh:name "FDP repository update date and time";
+        sh:description "Last update date and time of the repository";
+        sh:path r3d:lastUpdate;
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:datatype xsd:dateTime;
+    ] ;
+    sh:property [
+        sh:name "FDP catalog list" ;
+        sh:description "List of catalog metadata URLs";
+        sh:path r3d:dataCatalog;
+        sh:minCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "FDP country" ;
+        sh:path r3d:country;
+        sh:minCount 0;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "FDP repository identifier" ;
+        sh:description "Identifier of the repository";
+        sh:path r3d:repositoryIdentifier;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:closed true ;  # other terms are not allowed
+	sh:ignoredProperties (rdf:type) .

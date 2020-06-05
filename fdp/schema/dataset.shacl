@@ -1,0 +1,175 @@
+@prefix ex: <http://example.com/ns#> .
+@prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+ex:DatasetShape
+    a sh:NodeShape ;
+    sh:targetClass dcat:Dataset;
+    sh:nodeKind sh:IRI ;
+    sh:property [
+        sh:name "Dataset title" ;
+        sh:description "Name of the dataset with the language tag" ;
+        sh:path dcterms:title ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "Dataset publisher" ;
+        sh:description "Organisation(s) or person(s) responsible for the dataset" ;
+        sh:path dcterms:publisher ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Dataset version" ;
+        sh:description "Version of the dataset" ;
+        sh:path dcterms:hasVersion ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+    ] ;
+    sh:property [
+        sh:name "Dataset description" ;
+        sh:description "Description of the dataset with the language tag" ;
+        sh:path dcterms:description ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "Dataset metadata specification" ;
+        sh:description "The specification of the dataset metadata schema" ;
+        sh:path dcterms:conformsTo ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Dataset entry issued date and time" ;
+        sh:description "Created date of the dataset entry" ;
+        sh:path dcterms:issued ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+    ] ;
+    sh:property [
+        sh:name "Dataset entry modified date and time" ;
+        sh:description "Last modified date of the dataset entry" ;
+        sh:path dcterms:modified ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime ;
+    ] ;
+    sh:property [
+        sh:name "Dataset language" ;
+        sh:path dcterms:language ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Dataset license" ;
+        sh:path dcterms:license ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Dataset rights" ;
+        sh:path dcterms:rights ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Dataset access rights" ;
+        sh:path dcterms:accessRights ;
+        sh:minCount 0 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Dataset parent reference" ;
+        sh:description "Relation to the parent metadata" ;
+        sh:path dcterms:isPartOf ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:property [
+        sh:name "Dataset metadata identifier";
+        sh:description "Identifier of the metadata entry. Define new sub property ‘metadataID’ for dcterms:identifier" ;
+        sh:path fdp:metadataIdentifier;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "Dataset metadata issued date and time";
+        sh:description "Created date and time of the metadata entry";
+        sh:path fdp:metadataIssued;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:datatype xsd:dateTime;
+    ] ;
+    sh:property [
+        sh:name "Dataset metadata modified date and time" ;
+        sh:description "Last modified date and time of the metadata entry";
+        sh:path fdp:metadataModified;
+        sh:minCount 1;
+        sh:maxCount 1 ;
+        sh:datatype xsd:dateTime;
+    ] ;
+    sh:property [
+        sh:name "Dataset label" ;
+        sh:description "Name of the dataset with the language tag";
+        sh:path rdfs:label;
+        sh:minCount 0;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "Dataset homepage" ;
+        sh:path foaf:homepage;
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "Dataset distribution list" ;
+        sh:description "List of distribution URLs";
+        sh:path dcat:distribution;
+        sh:minCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "Dataset theme list" ;
+        sh:description "List of concepts that describe the dataset";
+        sh:path dcat:theme;
+        sh:minCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "Dataset contact point" ;
+        sh:path dcat:contactPoint;
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:property [
+        sh:name "Dataset keywords" ;
+        sh:description "Keyword(s) related to the dataset with the language tag";
+        sh:path dcat:keyword;
+        sh:minCount 0;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:property [
+        sh:name "Dataset homepage" ;
+        sh:description "Home page of the dataset";
+        sh:path dcat:landingpage;
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:nodeKind sh:IRI;
+    ] ;
+    sh:closed true ;  # other terms are not allowed
+	sh:ignoredProperties (rdf:type) .
