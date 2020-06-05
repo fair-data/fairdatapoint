@@ -1,16 +1,20 @@
-FROM python:3.6-stretch
+FROM python:3-slim
 
-RUN apt-get update -y && apt-get install git make -y
+RUN apt-get -y update && \
+    apt-get -y install git make curl
 
-# Service user
-RUN useradd fdp && mkdir /home/fdp && chown fdp:fdp /home/fdp
+RUN useradd fdp && \
+    mkdir /home/fdp && \
+    chown fdp:fdp /home/fdp
 
-COPY fdp-api/python /home/fdp
+COPY . /home/fdp
 
 WORKDIR /home/fdp
 
-RUN make install
+RUN pip install .
 
-EXPOSE 8080
+ENV HOST=0.0.0.0
+ENV PORT=8080
 
-CMD python -m bottle -b 0.0.0.0:8080 fdp
+CMD fdp-run ${HOST} ${PORT}
+HEALTHCHECK --interval=5s CMD curl --silent --fail ${HOST}:${PORT} || exit 1
