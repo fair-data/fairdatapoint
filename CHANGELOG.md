@@ -3,13 +3,31 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.7.0] - 2020-06-05
+### Added
+- POST and DELETE methods
+- Support for common RDF formats (MIME types) in GET and POST methods
+- SHACL validator to validate different layers of metadata
+- Support for SPARQL database store
+- Docker file and docker compose file
+- Running in production mode
+
+### Changed
+- GET and POST methods
+- Removed loading metadata for the command tool `fdp-run`
+- Removed support for INI-based configuration files
+- Big updates on tests
+- Documentation in README
+- Use Bottle and Paste for production run
+
 ## [0.6.0] - 2020-02-10
 ### Added
 - Loading meta-data from RDF/Turtle file (TTL).
 - Automatic Swagger API (OpenAPI) generation (via `flask-restplus`).
 
 ### Changed
-- Documentation in Readme
+- Documentation in REAME
 - Use Flask instead of Bottle
+
 ### Fixed
 - Test syntax
