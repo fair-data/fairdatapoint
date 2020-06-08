@@ -23,7 +23,7 @@ setup(
     description="Python implementation of FAIR Data Point",
     long_description=readme + '\n\n',
     long_description_content_type='text/markdown',
-    author="Rajaram Kaliyaperumal, Arnold Kuzniar, Carlos Martinez-Ortiz",
+    author="Rajaram Kaliyaperumal, Arnold Kuzniar, Cunliang Geng, Carlos Martinez-Ortiz",
     author_email='c.martinez@esciencecenter.nl',
     url='https://github.com/NLeSC/fdp',
     packages=[
