@@ -7,7 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - POST and DELETE methods
 - SHACL validator to validate different layers of metadata
-- Support for SPARQL database store, such as Virtuoso RDF Triple Store
+- Support for SPARQL database, such as Virtuoso RDF Triple Store
 - Docker compose file
 - Running in production mode
 
