@@ -53,5 +53,4 @@ setup(
     scripts=[
         'bin/fdp-run'
     ],
-    package_data={'fdp': ['schema/*.shacl']}
 )
