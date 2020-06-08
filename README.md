@@ -21,12 +21,18 @@ FDP has been implemented in:
 
 To install FDP, do
 
+From pypi
+```bash
+pip install fairdatapoint
+```
+
+Or from this repo
 ```bash
 git clone https://github.com/NLeSC/fairdatapoint.git
 cd fairdatapoint
 pip install .
 ```
-TODO: update it when there is a release on pypi
+
 
 ## Running
 ```bash
@@ -58,9 +64,7 @@ docker-compose -f docker-compose.prod.yml up -d
 Before deploying FDP, it's necessary to first have a running SPARQL database.
 
 ```
-git clone https://github.com/NLeSC/fairdatapoint.git
-cd fairdatapoint
-pip install .
+pip install fairdatapoint
 
 # fdp-run <host> <port> --db=<sparql-endpoint>
 fdp example.com 8080 --db='http://dbpedia.org/sparql'
