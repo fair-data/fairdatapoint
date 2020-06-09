@@ -1,9 +1,9 @@
-[![DOI](https://zenodo.org/badge/37470907.svg)](https://zenodo.org/badge/latestdoi/37470907)
-[![Build Status](https://travis-ci.org/c-martinez/FAIRDataPoint.svg?branch=dev)](https://travis-ci.org/c-martinez/FAIRDataPoint)
-[![Coverage Status](https://coveralls.io/repos/github/c-martinez/FAIRDataPoint/badge.svg?branch=dev)](https://coveralls.io/github/c-martinez/FAIRDataPoint?branch=dev)
-
-
 # FAIR Data Point (FDP)
+
+[![DOI](https://zenodo.org/badge/37470907.svg)](https://zenodo.org/badge/latestdoi/37470907)
+[![Build Status](https://travis-ci.org/NLeSC/fairdatapoint.svg?branch=master)](https://travis-ci.org/NLeSC/fairdatapoint)
+[![Coverage Status](https://coveralls.io/repos/github/NLeSC/fairdatapoint/badge.svg?branch=master)](https://coveralls.io/github/NLeSC/fairdatapoint?branch=master)
+
 
 Python implementation of FAIR Data Point.
 
