@@ -36,10 +36,10 @@ pip install .
 
 ## Running
 ```bash
-fdp-run localhost 8080
+fdp-run localhost 80
 ```
 
-Then visit from your browser: http://localhost:8080/
+Then visit from your browser: http://localhost:80/
 
 ## Unit testing
 Run tests (including coverage) with:
@@ -67,7 +67,7 @@ Before deploying FDP, it's necessary to first have a running SPARQL database.
 pip install fairdatapoint
 
 # fdp-run <host> <port> --db=<sparql-endpoint>
-fdp example.com 8080 --db='http://dbpedia.org/sparql'
+fdp example.com 80 --db='http://dbpedia.org/sparql'
 ```
 
 ## Web API documentation
