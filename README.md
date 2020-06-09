@@ -1,6 +1,8 @@
 # FAIR Data Point (FDP)
 
+[![PyPI](https://img.shields.io/pypi/v/fairdatapoint)](https://pypi.org/project/fairdatapoint/)
 [![DOI](https://zenodo.org/badge/37470907.svg)](https://zenodo.org/badge/latestdoi/37470907)
+[![Research Software Directory](https://img.shields.io/badge/RSD-FAIRDataPoint-red)](https://research-software.nl/software/fairdatapoint)
 [![Build Status](https://travis-ci.org/NLeSC/fairdatapoint.svg?branch=master)](https://travis-ci.org/NLeSC/fairdatapoint)
 [![Coverage Status](https://coveralls.io/repos/github/NLeSC/fairdatapoint/badge.svg?branch=master)](https://coveralls.io/github/NLeSC/fairdatapoint?branch=master)
 
