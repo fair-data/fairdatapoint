@@ -6,7 +6,7 @@ services:
     ports:
       - "80:80"
     healthcheck:
-        test: curl --silent --fail http://0.0.0.0:80 || exit 1
+        test: curl --silent --fail http://0.0.0.0 || exit 1
         interval: 5s
     depends_on:
       - db

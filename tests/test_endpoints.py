@@ -305,4 +305,4 @@ class TestMIMETypes:
         rv = client_new_store.get('/fdp', headers={'accept': 'application/n-triples'})
         assert rv.status_code == 200
         assert rv.mimetype == 'application/n-triples'
-        b'<http://0.0.0.0:80/fdp> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIssued> "2019-04-09T10:01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .' in rv.data
+        b'<http://0.0.0.0/fdp> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIssued> "2019-04-09T10:01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .' in rv.data
