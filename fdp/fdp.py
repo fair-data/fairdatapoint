@@ -33,7 +33,10 @@ def initGraph(host, port, endpoint=None):
         host = 'http://127.0.0.1'
     elif not host.startswith('http'):
         host = f'http://{host}'
-    base_uri = f'{host}:{port}'
+    if int(port) == 80:
+        base_uri = host
+    else:
+        base_uri = f'{host}:{port}'
     if endpoint is None:
         g = FAIRGraph(base_uri)
     else:
