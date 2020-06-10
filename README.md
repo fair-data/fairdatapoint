@@ -39,7 +39,7 @@ pip install .
 fdp-run localhost 80
 ```
 
-Then visit from your browser: http://localhost:80/
+Then visit from your browser: http://localhost/
 
 ## Unit testing
 Run tests (including coverage) with:
@@ -54,7 +54,9 @@ TODO: Include a link to your project's full documentation here.
 
 ## Deploy with Docker
 
-Download the `docker-compose.prod.yml` from this repo, change the `HOSTNAME` in the file to a proper host, and then run the command
+Download the `docker-compose.prod.yml` from this repo, change the `HOSTNAME` in the file to a proper host.
+The default port is `80`, and you can use other port (e.g. `8080`) if port `80` is used.
+Then run the command
 ```
 docker-compose -f docker-compose.prod.yml up -d
 ```
