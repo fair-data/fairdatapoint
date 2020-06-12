@@ -14,3 +14,5 @@ services:
         - "1111:1111"
     environment:
         SPARQL_UPDATE: "true"
+    volumes:
+        - DATABASE_PATH:/data
