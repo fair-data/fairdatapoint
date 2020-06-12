@@ -7,14 +7,14 @@ from fdp.fdp import app, initGraph
                 ids =['Memory Store', 'Persistent Store'])
 def client(request):
     '''Build http client'''
-    initGraph(host='0.0.0.0', port=8080, endpoint=request.param)
+    initGraph(host='0.0.0.0', port=80, endpoint=request.param)
     with app.test_client() as client:
         yield client
 
 # to make sure creating a new store when calling client
 @pytest.fixture(scope='function', params=[None], ids =['Memory Store'])
 def client_new_store(request):
-    initGraph(host='0.0.0.0', port=8080, endpoint=request.param)
+    initGraph(host='0.0.0.0', port=80, endpoint=request.param)
     with app.test_client() as client:
         yield client
 
@@ -305,4 +305,4 @@ class TestMIMETypes:
         rv = client_new_store.get('/fdp', headers={'accept': 'application/n-triples'})
         assert rv.status_code == 200
         assert rv.mimetype == 'application/n-triples'
-        b'<http://0.0.0.0:8080/fdp> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIssued> "2019-04-09T10:01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .' in rv.data
+        b'<http://0.0.0.0/fdp> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIssued> "2019-04-09T10:01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .' in rv.data

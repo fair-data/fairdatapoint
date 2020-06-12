@@ -38,10 +38,10 @@ pip install .
 
 ## Running
 ```bash
-fdp-run localhost 8080
+fdp-run localhost 80
 ```
 
-Then visit from your browser: http://localhost:8080/
+Then visit from your browser: http://localhost/
 
 ## Unit testing
 Run tests (including coverage) with:
@@ -56,7 +56,9 @@ TODO: Include a link to your project's full documentation here.
 
 ## Deploy with Docker
 
-Download the `docker-compose.prod.yml` from this repo, change the `HOSTNAME` in the file to a proper host, and then run the command
+Download the `docker-compose.prod.yml` from this repo, change the `HOSTNAME` in the file to a proper host.
+The default port is `80`, and you can use other port (e.g. `8080`) if port `80` is used.
+Then run the command
 ```
 docker-compose -f docker-compose.prod.yml up -d
 ```
@@ -69,7 +71,7 @@ Before deploying FDP, it's necessary to first have a running SPARQL database.
 pip install fairdatapoint
 
 # fdp-run <host> <port> --db=<sparql-endpoint>
-fdp example.com 8080 --db='http://dbpedia.org/sparql'
+fdp example.com 80 --db='http://dbpedia.org/sparql'
 ```
 
 ## Web API documentation

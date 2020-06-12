@@ -8,7 +8,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dbp: <http://dbpedia.org/resource/> .
 
-<http://0.0.0.0:8080/fdp> a r3d:Repository;
+<http://0.0.0.0/fdp> a r3d:Repository;
     dcterms:title "FAIR Data Point service of Plant Breeding group at Wageningen University and Research.";
     dcterms:hasVersion "0.1";
     dcterms:description "This service provides machine-readable descriptions about available datasets (metadata).";
@@ -19,17 +19,17 @@
     fdp:metadataModified "2019-05-10T09:00:00"^^xsd:dateTime;
     rdfs:label "FAIR Data Point service of Plant Breeding group at Wageningen University and Research.";
     r3d:dataCatalog
-        <http://0.0.0.0:8080/catalog/catalog-01>,
-        <http://0.0.0.0:8080/catalog/catalog-02>;
+        <http://0.0.0.0/catalog/catalog-01>,
+        <http://0.0.0.0/catalog/catalog-02>;
     r3d:repositoryIdentifier ex:fdp_repositoryID .
 
-<http://0.0.0.0:8080/dataset/dataset02> a dcat:Dataset ;
+<http://0.0.0.0/dataset/dataset02> a dcat:Dataset ;
     dcterms:title "Second sample dataset"^^xsd:string ;
     dcterms:publisher <http://orcid.org/0000-0002-4368-8058> ;
     dcterms:hasVersion "1.0"^^xsd:string ;
-    dcterms:isPartOf <http://0.0.0.0:8080/catalog/catalog02> ;
+    dcterms:isPartOf <http://0.0.0.0/catalog/catalog02> ;
     fdp:metadataIdentifier <http://example.org/dataset02> ;
     fdp:metadataIssued "2016-10-27T13:30:00"^^xsd:dateTime ;
     fdp:metadataModified "2016-10-27T13:30:00"^^xsd:dateTime ;
-    dcat:distribution <http://0.0.0.0:8080/distribution/dist02> ;
+    dcat:distribution <http://0.0.0.0/distribution/dist02> ;
     dcat:theme dbp:Plant_breeding .

@@ -1,6 +1,6 @@
 [
   {
-    "@id": "http://0.0.0.0:8080/dataset/breedb",
+    "@id": "http://0.0.0.0/dataset/breedb",
     "@type": [
       "http://www.w3.org/ns/dcat#Dataset"
     ],
@@ -11,7 +11,7 @@
     ],
     "http://purl.org/dc/terms/isPartOf": [
       {
-        "@id": "http://0.0.0.0:8080/catalog/catalog01"
+        "@id": "http://0.0.0.0/catalog/catalog01"
       }
     ],
     "http://purl.org/dc/terms/publisher": [
@@ -43,7 +43,7 @@
     ],
     "http://www.w3.org/ns/dcat#distribution": [
       {
-        "@id": "http://0.0.0.0:8080/distribution/breedb-sparql"
+        "@id": "http://0.0.0.0/distribution/breedb-sparql"
       }
     ],
     "http://www.w3.org/ns/dcat#theme": [

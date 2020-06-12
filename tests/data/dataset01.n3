@@ -8,14 +8,13 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://0.0.0.0:8080/dataset/breedb> a dcat:Dataset ;
+<http://0.0.0.0/dataset/breedb> a dcat:Dataset ;
     dcterms:hasVersion "1.0"^^xsd:string ;
-    dcterms:isPartOf <http://0.0.0.0:8080/catalog/catalog01> ;
+    dcterms:isPartOf <http://0.0.0.0/catalog/catalog01> ;
     dcterms:publisher <http://orcid.org/0000-0002-4368-8058> ;
     dcterms:title "BreeDB tomato passport dataset"^^xsd:string ;
     fdp:metadataIdentifier <http://example.org/dataset01> ;
     fdp:metadataIssued "2016-10-27T09:30:00"^^xsd:dateTime ;
     fdp:metadataModified "2016-10-27T09:30:00"^^xsd:dateTime ;
-    dcat:distribution <http://0.0.0.0:8080/distribution/breedb-sparql> ;
+    dcat:distribution <http://0.0.0.0/distribution/breedb-sparql> ;
     dcat:theme dbp:Plant_breeding .
-

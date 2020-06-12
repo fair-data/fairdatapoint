@@ -1,6 +1,6 @@
 [
   {
-    "@id": "http://0.0.0.0:8080/catalog/catalog02",
+    "@id": "http://0.0.0.0/catalog/catalog02",
     "@type": [
       "http://www.w3.org/ns/dcat#Catalog"
     ],
@@ -11,7 +11,7 @@
     ],
     "http://purl.org/dc/terms/isPartOf": [
       {
-        "@id": "http://0.0.0.0:8080/fdp"
+        "@id": "http://0.0.0.0/fdp"
       }
     ],
     "http://purl.org/dc/terms/publisher": [
@@ -43,7 +43,7 @@
     ],
     "http://www.w3.org/ns/dcat#dataset": [
       {
-        "@id": "http://0.0.0.0:8080/dataset/dataset02"
+        "@id": "http://0.0.0.0/dataset/dataset02"
       }
     ],
     "http://www.w3.org/ns/dcat#themeTaxonomy": [

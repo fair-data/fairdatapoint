@@ -5,4 +5,4 @@
 @prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
 @prefix dbp: <http://dbpedia.org/resource/> .
 
-<http://0.0.0.0:8080/catalog/catalog01> a dcat:Catalog .
+<http://0.0.0.0/catalog/catalog01> a dcat:Catalog .

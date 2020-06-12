@@ -8,9 +8,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://0.0.0.0:8080/catalog/catalog01> a dcat:Catalog ;
+<http://0.0.0.0/catalog/catalog01> a dcat:Catalog ;
     dcterms:hasVersion "1.0" ;
-    dcterms:isPartOf <http://0.0.0.0:8080/fdp> ;
+    dcterms:isPartOf <http://0.0.0.0/fdp> ;
     dcterms:publisher <http://orcid.org/0000-0002-4368-8058> ;
     dcterms:title "First sample catalog" ;
     fdp:metadataIdentifier <http://example.org/catalog01> ;
@@ -18,4 +18,3 @@
     fdp:metadataModified "2016-10-27T00:00:00"^^xsd:dateTime ;
     dcat:dataset <file:///Users/clgeng/teamflow/FAIRDataPoint/tests/data/dataset/breedb> ;
     dcat:themeTaxonomy dbp:Breeding .
-

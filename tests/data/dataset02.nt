@@ -1,11 +1,10 @@
-<http://0.0.0.0:8080/dataset/dataset02> <http://purl.org/dc/terms/hasVersion> "1.0"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://0.0.0.0:8080/dataset/dataset02> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataModified> "2016-10-27T13:30:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
-<http://0.0.0.0:8080/dataset/dataset02> <http://purl.org/dc/terms/isPartOf> <http://0.0.0.0:8080/catalog/catalog02> .
-<http://0.0.0.0:8080/dataset/dataset02> <http://www.w3.org/ns/dcat#theme> <http://dbpedia.org/resource/Plant_breeding> .
-<http://0.0.0.0:8080/dataset/dataset02> <http://purl.org/dc/terms/title> "Second sample dataset"^^<http://www.w3.org/2001/XMLSchema#string> .
-<http://0.0.0.0:8080/dataset/dataset02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Dataset> .
-<http://0.0.0.0:8080/dataset/dataset02> <http://www.w3.org/ns/dcat#distribution> <http://0.0.0.0:8080/distribution/dist02> .
-<http://0.0.0.0:8080/dataset/dataset02> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIdentifier> <http://example.org/dataset02> .
-<http://0.0.0.0:8080/dataset/dataset02> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0002-4368-8058> .
-<http://0.0.0.0:8080/dataset/dataset02> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIssued> "2016-10-27T13:30:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
-
+<http://0.0.0.0/dataset/dataset02> <http://purl.org/dc/terms/hasVersion> "1.0"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://0.0.0.0/dataset/dataset02> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataModified> "2016-10-27T13:30:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://0.0.0.0/dataset/dataset02> <http://purl.org/dc/terms/isPartOf> <http://0.0.0.0/catalog/catalog02> .
+<http://0.0.0.0/dataset/dataset02> <http://www.w3.org/ns/dcat#theme> <http://dbpedia.org/resource/Plant_breeding> .
+<http://0.0.0.0/dataset/dataset02> <http://purl.org/dc/terms/title> "Second sample dataset"^^<http://www.w3.org/2001/XMLSchema#string> .
+<http://0.0.0.0/dataset/dataset02> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/dcat#Dataset> .
+<http://0.0.0.0/dataset/dataset02> <http://www.w3.org/ns/dcat#distribution> <http://0.0.0.0/distribution/dist02> .
+<http://0.0.0.0/dataset/dataset02> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIdentifier> <http://example.org/dataset02> .
+<http://0.0.0.0/dataset/dataset02> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0002-4368-8058> .
+<http://0.0.0.0/dataset/dataset02> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIssued> "2016-10-27T13:30:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .

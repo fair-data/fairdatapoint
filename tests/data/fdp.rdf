@@ -6,11 +6,11 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
-  <rdf:Description rdf:about="http://0.0.0.0:8080/fdp">
+  <rdf:Description rdf:about="http://0.0.0.0/fdp">
     <rdf:type rdf:resource="http://www.re3data.org/schema/3-0#Repository"/>
-    <r3d:dataCatalog rdf:resource="http://0.0.0.0:8080/catalog/catalog01"/>
+    <r3d:dataCatalog rdf:resource="http://0.0.0.0/catalog/catalog01"/>
     <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
-    <r3d:dataCatalog rdf:resource="http://0.0.0.0:8080/catalog/catalog02"/>
+    <r3d:dataCatalog rdf:resource="http://0.0.0.0/catalog/catalog02"/>
     <dcterms:conformsTo rdf:resource="https://github.com/FAIRDataTeam/FAIRDataPoint-Spec"/>
     <dcterms:title>FAIR Data Point service of Plant Breeding group at Wageningen University and Research.</dcterms:title>
     <dcterms:title xml:lang="nl">FAIR Data Point service van Plant Breeding group van Wageningen University and Research.</dcterms:title>

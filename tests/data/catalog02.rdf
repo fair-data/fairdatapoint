@@ -5,15 +5,15 @@
    xmlns:fdp="http://rdf.biosemantics.org/ontologies/fdp-o#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <rdf:Description rdf:about="http://0.0.0.0:8080/catalog/catalog02">
+  <rdf:Description rdf:about="http://0.0.0.0/catalog/catalog02">
     <dcterms:title>Second sample catalog</dcterms:title>
     <fdp:metadataIdentifier rdf:resource="http://example.org/catalog02"/>
     <dcterms:publisher rdf:resource="http://orcid.org/0000-0002-4368-8058"/>
-    <dcat:dataset rdf:resource="http://0.0.0.0:8080/dataset/dataset02"/>
+    <dcat:dataset rdf:resource="http://0.0.0.0/dataset/dataset02"/>
     <dcat:themeTaxonomy rdf:resource="http://dbpedia.org/resource/Breeding"/>
     <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
     <fdp:metadataIssued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-10-27T09:30:00</fdp:metadataIssued>
-    <dcterms:isPartOf rdf:resource="http://0.0.0.0:8080/fdp"/>
+    <dcterms:isPartOf rdf:resource="http://0.0.0.0/fdp"/>
     <fdp:metadataModified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-12-23T10:00:00</fdp:metadataModified>
     <dcterms:hasVersion>1.1</dcterms:hasVersion>
   </rdf:Description>

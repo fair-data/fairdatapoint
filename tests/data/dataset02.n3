@@ -8,14 +8,13 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://0.0.0.0:8080/dataset/dataset02> a dcat:Dataset ;
+<http://0.0.0.0/dataset/dataset02> a dcat:Dataset ;
     dcterms:hasVersion "1.0"^^xsd:string ;
-    dcterms:isPartOf <http://0.0.0.0:8080/catalog/catalog02> ;
+    dcterms:isPartOf <http://0.0.0.0/catalog/catalog02> ;
     dcterms:publisher <http://orcid.org/0000-0002-4368-8058> ;
     dcterms:title "Second sample dataset"^^xsd:string ;
     fdp:metadataIdentifier <http://example.org/dataset02> ;
     fdp:metadataIssued "2016-10-27T13:30:00"^^xsd:dateTime ;
     fdp:metadataModified "2016-10-27T13:30:00"^^xsd:dateTime ;
-    dcat:distribution <http://0.0.0.0:8080/distribution/dist02> ;
+    dcat:distribution <http://0.0.0.0/distribution/dist02> ;
     dcat:theme dbp:Plant_breeding .
-

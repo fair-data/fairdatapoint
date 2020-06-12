@@ -1,6 +1,6 @@
 [
   {
-    "@id": "http://0.0.0.0:8080/distribution/breedb-sparql",
+    "@id": "http://0.0.0.0/distribution/breedb-sparql",
     "@type": [
       "http://www.w3.org/ns/dcat#Distribution"
     ],
@@ -11,7 +11,7 @@
     ],
     "http://purl.org/dc/terms/isPartOf": [
       {
-        "@id": "http://0.0.0.0:8080/dataset/breedb"
+        "@id": "http://0.0.0.0/dataset/breedb"
       }
     ],
     "http://purl.org/dc/terms/license": [

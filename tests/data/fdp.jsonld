@@ -1,6 +1,6 @@
 [
   {
-    "@id": "http://0.0.0.0:8080/fdp",
+    "@id": "http://0.0.0.0/fdp",
     "@type": [
       "http://www.re3data.org/schema/3-0#Repository"
     ],
@@ -57,10 +57,10 @@
     ],
     "http://www.re3data.org/schema/3-0#dataCatalog": [
       {
-        "@id": "http://0.0.0.0:8080/catalog/catalog01"
+        "@id": "http://0.0.0.0/catalog/catalog01"
       },
       {
-        "@id": "http://0.0.0.0:8080/catalog/catalog02"
+        "@id": "http://0.0.0.0/catalog/catalog02"
       }
     ],
     "http://www.re3data.org/schema/3-0#repositoryIdentifier": [

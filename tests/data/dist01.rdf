@@ -5,13 +5,13 @@
    xmlns:fdp="http://rdf.biosemantics.org/ontologies/fdp-o#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <rdf:Description rdf:about="http://0.0.0.0:8080/distribution/breedb-sparql">
+  <rdf:Description rdf:about="http://0.0.0.0/distribution/breedb-sparql">
     <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</dcterms:hasVersion>
     <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Distribution"/>
     <fdp:metadataIdentifier rdf:resource="http://example.org/dist_breedb-sparql"/>
     <dcterms:license rdf:resource="http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0"/>
     <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SPARQL endpoint for BreeDB tomato passport data</dcterms:title>
-    <dcterms:isPartOf rdf:resource="http://0.0.0.0:8080/dataset/breedb"/>
+    <dcterms:isPartOf rdf:resource="http://0.0.0.0/dataset/breedb"/>
     <dcat:accessURL rdf:resource="http://virtuoso.biotools.nl:8888/sparql"/>
     <fdp:metadataModified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-10-27T09:30:00</fdp:metadataModified>
     <dcat:mediaType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">application/n-triples</dcat:mediaType>

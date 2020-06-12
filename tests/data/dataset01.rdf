@@ -5,16 +5,16 @@
    xmlns:fdp="http://rdf.biosemantics.org/ontologies/fdp-o#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
-  <rdf:Description rdf:about="http://0.0.0.0:8080/dataset/breedb">
+  <rdf:Description rdf:about="http://0.0.0.0/dataset/breedb">
     <dcat:theme rdf:resource="http://dbpedia.org/resource/Plant_breeding"/>
     <dcterms:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BreeDB tomato passport dataset</dcterms:title>
     <dcterms:hasVersion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1.0</dcterms:hasVersion>
     <dcterms:publisher rdf:resource="http://orcid.org/0000-0002-4368-8058"/>
-    <dcterms:isPartOf rdf:resource="http://0.0.0.0:8080/catalog/catalog01"/>
+    <dcterms:isPartOf rdf:resource="http://0.0.0.0/catalog/catalog01"/>
     <fdp:metadataIdentifier rdf:resource="http://example.org/dataset01"/>
     <fdp:metadataModified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-10-27T09:30:00</fdp:metadataModified>
     <fdp:metadataIssued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-10-27T09:30:00</fdp:metadataIssued>
     <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
-    <dcat:distribution rdf:resource="http://0.0.0.0:8080/distribution/breedb-sparql"/>
+    <dcat:distribution rdf:resource="http://0.0.0.0/distribution/breedb-sparql"/>
   </rdf:Description>
 </rdf:RDF>

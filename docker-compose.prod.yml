@@ -2,9 +2,9 @@ version: '3'
 services:
   fdp:
     image: "nlesc/fairdatapoint"
-    command: fdp-run HOSTNAME 8080 --db http://db:8890/sparql
+    command: fdp-run HOSTNAME 80 --db http://db:8890/sparql
     ports:
-      - "8080:8080"
+      - "80:80"
     depends_on:
       - db
   db:

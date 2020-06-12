@@ -5,13 +5,13 @@
 @prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
 @prefix dbp: <http://dbpedia.org/resource/> .
 
-<http://0.0.0.0:8080/catalog/catalog02> a dcat:Catalog ;
+<http://0.0.0.0/catalog/catalog02> a dcat:Catalog ;
     dcterms:title "Second sample catalog" ;
     dcterms:hasVersion "1.1" ;
     dcterms:publisher <http://orcid.org/0000-0002-4368-8058> ;
-    dcterms:isPartOf <http://0.0.0.0:8080/fdp> ;
+    dcterms:isPartOf <http://0.0.0.0/fdp> ;
     fdp:metadataIdentifier <http://example.org/catalog02> ;
     fdp:metadataIssued "2016-10-27T09:30:00"^^xsd:dateTime ;
     fdp:metadataModified "2016-12-23T10:00:00"^^xsd:dateTime ;
-    dcat:dataset <http://0.0.0.0:8080/dataset/dataset02> ;
+    dcat:dataset <http://0.0.0.0/dataset/dataset02> ;
     dcat:themeTaxonomy dbp:Breeding .

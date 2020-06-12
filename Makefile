@@ -23,7 +23,7 @@ test:
 	pytest
 
 serve-dev:
-	fdp-run localhost 8080
+	fdp-run localhost 80
 
 clean: clean-build clean-pyc clean-test
 

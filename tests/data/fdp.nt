@@ -1,16 +1,15 @@
-<http://0.0.0.0:8080/fdp> <http://www.re3data.org/schema/3-0#dataCatalog> <http://0.0.0.0:8080/catalog/catalog01> .
-<http://0.0.0.0:8080/fdp> <http://purl.org/dc/terms/description> "This service provides machine-readable descriptions about available datasets (metadata)." .
-<http://0.0.0.0:8080/fdp> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0003-1711-7961> .
-<http://0.0.0.0:8080/fdp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.re3data.org/schema/3-0#Repository> .
-<http://0.0.0.0:8080/fdp> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIssued> "2019-04-09T10:01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
-<http://0.0.0.0:8080/fdp> <http://purl.org/dc/terms/hasVersion> "0.1" .
-<http://0.0.0.0:8080/fdp> <http://www.w3.org/2000/01/rdf-schema#label> "FAIR Data Point service of Plant Breeding group at Wageningen University and Research." .
-<http://0.0.0.0:8080/fdp> <http://purl.org/dc/terms/title> "FAIR Data Point service van Plant Breeding group van Wageningen University and Research."@nl .
-<http://0.0.0.0:8080/fdp> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataModified> "2019-05-10T09:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
-<http://0.0.0.0:8080/fdp> <http://www.re3data.org/schema/3-0#dataCatalog> <http://0.0.0.0:8080/catalog/catalog02> .
-<http://0.0.0.0:8080/fdp> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIdentifier> <http://example.com/ns#fdp> .
-<http://0.0.0.0:8080/fdp> <http://purl.org/dc/terms/conformsTo> <https://github.com/FAIRDataTeam/FAIRDataPoint-Spec> .
-<http://0.0.0.0:8080/fdp> <http://www.re3data.org/schema/3-0#repositoryIdentifier> <http://example.com/ns#fdp_repositoryID> .
-<http://0.0.0.0:8080/fdp> <http://purl.org/dc/terms/title> "FAIR Data Point service of Plant Breeding group at Wageningen University and Research." .
-<http://0.0.0.0:8080/fdp> <http://purl.org/dc/terms/language> <http://id.loc.gov/vocabulary/iso639-1/en> .
-
+<http://0.0.0.0/fdp> <http://www.re3data.org/schema/3-0#dataCatalog> <http://0.0.0.0/catalog/catalog01> .
+<http://0.0.0.0/fdp> <http://purl.org/dc/terms/description> "This service provides machine-readable descriptions about available datasets (metadata)." .
+<http://0.0.0.0/fdp> <http://purl.org/dc/terms/publisher> <http://orcid.org/0000-0003-1711-7961> .
+<http://0.0.0.0/fdp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.re3data.org/schema/3-0#Repository> .
+<http://0.0.0.0/fdp> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIssued> "2019-04-09T10:01:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://0.0.0.0/fdp> <http://purl.org/dc/terms/hasVersion> "0.1" .
+<http://0.0.0.0/fdp> <http://www.w3.org/2000/01/rdf-schema#label> "FAIR Data Point service of Plant Breeding group at Wageningen University and Research." .
+<http://0.0.0.0/fdp> <http://purl.org/dc/terms/title> "FAIR Data Point service van Plant Breeding group van Wageningen University and Research."@nl .
+<http://0.0.0.0/fdp> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataModified> "2019-05-10T09:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://0.0.0.0/fdp> <http://www.re3data.org/schema/3-0#dataCatalog> <http://0.0.0.0/catalog/catalog02> .
+<http://0.0.0.0/fdp> <http://rdf.biosemantics.org/ontologies/fdp-o#metadataIdentifier> <http://example.com/ns#fdp> .
+<http://0.0.0.0/fdp> <http://purl.org/dc/terms/conformsTo> <https://github.com/FAIRDataTeam/FAIRDataPoint-Spec> .
+<http://0.0.0.0/fdp> <http://www.re3data.org/schema/3-0#repositoryIdentifier> <http://example.com/ns#fdp_repositoryID> .
+<http://0.0.0.0/fdp> <http://purl.org/dc/terms/title> "FAIR Data Point service of Plant Breeding group at Wageningen University and Research." .
+<http://0.0.0.0/fdp> <http://purl.org/dc/terms/language> <http://id.loc.gov/vocabulary/iso639-1/en> .

@@ -3,11 +3,11 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
 
-<http://0.0.0.0:8080/distribution/breedb-sparql> a dcat:Distribution ;
+<http://0.0.0.0/distribution/breedb-sparql> a dcat:Distribution ;
     dcterms:title "SPARQL endpoint for BreeDB tomato passport data"^^xsd:string ;
     dcterms:license <http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0> ;
     dcterms:hasVersion "1.0"^^xsd:string ;
-    dcterms:isPartOf <http://0.0.0.0:8080/dataset/breedb> ;
+    dcterms:isPartOf <http://0.0.0.0/dataset/breedb> ;
     fdp:metadataIdentifier <http://example.org/dist_breedb-sparql> ;
     fdp:metadataIssued "2016-10-27T09:30:00"^^xsd:dateTime ;
     fdp:metadataModified "2016-10-27T09:30:00"^^xsd:dateTime ;

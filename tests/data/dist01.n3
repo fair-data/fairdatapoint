@@ -6,9 +6,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://0.0.0.0:8080/distribution/breedb-sparql> a dcat:Distribution ;
+<http://0.0.0.0/distribution/breedb-sparql> a dcat:Distribution ;
     dcterms:hasVersion "1.0"^^xsd:string ;
-    dcterms:isPartOf <http://0.0.0.0:8080/dataset/breedb> ;
+    dcterms:isPartOf <http://0.0.0.0/dataset/breedb> ;
     dcterms:license <http://rdflicense.appspot.com/rdflicense/cc-by-nc-nd3.0> ;
     dcterms:title "SPARQL endpoint for BreeDB tomato passport data"^^xsd:string ;
     fdp:metadataIdentifier <http://example.org/dist_breedb-sparql> ;
@@ -16,4 +16,3 @@
     fdp:metadataModified "2016-10-27T09:30:00"^^xsd:dateTime ;
     dcat:accessURL <http://virtuoso.biotools.nl:8888/sparql> ;
     dcat:mediaType "application/n-triples"^^xsd:string .
-

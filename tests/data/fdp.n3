@@ -8,7 +8,7 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://0.0.0.0:8080/fdp> a r3d:Repository ;
+<http://0.0.0.0/fdp> a r3d:Repository ;
     rdfs:label "FAIR Data Point service of Plant Breeding group at Wageningen University and Research." ;
     dcterms:conformsTo <https://github.com/FAIRDataTeam/FAIRDataPoint-Spec> ;
     dcterms:description "This service provides machine-readable descriptions about available datasets (metadata)." ;
@@ -20,7 +20,7 @@
     fdp:metadataIdentifier ex:fdp ;
     fdp:metadataIssued "2019-04-09T10:01:00"^^xsd:dateTime ;
     fdp:metadataModified "2019-05-10T09:00:00"^^xsd:dateTime ;
-    r3d:dataCatalog <http://0.0.0.0:8080/catalog/catalog01>,
-        <http://0.0.0.0:8080/catalog/catalog02> ;
+    r3d:dataCatalog <http://0.0.0.0/catalog/catalog01>,
+        <http://0.0.0.0/catalog/catalog02> ;
     r3d:repositoryIdentifier ex:fdp_repositoryID .
 
