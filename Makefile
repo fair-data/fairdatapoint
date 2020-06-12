@@ -50,5 +50,8 @@ dist: clean
 	python setup.py sdist bdist_wheel
 	ls -l dist
 
+install-dist:
+	pip install `ls dist/*.gz`"[tests]"
+
 release:
 	python -m twine upload dist/*
