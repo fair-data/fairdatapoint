@@ -51,7 +51,7 @@ dist: clean
 	ls -l dist
 
 install-dist:
-	pip install `ls dist/*.gz`"[tests]"
+	pip install --upgrade `ls dist/*.gz`"[tests]"
 
 release:
 	python -m twine upload dist/*
