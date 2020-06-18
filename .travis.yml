@@ -13,8 +13,7 @@ before_install:
 
 # command to install dependencies
 install:
-  - make dist
-  - make install-dist
+  - make install-test
 
 # command to run tests
 script:
