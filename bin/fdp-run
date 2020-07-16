@@ -13,11 +13,11 @@ Options:
 """
 from docopt import docopt
 from fdp import __version__
-from fdp.fdp import init_app
+from fdp.fdp import create_app
 from bottle import run
 
 args = docopt(__doc__, version='FDP run ' + __version__)
-run(init_app(host=args['<host>'], port=args['<port>'], endpoint=args['--db']),
+run(create_app(host=args['<host>'], port=args['<port>'], graph_endpoint=args['--db']),
     host = args['<host>'],
     port = args['<port>'],
     server = 'paste',
