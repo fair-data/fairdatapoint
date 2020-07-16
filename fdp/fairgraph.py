@@ -1,7 +1,7 @@
 from rdflib import Graph, Namespace, URIRef
 from rdflib.plugins.stores.sparqlstore import SPARQLUpdateStore
 
-API_ENDPOINTS = {'/fdp', '/doc', '/catalog/', '/dataset/', '/distribution/'}
+API_ENDPOINTS = {'fdp', 'doc', 'catalog', 'dataset', 'distribution'}
 DCAT = Namespace("http://www.w3.org/ns/dcat#")
 
 class FAIRGraph(object):
@@ -14,22 +14,14 @@ class FAIRGraph(object):
             store = SPARQLUpdateStore(endpoint)
             self._graph = Graph(store, identifier=default_graph)
 
-    def _buildURI(self, endpoint, id=None):
+    def buildURI(self, endpoint, id=None):
+        endpoint = endpoint.lower()
         assert (endpoint in API_ENDPOINTS), 'Invalid endpoint'
-        id = '' if id is None else '%s' % str(id)
-        return self._base_uri + endpoint + id
-
-    def fdpURI(self):
-        return self._buildURI('/fdp')
-
-    def catURI(self, id=None):
-        return self._buildURI('/catalog/', id)
-
-    def datURI(self, id=None):
-        return self._buildURI('/dataset/', id)
-
-    def distURI(self, id=None):
-        return self._buildURI('/distribution/', id)
+        if id is None:
+            uri = self._base_uri + '/' + endpoint
+        else:
+            uri = self._base_uri + '/' + endpoint + '/' + str(id)
+        return uri
 
     def serialize(self, uri, format):
         g = self.matchURI(uri)
