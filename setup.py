@@ -46,7 +46,7 @@ setup(
     test_suite='tests',
     install_requires=install_requires,
     extras_require={
-        'dev': ['prospector[with_pyroma]', 'yapf', 'isort'],
+        'dev': ['prospector[with_pyroma]', 'yapf', 'isort', 'swagger-ui-bundle>=0.0.2'],
         'tests': ['pytest>5.0', 'pytest-cov', 'coveralls', 'pytest-datadir-ng'],
         'docs': ['sphinx', 'sphinx_rtd_theme', 'recommonmark'],
     },
