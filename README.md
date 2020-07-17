@@ -82,7 +82,7 @@ FAIR Data Point (FDP) exposes the following endpoints (URL paths):
 
 | Endpoint |  GET  | POST |  PUT | DELETE     |
 |--------------|:--------------:|:-----------------:|:--------------:|:--------------:
-| fdp | Output fdp metadata | Create new metadata | Update FDP metadata | Not Allowed |
+| fdp | Output fdp metadata | Create new fdp metadata | Update fdp metadata | Not Allowed |
 | catalog     | Output all catalog IDs   | Create new catalog metadata| Not Allowed | Not Allowed |
 | dataset     | Output all dataset IDs   | Create new dataset metadata| Not Allowed | Not Allowed |
 | distribution  | Output all distribution IDs  | Create new distribution metadata| Not Allowed | Not Allowed |
