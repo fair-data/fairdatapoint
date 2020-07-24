@@ -13,8 +13,6 @@ servers:
 tags:
   - name: Metadata
     description: Metadata Controller
-  - name: Users
-    description: Uers Controller
 paths:
   /fdp:
     get:
@@ -24,25 +22,13 @@ paths:
       operationId: fdp.api.FDP.get
       responses:
         '200':
-          description: Successful operation
-          content:
-            text/turtle:
-              {}
-            text/n3:
-              {}
-            application/rdf+xml:
-              {}
-            application/ld+json:
-              {}
-            application/n-triples:
-              {}
+          $ref: '#/components/responses/RDF'
     post:
       tags:
         - Metadata
       summary: Create FDP metadta
       operationId: fdp.api.FDP.post
       requestBody:
-        required: true
         $ref: '#/components/requestBodies/RDF'
       responses:
         '200':
@@ -55,7 +41,6 @@ paths:
       summary: Update FDP metadta
       operationId: fdp.api.FDP.put
       requestBody:
-        required: true
         $ref: '#/components/requestBodies/RDF'
       responses:
         '200':
@@ -79,7 +64,6 @@ paths:
       summary: Create Catalog metadta
       operationId: fdp.api.Catalog.post
       requestBody:
-        required: true
         $ref: '#/components/requestBodies/RDF'
       responses:
         '200':
@@ -102,18 +86,7 @@ paths:
       operationId: fdp.api.Catalog.get
       responses:
         '200':
-          description: Successful operation
-          content:
-            text/turtle:
-              {}
-            text/n3:
-              {}
-            application/rdf+xml:
-              {}
-            application/ld+json:
-              {}
-            application/n-triples:
-              {}
+          $ref: '#/components/responses/RDF'
         '404':
           description: Invalid ID supplied
     put:
@@ -122,7 +95,6 @@ paths:
       summary: Update Catalog metadta
       operationId: fdp.api.Catalog.put
       requestBody:
-        required: true
         $ref: '#/components/requestBodies/RDF'
       responses:
         '200':
@@ -156,7 +128,6 @@ paths:
       summary: Create Dataset metadta
       operationId: fdp.api.Dataset.post
       requestBody:
-        required: true
         $ref: '#/components/requestBodies/RDF'
       responses:
         '200':
@@ -179,18 +150,7 @@ paths:
       operationId: fdp.api.Dataset.get
       responses:
         '200':
-          description: Successful operation
-          content:
-            text/turtle:
-              {}
-            text/n3:
-              {}
-            application/rdf+xml:
-              {}
-            application/ld+json:
-              {}
-            application/n-triples:
-              {}
+          $ref: '#/components/responses/RDF'
         '404':
           description: Invalid ID supplied
     put:
@@ -199,7 +159,6 @@ paths:
       summary: Update Dataset metadta
       operationId: fdp.api.Dataset.put
       requestBody:
-        required: true
         $ref: '#/components/requestBodies/RDF'
       responses:
         '200':
@@ -227,18 +186,12 @@ paths:
       responses:
         '200':
           description: Successful operation
-          # content:
-          #   '*/*':
-          #     example: |-
-          #       http://distribution/cata01
-          #       http://distribution/cata02
     post:
       tags:
         - Metadata
       summary: Create Distribution metadta
       operationId: fdp.api.Distribution.post
       requestBody:
-        required: true
         $ref: '#/components/requestBodies/RDF'
       responses:
         '200':
@@ -261,18 +214,7 @@ paths:
       operationId: fdp.api.Distribution.get
       responses:
         '200':
-          description: Successful operation
-          content:
-            text/turtle:
-              {}
-            text/n3:
-              {}
-            application/rdf+xml:
-              {}
-            application/ld+json:
-              {}
-            application/n-triples:
-              {}
+          $ref: '#/components/responses/RDF'
         '404':
           description: Invalid ID supplied
     put:
@@ -281,7 +223,6 @@ paths:
       summary: Update Distribution metadta
       operationId: fdp.api.Distribution.put
       requestBody:
-        required: true
         $ref: '#/components/requestBodies/RDF'
       responses:
         '200':
@@ -303,6 +244,7 @@ paths:
 components:
   requestBodies:
     RDF:
+      required: true
       content:
         text/turtle:
           schema:
@@ -319,3 +261,17 @@ components:
         application/n-triples:
           schema:
             {}
+  responses:
+    RDF:
+      description: Successful operation
+      content:
+        text/turtle:
+          {}
+        text/n3:
+          {}
+        application/rdf+xml:
+          {}
+        application/ld+json:
+          {}
+        application/n-triples:
+          {}
