@@ -80,15 +80,15 @@ fdp example.com 80 --db='http://dbpedia.org/sparql'
 
 FAIR Data Point (FDP) exposes the following endpoints (URL paths):
 
-| Endpoint |  GET  | POST |      DELETE     |
-|--------------|:--------------:|:-----------------:|:--------------:|
-| fdp | Output metadata triples | Remove existing triples for a specific ID, then create new triples with the request data | Not Allowed |
-| catalog/     | Output all IDs   | Remove existing triples for a specific ID, then create new triples with the request data | Remove all IDs |
-| dataset/     | Output all IDs   | Remove existing triples for a specific ID, then create new triples with the request data | Remove all IDs |
-| distribution/  | Output all IDs  | Remove existing triples for a specific ID, then create new triples with the request data | Remove all IDs |
-| catalog/\<catalogID\> | Output metadata triples | Not Allowed | Remove the specific ID |
-| dataset/\<datasetID\> | Output metadata triples | Not Allowed | Remove the specific ID |
-| distribution/\<distributionID\> | Output metadata triples | Not Allowed | Remove the specific ID |
+| Endpoint |  GET  | POST |  PUT | DELETE     |
+|--------------|:--------------:|:-----------------:|:--------------:|:--------------:
+| fdp | Output fdp metadata | Create new fdp metadata | Update fdp metadata | Not Allowed |
+| catalog     | Output all catalog IDs   | Create new catalog metadata| Not Allowed | Not Allowed |
+| dataset     | Output all dataset IDs   | Create new dataset metadata| Not Allowed | Not Allowed |
+| distribution  | Output all distribution IDs  | Create new distribution metadata| Not Allowed | Not Allowed |
+| catalog/\<catalogID\> | Output \<catalogID\> metadata | Not Allowed | Update \<catalogID\> metadata | Remove \<catalogID\> metadata |
+| dataset/\<datasetID\> | Output \<datasetID\> metadata | Not Allowed | Update \<datasetID\> metadata | Remove \<datasetID\> metadata |
+| distribution/\<distributionID\> | Output \<distributionID\> metadata | Not Allowed | Update \<distributionID\> metadata | Remove \<distributionID\> metadata |
 
 
 ### Access endpoints to request metadata programmatically

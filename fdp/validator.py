@@ -45,10 +45,8 @@ def _validate(data, data_format, layer, shapes_file):
                                              inference='rdfs', debug=False,
                                              serialize_report_graph=True)
         return conforms, v_text
-    except ValueError as e:
-        return False, e.args[0]
     except Exception as e:
-        return False, e.message
+        return False, e.args[0]
 
 
 class FDPValidator():
