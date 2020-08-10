@@ -1,0 +1,12 @@
+#+ summary: Lookup metadata that contains the given media type
+#+ method: GET
+#+ endpoint_in_url: True
+
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+#PREFIX bif: <http://www.openlinksw.com/schemas/bif#> # for Virtuoso
+
+SELECT DISTINCT (?s AS ?ID) (?o AS ?MediaType)
+WHERE {
+    ?s dcat:mediaType ?o .
+    FILTER (contains(?o, ?_format))
+}

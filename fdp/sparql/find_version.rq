@@ -1,0 +1,11 @@
+#+ summary: Lookup metadata that has the given version
+#+ method: GET
+#+ endpoint_in_url: True
+
+PREFIX dct: <http://purl.org/dc/terms/>
+#PREFIX bif: <http://www.openlinksw.com/schemas/bif#> # for Virtuoso
+
+SELECT DISTINCT (?s AS ?ID) (?_version AS ?Version)
+WHERE {
+    ?s dct:hasVersion ?_version
+}

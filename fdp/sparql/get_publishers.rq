@@ -1,0 +1,11 @@
+#+ summary: Get all publishers
+#+ method: GET
+#+ endpoint_in_url: True
+
+PREFIX dct: <http://purl.org/dc/terms/>
+#PREFIX bif: <http://www.openlinksw.com/schemas/bif#> # for Virtuoso
+
+SELECT DISTINCT (?o AS ?Publisher)
+WHERE {
+    ?s dct:publisher ?o
+}

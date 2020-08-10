@@ -1,0 +1,11 @@
+#+ summary: Get all media types, only applicable to distribution metadata.
+#+ method: GET
+#+ endpoint_in_url: True
+
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+#PREFIX bif: <http://www.openlinksw.com/schemas/bif#> # for Virtuoso
+
+SELECT DISTINCT (?o AS ?MediaType)
+WHERE {
+    ?s dcat:mediaType ?o
+}

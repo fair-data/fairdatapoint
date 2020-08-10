@@ -1,0 +1,11 @@
+#+ summary: Get all IDs that are parents of the given metadata ID.
+#+ method: GET
+#+ endpoint_in_url: True
+
+PREFIX dct: <http://purl.org/dc/terms/>
+#PREFIX bif: <http://www.openlinksw.com/schemas/bif#> # for Virtuoso
+
+SELECT DISTINCT (?o AS ?ParentID)
+WHERE {
+    ?_id_iri dct:isPartOf ?o .
+}

@@ -1,0 +1,10 @@
+#+ summary: Find the metatata that contains the given URI
+#+ method: GET
+#+ endpoint_in_url: True
+
+#PREFIX bif: <http://www.openlinksw.com/schemas/bif#>  # for Virtuoso
+
+SELECT ?s ?p (?_uri_iri AS ?URI)
+WHERE {
+    ?s ?p ?_uri_iri .
+}
