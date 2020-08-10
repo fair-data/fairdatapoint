@@ -13,6 +13,8 @@ servers:
 tags:
   - name: Metadata
     description: Metadata Controller
+  - name: Search
+    description: Metadata search engine
 paths:
   /fdp:
     get:
@@ -241,6 +243,175 @@ paths:
           description: Successful operation
         '404':
           description: Invalid ID supplied
+  /find_text:
+    parameters:
+      - name: text
+        in: query
+        required: true
+        description: Query text.
+           Support one of the operators "and", "or" and "and not";
+           Text with single quotes is treated as one word.
+        schema:
+          type: string
+        example: "'fair data' or point"
+    get:
+      tags:
+        - Search
+      summary: Find metadata that contains the given text
+      operationId: fdp.api.FindText.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /find_uri:
+    parameters:
+      - name: uri
+        in: query
+        required: true
+        schema:
+          type: string
+        example: "http://0.0.0.0/catalog/catalog01"
+    get:
+      tags:
+        - Search
+      summary: Find metadata that contains the given URI
+      operationId: fdp.api.FindURI.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /find_media_type:
+    parameters:
+      - name: format
+        in: query
+        required: true
+        schema:
+          type: string
+        example: "text/turtle"
+    get:
+      tags:
+        - Search
+      summary: Find metadata that contains the given media type
+      operationId: fdp.api.FindMediaType.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /find_publisher:
+    parameters:
+      - name: publisher
+        in: query
+        required: true
+        schema:
+          type: string
+        example: "http://orcid.org/0000-0003-1711-7961"
+    get:
+      tags:
+        - Search
+      summary: Find metadata that has the given publisher
+      operationId: fdp.api.FindPublisher.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /find_version:
+    parameters:
+      - name: version
+        in: query
+        required: true
+        schema:
+          type: string
+        example: "1.0"
+    get:
+      tags:
+        - Search
+      summary: Find metadata that has the given version
+      operationId: fdp.api.FindVersion.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /get_children_ids:
+    parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: string
+        example: "http://0.0.0.0/catalog/catalog01"
+    get:
+      tags:
+        - Search
+      summary: Get all IDs that are children of the given metadata ID.
+      operationId: fdp.api.GetChildrenIDs.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /get_parent_ids:
+    parameters:
+      - name: id
+        in: query
+        required: true
+        schema:
+          type: string
+        example: "http://0.0.0.0/catalog/catalog01"
+    get:
+      tags:
+        - Search
+      summary: Get all IDs that are parents of the given metadata ID.
+      operationId: fdp.api.GetParentIDs.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /get_data_urls:
+    get:
+      tags:
+        - Search
+      summary: Get all access and download URLs of data, only applicable to distribution metadata.
+      operationId: fdp.api.GetDataURLs.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /get_licenses:
+    get:
+      tags:
+        - Search
+      summary: Get all licenses, only applicable to distribution metadata.
+      operationId: fdp.api.GetLicenses.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /get_media_types:
+    get:
+      tags:
+        - Search
+      summary: Get all media types, only applicable to distribution metadata.
+      operationId: fdp.api.GetMediaTypes.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /get_publishers:
+    get:
+      tags:
+        - Search
+      summary: Get all publishers
+      operationId: fdp.api.GetPublishers.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /get_themes:
+    get:
+      tags:
+        - Search
+      summary: Get all themes, only applicable to dataset metadata.
+      operationId: fdp.api.GetThemes.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
+  /get_theme_taxonomy:
+    get:
+      tags:
+        - Search
+      summary: Get all theme taxonomy, only applicable to catalog metadata.
+      operationId: fdp.api.GetThemeTaxonomy.get
+      responses:
+        '200':
+          $ref: '#/components/responses/SearchRDF'
 components:
   requestBodies:
     RDF:
@@ -275,3 +446,12 @@ components:
           {}
         application/n-triples:
           {}
+    SearchRDF:
+        description: Successful operation
+        content:
+          application/json:
+            {}
+          text/csv:
+            {}
+          text/html:
+            {}
