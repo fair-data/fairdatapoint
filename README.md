@@ -20,7 +20,7 @@ FDP has been implemented in:
 * [Python](https://github.com/NLeSC/FAIRDataPoint/)
 * [Java](https://github.com/DTL-FAIRData/FAIRDataPoint)
 
-Besides the regular features described in FDP sepc, this Python implementation also provides [search features](##Quick-look-on-FDP-features). With that you can easily search text, URI and specific terms e.g. publishers, media types, licenses, etc. To use the search features, you need to [deploy with docker](##Deploy-with-Docker).
+Besides the regular features described in FDP sepc, this Python implementation also provides [search features](#Quick-look-on-FDP-features). With that you can easily search text, URI and specific terms e.g. publishers, media types, licenses, etc. To use the search features, you need to [deploy with docker](#Deploy-with-Docker).
 
 ## Installation
 
