@@ -2,17 +2,25 @@ import connexion
 from fdp import config
 
 def create_app(host, port, sparql_endpoint=None, grlc_endpoint=None):
-    config.init_fairgraph(host, port, sparql_endpoint)
-    config.init_grlc(grlc_endpoint, sparql_endpoint)
 
+    config.init_fairgraph(host, port, sparql_endpoint)
     app = connexion.FlaskApp(__name__, specification_dir='openapi/', debug=True)
     options = {"swagger_ui": True}
-    app.add_api('openapi.yaml',
-            options=options,
-            arguments={'title': 'FDP server'},
-            strict_validation=True,
-            validate_responses=True
-            )
+    if sparql_endpoint is not None and grlc_endpoint is not None:
+        config.init_grlc(grlc_endpoint, sparql_endpoint)
+        app.add_api('openapi.yaml',
+                options=options,
+                arguments={'title': 'FDP server'},
+                strict_validation=True,
+                validate_responses=True
+                )
+    else:
+        app.add_api('openapi_wo_search.yaml',
+                options=options,
+                arguments={'title': 'FDP server'},
+                strict_validation=True,
+                validate_responses=True
+                )
 
     return app.app
 
