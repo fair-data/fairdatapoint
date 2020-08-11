@@ -2,13 +2,14 @@
 """FDP run.
 
 Usage:
-  fdp-run <host> <port> [--db=<sparql-endpoint>] [--debug=<debug>]
+  fdp-run <host> <port> [--db=<sparql-endpoint>] [--grlc=<grlc-endpoint>] [--debug=<debug>]
   fdp-run (-h | --help | --version)
 
 Options:
   -h --help                   Show this screen and exit
   --version                   Show FDP version
   --db=<sparql-endpoint>      Set a SPARQL endpoint URL. If not set, using memory store.
+  --grlc=<grlc-endpoint>      Set a grlc endpoint URL. Only applicable for SPARQL store.
   --debug=<debug>             Debug mode [default: False]
 """
 from docopt import docopt
@@ -17,7 +18,7 @@ from fdp.fdp import create_app
 from bottle import run
 
 args = docopt(__doc__, version='FDP run ' + __version__)
-run(create_app(host=args['<host>'], port=args['<port>'], graph_endpoint=args['--db']),
+run(create_app(host=args['<host>'], port=args['<port>'], sparql_endpoint=args['--db'], grlc_endpoint=args['--grlc']),
     host = args['<host>'],
     port = args['<port>'],
     server = 'paste',
