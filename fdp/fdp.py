@@ -1,8 +1,9 @@
 import connexion
 from fdp import config
 
-def create_app(host, port, graph_endpoint=None):
-    config.init_fairgraph(host, port, graph_endpoint)
+def create_app(host, port, sparql_endpoint=None, grlc_endpoint=None):
+    config.init_fairgraph(host, port, sparql_endpoint)
+    config.init_grlc(grlc_endpoint, sparql_endpoint)
 
     app = connexion.FlaskApp(__name__, specification_dir='openapi/', debug=True)
     options = {"swagger_ui": True}
