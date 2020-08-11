@@ -20,6 +20,8 @@ FDP has been implemented in:
 * [Python](https://github.com/NLeSC/FAIRDataPoint/)
 * [Java](https://github.com/DTL-FAIRData/FAIRDataPoint)
 
+Besides the regular features described in FDP sepc, this Python implementation also provides [search features](##Quick-look-on-FDP-features). With that you can easily search text, URI and specific terms e.g. publishers, media types, licenses, etc. To use the search features, you need to [deploy with docker](##Deploy-with-Docker).
+
 ## Installation
 
 To install FDP, do
@@ -75,6 +77,11 @@ pip install fairdatapoint
 # fdp-run <host> <port> --db=<sparql-endpoint>
 fdp example.com 80 --db='http://dbpedia.org/sparql'
 ```
+
+## Quick look on FDP features
+
+![swagger-ui](image/ui.png)
+
 
 ## Web API documentation
 
