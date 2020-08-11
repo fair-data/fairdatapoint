@@ -7,14 +7,14 @@ from fdp.fdp import create_app
                 ids =['Memory Store', 'Persistent Store'])
 def client(request):
     '''Build http client'''
-    app = create_app(host='0.0.0.0', port=80, graph_endpoint=request.param)
+    app = create_app(host='0.0.0.0', port=80, sparql_endpoint=request.param)
     with app.test_client() as client:
         yield client
 
 # to make sure creating a new store when calling client
 @pytest.fixture(scope='function', params=[None], ids =['Memory Store'])
 def client_new_store(request):
-    app = create_app(host='0.0.0.0', port=80, graph_endpoint=request.param)
+    app = create_app(host='0.0.0.0', port=80, sparql_endpoint=request.param)
     with app.test_client() as client:
         yield client
 
