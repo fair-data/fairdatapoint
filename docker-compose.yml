@@ -2,7 +2,7 @@ version: '3'
 services:
   fdp:
     build: .
-    command: fdp-run 0.0.0.0 80 --db http://db:8890/sparql
+    command: fdp-run 0.0.0.0 80 --db http://db:8890/sparql --grlc http://grlc:8088
     ports:
       - "80:80"
     healthcheck:
@@ -10,6 +10,7 @@ services:
         interval: 5s
     depends_on:
       - db
+      - grlc
   db:
     image: "tenforce/virtuoso"
     ports:
@@ -17,3 +18,15 @@ services:
         - "1111:1111"
     environment:
         SPARQL_UPDATE: "true"
+  grlc:
+    image: "clariah/grlc"
+    ports:
+      - "8088:8088"
+    environment:
+      - GRLC_SERVER_NAME=0.0.0.0:8088
+      - GRLC_SPARQL_ENDPOINT=http://db:8890/sparql
+      - DEBUG=true
+    volumes:
+      - ./fdp/sparql:/home/grlc/queries
+    depends_on:
+      - db
