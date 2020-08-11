@@ -16,5 +16,5 @@ RUN pip install .
 ENV HOST=0.0.0.0
 ENV PORT=80
 
-CMD fdp-run ${HOST} ${PORT}
+CMD fdp-run ${HOST} ${PORT} --db=http://0.0.0.0:8890/sparql --grlc=http://0.0.0.0:8080
 HEALTHCHECK --interval=5s CMD curl --silent --fail ${HOST}:${PORT} || exit 1
