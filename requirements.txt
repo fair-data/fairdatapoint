@@ -5,6 +5,5 @@ Flask==1.1.1
 Werkzeug==0.16.0
 pyshacl==0.11.4
 SPARQLWrapper==1.8.5
-bottle==0.12.18
-paste==3.4.0
 connexion==2.7.0
+swagger-ui-bundle>=0.0.2
