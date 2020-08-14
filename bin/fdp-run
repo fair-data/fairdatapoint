@@ -14,11 +14,10 @@ Options:
 from docopt import docopt
 from fdp import __version__
 from fdp.fdp import create_app
-from bottle import run
+from flask import Flask
 
 args = docopt(__doc__, version='FDP run ' + __version__)
-run(create_app(host=args['<host>'], port=args['<port>'], graph_endpoint=args['--db']),
+Flask.run(create_app(host=args['<host>'], port=args['<port>'], graph_endpoint=args['--db']),
     host = args['<host>'],
     port = args['<port>'],
-    server = 'paste',
     debug = args['--debug'])
