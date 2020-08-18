@@ -3,4 +3,5 @@ include README.md
 include CHANGELOG.md
 include requirements.txt
 graft fdp/schema
+graft fdp/openapi
 graft tests
