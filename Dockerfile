@@ -1,9 +1,8 @@
 FROM python:3-slim
 
 RUN apt-get -y update && \
-    apt-get -y install git make curl
-
-RUN useradd fdp && \
+    apt-get -y install git make curl && \
+    useradd fdp && \
     mkdir /home/fdp && \
     chown fdp:fdp /home/fdp
 
@@ -11,10 +10,10 @@ COPY . /home/fdp
 
 WORKDIR /home/fdp
 
-RUN pip install .
+RUN pip install . && \
+    pip install gunicorn
 
-ENV HOST=0.0.0.0
-ENV PORT=80
+ENV FDP_HOST=0.0.0.0
+ENV FDP_PORT=80
 
-CMD fdp-run ${HOST} ${PORT}
-HEALTHCHECK --interval=5s CMD curl --silent --fail ${HOST}:${PORT} || exit 1
+CMD fdp-run ${FDP_HOST} ${FDP_PORT}
