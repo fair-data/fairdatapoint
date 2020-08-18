@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -26,9 +26,7 @@ setup(
     author="Rajaram Kaliyaperumal, Arnold Kuzniar, Cunliang Geng, Carlos Martinez-Ortiz",
     author_email='c.martinez@esciencecenter.nl',
     url='https://github.com/NLeSC/fairdatapoint',
-    packages=[
-        'fdp',
-    ],
+    packages=find_packages(),
     include_package_data=True,
     license="Apache Software License 2.0",
     zip_safe=False,
