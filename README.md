@@ -57,13 +57,7 @@ TODO: Include a link to your project's full documentation here.
 
 ## Deploy with Docker
 
-Download the `docker-compose.prod.yml` from this repo, change the `HOSTNAME` in the file to a proper host.
-The default port is `80`, and you can use other port (e.g. `8080`) if port `80` is used.
-Also change the `DATABASE_PATH` to a local path for the SPARQL database.
-Then run the command
-```
-docker-compose -f docker-compose.prod.yml up -d
-```
+Check [fairdatapoint-service](https://github.com/CunliangGeng/fairdatapoint-service).
 
 ## Deploy without Docker
 

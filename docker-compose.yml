@@ -1,19 +1,18 @@
-version: '3'
+version: '3.8'
 services:
   fdp:
     build: .
     command: fdp-run 0.0.0.0 80 --db http://db:8890/sparql
     ports:
       - "80:80"
-    healthcheck:
-        test: curl --silent --fail http://0.0.0.0 || exit 1
-        interval: 5s
     depends_on:
       - db
   db:
     image: "tenforce/virtuoso"
-    ports:
-        - "8890:8890"
-        - "1111:1111"
+    # ports:
+    #   - "8890:8890"
+    #   - "1111:1111"
     environment:
-        SPARQL_UPDATE: "true"
+      - SPARQL_UPDATE=true
+    volumes:
+      - ./data/virtuoso:/data
