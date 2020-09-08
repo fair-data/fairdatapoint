@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.7.1] - 2020-09-08
+### Added
+- PUT method used to update metadata
+
+### Changed
+- Replaced `flask-restplus` with `connexion` package for OpenAPI generation
+- Refactored code based on OpenAPI specification
+- Removed ending '/' in endpoints, e.g. '/catalog/' was changed to '/catalog'.
+- Removed Bottle and Paste dependecies
+- Removed docker compose file for production run
+
+
 ## [0.7.0] - 2020-06-12
 ### Added
 - POST and DELETE methods
