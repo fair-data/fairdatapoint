@@ -24,10 +24,10 @@ authors:
     orcid: "https://orcid.org/0000-0002-1409-8358"
 
 cff-version: "1.0.3"
-date-released: 2020-06-12
+date-released: 2020-09-08
 doi: 10.5281/zenodo.1083951
 license: Apache-2.0
 message: "If you use this software, please cite it using these metadata."
 repository-code: "https://github.com/NLeSC/fairdatapoint"
 title: "FAIR Data Point"
-version: '0.7.0'
+version: '0.7.1'
