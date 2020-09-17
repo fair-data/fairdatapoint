@@ -1,12 +1,21 @@
 openapi: 3.0.0
 info:
-  description:
-    Find more about [FAIR Data Point](https://github.com/NLeSC/fairdatapoint).
+  title: FAIR Data Point
   version: "1.0.0"
-  title: FAIR Data Point REST APIs
+  description: FAIR Data Point is a RESTful web service that enables data owners
+     to describe and to expose their datasets (metadata) as well as data users
+     to discover more information about available datasets according to the
+     [FAIR Data Principles](https://www.force11.org/group/fairgroup/fairprinciples).
+  contact:
+    name: Netherlands eScience Center
+    url: https://www.esciencecenter.nl/
+    email: info@esciencecenter.nl
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+externalDocs:
+  description: Find out more about FAIR Data Point
+  url: https://github.com/NLeSC/fairdatapoint
 servers:
   - description: API version 1
     url: /
