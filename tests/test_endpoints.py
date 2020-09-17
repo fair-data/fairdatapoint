@@ -24,7 +24,7 @@ class TestBaseEndpointTests:
 
     # datadir fixture provided via pytest-datadir-ng
     def test_fdp(self, client, datadir):
-        """Testing post and get to fdp"""
+        """Testing post, get and put to fdp"""
         rv = client.post('/fdp', data=datadir['fdp.ttl'])
         assert rv.status_code == 200
         assert 'message' in rv.json
@@ -37,6 +37,15 @@ class TestBaseEndpointTests:
         assert rv.mimetype == 'text/turtle'
         assert b'hasVersion "0.1"' in rv.data
         assert b'metadataIssued "2019-04-09T10:01:00"^^xsd:dateTime' in rv.data
+
+        rv = client.put('/fdp', data=datadir['fdp_update.ttl'])
+        assert rv.status_code == 200
+        assert 'message' in rv.json
+        assert rv.json['message'] == 'Ok'
+
+        rv = client.get('/fdp')
+        assert rv.status_code == 200
+        assert b'hasVersion "0.2"' in rv.data
 
         rv = client.delete('/fdp')
         assert rv.status_code == 405
@@ -80,7 +89,7 @@ class TestBaseEndpointTests:
         assert 'Not allowed RDF type for layer FDP' in rv.json['message']
 
     def test_catalog(self, client, datadir):
-        """Testing post and get to catalog"""
+        """Testing post, get, put and delete to catalog"""
         rv = client.post('/catalog', data=datadir['catalog01.ttl'])
         assert rv.status_code == 200
         assert rv.json['message'] == 'Ok'
@@ -102,11 +111,28 @@ class TestBaseEndpointTests:
         assert 'GET' in rv.headers['Allow']
         assert rv.mimetype == 'text/turtle'
         assert b'catalog01' in rv.data
+        assert b'hasVersion "1.0"' in rv.data
+
+        rv = client.put('/catalog/catalog01', data=datadir['catalog01_update.ttl'])
+        # assert rv.status_code == 200
+        # assert rv.json['message'] == 'Ok'
+        print(rv.data)
+        assert rv.json['message'] == 'Ok'
+
+        rv = client.get('/catalog/catalog01')
+        assert rv.status_code == 200
+        assert b'catalog01' in rv.data
+        assert b'hasVersion "2.0"' in rv.data
 
         rv = client.delete('/catalog/catalog01')
         assert rv.status_code == 204
 
         rv = client.get('/catalog/catalog01')
+        assert rv.status_code == 404
+        assert 'message' in rv.json
+        assert rv.json['message'] == 'Not Found'
+
+        rv = client.put('/catalog/catalog01', data=datadir['catalog01_update.ttl'])
         assert rv.status_code == 404
         assert 'message' in rv.json
         assert rv.json['message'] == 'Not Found'
@@ -134,7 +160,7 @@ class TestBaseEndpointTests:
         assert 'Validation Report\nConforms: False\nResults (9)' in rv.json['message']
 
     def test_dataset(self, client, datadir):
-        """Testing post and get to dataset"""
+        """Testing post, get, put and delete to dataset"""
         rv = client.post('/dataset', data=datadir['dataset01.ttl'])
         assert rv.status_code == 200
         assert rv.json['message'] == 'Ok'
@@ -155,11 +181,26 @@ class TestBaseEndpointTests:
         assert 'GET' in rv.headers['Allow']
         assert rv.mimetype == 'text/turtle'
         assert b'breedb' in rv.data
+        assert b'hasVersion "1.0"' in rv.data
+
+        rv = client.put('/dataset/breedb', data=datadir['dataset01_update.ttl'])
+        assert rv.status_code == 200
+        assert rv.json['message'] == 'Ok'
+
+        rv = client.get('/dataset/breedb', )
+        assert rv.status_code == 200
+        assert b'breedb' in rv.data
+        assert b'hasVersion "2.0"' in rv.data
 
         rv = client.delete('/dataset/breedb')
         assert rv.status_code == 204
 
         rv = client.get('/dataset/breedb')
+        assert rv.status_code == 404
+        assert 'message' in rv.json
+        assert rv.json['message'] == 'Not Found'
+
+        rv = client.put('/dataset/breedb', data=datadir['dataset01_update.ttl'])
         assert rv.status_code == 404
         assert 'message' in rv.json
         assert rv.json['message'] == 'Not Found'
@@ -187,7 +228,7 @@ class TestBaseEndpointTests:
         assert 'Validation Report\nConforms: False\nResults (9)' in rv.json['message']
 
     def test_distribution(self, client, datadir):
-        """Testing post and get to distribution"""
+        """Testing post, get, put and delete to distribution"""
 
         rv = client.post('/distribution', data=datadir['dist01.ttl'])
         assert rv.status_code == 200
@@ -209,11 +250,26 @@ class TestBaseEndpointTests:
         assert 'GET' in rv.headers['Allow']
         assert rv.mimetype == 'text/turtle'
         assert b'breedb-sparql' in rv.data
+        assert b'hasVersion "1.0"' in rv.data
+
+        rv = client.put('/distribution/breedb-sparql', data=datadir['dist01_update.ttl'])
+        assert rv.status_code == 200
+        assert rv.json['message'] == 'Ok'
+
+        rv = client.get('/distribution/breedb-sparql')
+        assert rv.status_code == 200
+        assert b'breedb-sparql' in rv.data
+        assert b'hasVersion "2.0"' in rv.data
 
         rv = client.delete('/distribution/breedb-sparql')
         assert rv.status_code == 204
 
         rv = client.get('/distribution/breedb-sparql')
+        assert rv.status_code == 404
+        assert 'message' in rv.json
+        assert rv.json['message'] == 'Not Found'
+
+        rv = client.put('/distribution/breedb-sparql', data=datadir['dist01_update.ttl'])
         assert rv.status_code == 404
         assert 'message' in rv.json
         assert rv.json['message'] == 'Not Found'
