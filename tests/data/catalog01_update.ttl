@@ -1,0 +1,17 @@
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fdp: <http://rdf.biosemantics.org/ontologies/fdp-o#> .
+@prefix dbp: <http://dbpedia.org/resource/> .
+
+<http://0.0.0.0/catalog/catalog01> a dcat:Catalog ;
+    dcterms:title "First sample catalog";
+    dcterms:hasVersion "2.0" ;
+    dcterms:publisher <http://orcid.org/0000-0002-4368-8058> ;
+    dcterms:isPartOf <http://0.0.0.0/fdp> ;
+    fdp:metadataIdentifier <http://example.org/catalog01> ;
+    fdp:metadataIssued "2016-10-27T00:00:00"^^xsd:dateTime ;
+    fdp:metadataModified "2016-10-27T00:00:00"^^xsd:dateTime ;
+    dcat:dataset <dataset/breedb> ;
+    dcat:themeTaxonomy dbp:Breeding .
