@@ -106,7 +106,11 @@ class FDP():
         '''
         Update FDP metadata
         '''
-        return make_response({'message': 'Method Not Allowed'}, 405)
+        targetURI = fairgraph.buildURI('FDP')
+        if not fairgraph.URIexists(targetURI):
+            return make_response({'message': 'Not Found'}, 404)
+        fairgraph.deleteURI(targetURI)
+        return httpResponsePost('FDP')
 
 class Metadata():
 
