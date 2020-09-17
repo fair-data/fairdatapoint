@@ -139,9 +139,10 @@ class Metadata():
         '''
         Update Catalog metadata
         '''
-        if not fairgraph.URIexists(fairgraph.buildURI(self.layer, id)):
+        targetURI = fairgraph.buildURI(self.layer, id)
+        if not fairgraph.URIexists(targetURI):
             return make_response({'message': 'Not Found'}, 404)
-        fairgraph.deleteURI(fairgraph.buildURI(self.layer, id))
+        fairgraph.deleteURI(targetURI)
         #TODO validate the id of the request body
         return httpResponsePost(self.layer)
 
@@ -149,9 +150,10 @@ class Metadata():
         '''
         Delete the catalog ID and metadata
         '''
-        if not fairgraph.URIexists(fairgraph.buildURI(self.layer, id)):
+        targetURI = fairgraph.buildURI(self.layer, id)
+        if not fairgraph.URIexists(targetURI):
             return make_response({'message': 'Not Found'}, 404)
-        fairgraph.deleteURI(fairgraph.buildURI(self.layer, id))
+        fairgraph.deleteURI(targetURI)
         return make_response('', 204)
 
 Catalog = Metadata('Catalog')
