@@ -2,9 +2,7 @@
 from fdp.fairgraph import FAIRGraph
 
 def build_base_uri(host, port):
-    if host == 'localhost':
-        host = 'http://127.0.0.1'
-    elif not host.startswith('http'):
+    if not host.startswith('http'):
         host = f'http://{host}'
     if int(port) == 80:
         base_uri = host
