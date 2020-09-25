@@ -24,7 +24,7 @@ authors:
     orcid: "https://orcid.org/0000-0002-1409-8358"
 
 cff-version: "1.0.3"
-date-released: 2020-09-08
+date-released: 2020-09-15
 doi: 10.5281/zenodo.1083951
 license: Apache-2.0
 message: "If you use this software, please cite it using these metadata."
