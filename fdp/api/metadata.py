@@ -106,7 +106,11 @@ class FDP():
         '''
         Update FDP metadata
         '''
-        return make_response({'message': 'Method Not Allowed'}, 405)
+        targetURI = fairgraph.buildURI('FDP')
+        if not fairgraph.URIexists(targetURI):
+            return make_response({'message': 'Not Found'}, 404)
+        fairgraph.deleteURI(targetURI)
+        return httpResponsePost('FDP')
 
 class Metadata():
 
@@ -135,9 +139,10 @@ class Metadata():
         '''
         Update Catalog metadata
         '''
-        if not fairgraph.URIexists(fairgraph.buildURI(self.layer, id)):
+        targetURI = fairgraph.buildURI(self.layer, id)
+        if not fairgraph.URIexists(targetURI):
             return make_response({'message': 'Not Found'}, 404)
-        fairgraph.deleteURI(fairgraph.buildURI(self.layer, id))
+        fairgraph.deleteURI(targetURI)
         #TODO validate the id of the request body
         return httpResponsePost(self.layer)
 
@@ -145,9 +150,10 @@ class Metadata():
         '''
         Delete the catalog ID and metadata
         '''
-        if not fairgraph.URIexists(fairgraph.buildURI(self.layer, id)):
+        targetURI = fairgraph.buildURI(self.layer, id)
+        if not fairgraph.URIexists(targetURI):
             return make_response({'message': 'Not Found'}, 404)
-        fairgraph.deleteURI(fairgraph.buildURI(self.layer, id))
+        fairgraph.deleteURI(targetURI)
         return make_response('', 204)
 
 Catalog = Metadata('Catalog')
