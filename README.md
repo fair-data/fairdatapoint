@@ -61,13 +61,14 @@ Check [fairdatapoint-service](https://github.com/CunliangGeng/fairdatapoint-serv
 
 ## Deploy without Docker
 
-Before deploying FDP, it's necessary to first have a running SPARQL database.
+Before deploying FDP, it's necessary to first have a running SPARQL database which can be used to store metadata.
 
 ```
 pip install fairdatapoint
 
 # fdp-run <host> <port> --db=<sparql-endpoint>
-fdp example.com 80 --db='http://dbpedia.org/sparql'
+# Let's assume your <host> is 'example.com' and <sparql-endpoint> is 'http://example.com/sparql', then
+fdp-run example.com 80 --db='http://example.com/sparql'
 ```
 
 ## Web API documentation
