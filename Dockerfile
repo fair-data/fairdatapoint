@@ -15,5 +15,6 @@ RUN pip install . && \
 
 ENV FDP_HOST=0.0.0.0
 ENV FDP_PORT=80
+EXPOSE 80
 
 CMD fdp-run ${FDP_HOST} ${FDP_PORT}
