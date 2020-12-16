@@ -4,7 +4,7 @@ from fdp import config
 def create_app(host, port, graph_endpoint=None):
     config.init_fairgraph(host, port, graph_endpoint)
 
-    app = connexion.FlaskApp(__name__, specification_dir='openapi/', debug=True)
+    app = connexion.FlaskApp(__name__, specification_dir='openapi/', debug=True, options={"swagger_url": ""})
     options = {"swagger_ui": True}
     app.add_api('openapi.yaml',
             options=options,
