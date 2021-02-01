@@ -42,7 +42,7 @@ pip install .
 fdp-run localhost 80
 ```
 
-The [Swagger UI](https://swagger.io/tools/swagger-ui/) is enabled for FDP service, and you can have a try by visiting http://localhost/ui.
+The [Swagger UI](https://swagger.io/tools/swagger-ui/) is enabled for FDP service, and you can have a try by visiting http://localhost.
 
 ## Unit testing
 Run tests (including coverage) with:

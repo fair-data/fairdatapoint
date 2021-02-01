@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.7.2] - 2021-02-01
+### Changed
+- Changed the url of Swagger UI from `/ui` to the base url `/`
+
 ## [0.7.1] - 2020-09-15
 ### Added
 - PUT method used to update metadata
