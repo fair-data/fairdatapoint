@@ -7,6 +7,7 @@
 [![Build_Test](https://github.com/fair-data/fairdatapoint/actions/workflows/build_test.yml/badge.svg)](https://github.com/fair-data/fairdatapoint/actions/workflows/build_test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/NLeSC/fairdatapoint/badge.svg?branch=master)](https://coveralls.io/github/NLeSC/fairdatapoint?branch=master)
 
+[![Coverage Status](https://coveralls.io/repos/github/fair-data/fairdatapoint/badge.svg?branch=master)](https://coveralls.io/github/fair-data/fairdatapoint?branch=master)
 
 Python implementation of FAIR Data Point.
 
