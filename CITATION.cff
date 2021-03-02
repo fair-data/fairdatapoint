@@ -28,6 +28,6 @@ date-released: 2020-09-15
 doi: 10.5281/zenodo.1083951
 license: Apache-2.0
 message: "If you use this software, please cite it using these metadata."
-repository-code: "https://github.com/NLeSC/fairdatapoint"
+repository-code: "https://github.com/fair-data/fairdatapoint"
 title: "FAIR Data Point"
 version: '0.7.1'

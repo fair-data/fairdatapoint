@@ -5,8 +5,6 @@
 [![DOI](https://zenodo.org/badge/37470907.svg)](https://zenodo.org/badge/latestdoi/37470907)
 [![Research Software Directory](https://img.shields.io/badge/RSD-FAIRDataPoint-red)](https://research-software.nl/software/fairdatapoint)
 [![Build_Test](https://github.com/fair-data/fairdatapoint/actions/workflows/build_test.yml/badge.svg)](https://github.com/fair-data/fairdatapoint/actions/workflows/build_test.yml)
-[![Coverage Status](https://coveralls.io/repos/github/NLeSC/fairdatapoint/badge.svg?branch=master)](https://coveralls.io/github/NLeSC/fairdatapoint?branch=master)
-
 [![Coverage Status](https://coveralls.io/repos/github/fair-data/fairdatapoint/badge.svg?branch=master)](https://coveralls.io/github/fair-data/fairdatapoint?branch=master)
 
 Python implementation of FAIR Data Point.
@@ -18,7 +16,7 @@ FDP is a RESTful web service that enables data owners to describe and to expose 
 FDP software specification can be found [here](https://github.com/FAIRDataTeam/FAIRDataPoint-Spec/blob/master/spec.md)
 
 FDP has been implemented in:
-* [Python](https://github.com/NLeSC/FAIRDataPoint/)
+* [Python](https://github.com/fair-data/FAIRDataPoint/)
 * [Java](https://github.com/DTL-FAIRData/FAIRDataPoint)
 
 ## Installation
@@ -32,7 +30,7 @@ pip install fairdatapoint
 
 Or from this repo
 ```bash
-git clone https://github.com/NLeSC/fairdatapoint.git
+git clone https://github.com/fair-data/fairdatapoint.git
 cd fairdatapoint
 pip install .
 ```

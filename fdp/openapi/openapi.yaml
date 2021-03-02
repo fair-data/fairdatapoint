@@ -15,7 +15,7 @@ info:
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 externalDocs:
   description: Find out more about FAIR Data Point
-  url: https://github.com/NLeSC/fairdatapoint
+  url: https://github.com/fair-data/fairdatapoint
 servers:
   - description: API version 1
     url: /

@@ -25,7 +25,7 @@ setup(
     long_description_content_type='text/markdown',
     author="Rajaram Kaliyaperumal, Arnold Kuzniar, Cunliang Geng, Carlos Martinez-Ortiz",
     author_email='c.martinez@esciencecenter.nl',
-    url='https://github.com/NLeSC/fairdatapoint',
+    url='https://github.com/fair-data/fairdatapoint',
     packages=find_packages(),
     include_package_data=True,
     license="Apache Software License 2.0",
