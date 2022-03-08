@@ -17,9 +17,6 @@ FDP is a RESTful web service that enables data owners to describe and to expose 
 FDP software specification can be found [here](https://github.com/FAIRDataTeam/FAIRDataPoint-Spec/blob/master/spec.md).
 Other implementations are also available, e.g. [Java implementation](https://github.com/DTL-FAIRData/FAIRDataPoint)
 
-### Demo server
-A demo server of this Python implementation is http://fdp.fairdatapoint.nl/
-
 ## Installation
 
 To install FDP, do
