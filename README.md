@@ -7,6 +7,15 @@
 [![Build_Test](https://github.com/fair-data/fairdatapoint/actions/workflows/build_test.yml/badge.svg)](https://github.com/fair-data/fairdatapoint/actions/workflows/build_test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/fair-data/fairdatapoint/badge.svg?branch=master)](https://coveralls.io/github/fair-data/fairdatapoint?branch=master)
 
+> 
+> ⚠️ **Warning**
+>
+> This repo is **no longer maintained**.
+>
+> You could **switch to the [Java implementation](https://github.com/DTL-FAIRData/FAIRDataPoint)**.
+> 
+
+
 ## Overview
 Python implementation of FAIR Data Point.
 
